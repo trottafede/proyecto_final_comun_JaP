@@ -1,0 +1,89 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    background-color: gainsboro;
+    display: flex;
+}
+
+.letra-h2{
+    text-align: center;
+}
+
+.contenedor-register{
+    width: 380px;
+    margin: 25px auto;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 15px gray;
+}
+
+.texto-input{
+    margin-bottom: 15px;
+    font-weight: 500
+}
+
+.texto-input label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.texto-input input{
+    width: 96%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.boton-registrarse{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 500;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.boton-registrarse:hover{
+    background-color: rgb(54, 54, 145);
+    color: white;
+}
+
+.checkbox-terminos{
+    display: flex;
+    font-weight: 500;
+    margin: 10px 0 15px;
+}
+
+.checkbox-terminos label{
+    accent-color: black;
+    margin-left: -4px;
+}
+
+.link-login{
+    display: flex;
+    font-weight: 500;
+    margin: 0 0 15px;
+    margin-left: 2px;
+}
+
+.link-login a{
+    color: blue;
+    text-decoration: none;
+    transition: 1;
+}
+
+.link-login a:hover{
+    color: black;
+    text-decoration: underline;
+}

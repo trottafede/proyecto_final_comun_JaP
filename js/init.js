@@ -14,8 +14,10 @@ let showSpinner = function(){
 let hideSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "none";
 }
+const user =sessionStorage.getItem('user')
+var myobj = JSON.parse(user);
 
-let getJSONData = function(url){
+let getJSONData = async function(url){
     let result = {};
     showSpinner();
     return fetch(url)
