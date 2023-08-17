@@ -1,10 +1,10 @@
 let url = "https://japceibal.github.io/emercado-api/cats_products/101.json";
 
 async function fetchMovies() {
-  const {data} = await getJSONData(url);
+  const { data } = await getJSONData(url);
   let htmlContentToAppend = "";
   for (const category of data.products) {
-     htmlContentToAppend += `
+    htmlContentToAppend += `
     <div class="list-group-item list-group-item-action">
         <div class="row">
             <div class="col-3">
@@ -22,8 +22,7 @@ async function fetchMovies() {
             </div>
         </div>
     </div>`;
-    document.getElementById("cat-list-container").innerHTML = htmlContentToAppend; 
-}
+    document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+  }
 }
 fetchMovies();
-
