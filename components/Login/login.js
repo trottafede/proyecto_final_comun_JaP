@@ -26,6 +26,6 @@ document
       sessionStorage.setItem("user", JSON.stringify(valor));
 
       this.submit();
-      window.location.href = "../../login.html";
+      window.location.href = "../../index.html";
     }
   });
