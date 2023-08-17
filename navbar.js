@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   </li>`;
 
   const user = sessionStorage.getItem("user");
-
   const parsedUser = JSON.parse(user);
-  const cerrarSesion = (e) => {
+
+  const cerrarSesion = () => {
     sessionStorage.removeItem("user");
   };
 
