@@ -1,7 +1,11 @@
-let url = "https://japceibal.github.io/emercado-api/cats_products/101.json";
+let catID = localStorage.getItem("catID");
+let url = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
 
 async function fetchProducts() {
   const { data } = await getJSONData(url);
+  let text = `Veras aqui todos los productos de la categoria ${data.catName}`;
+  document.getElementById("titulo").innerHTML = text;
+
   let htmlContentToAppend = "";
   for (const category of data.products) {
     htmlContentToAppend += `
@@ -21,7 +25,10 @@ async function fetchProducts() {
             </div>
         </div>
     </div>`;
-    document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+    document.getElementById("cat-list-container").innerHTML =
+      htmlContentToAppend;
   }
 }
 fetchProducts();
+
+
