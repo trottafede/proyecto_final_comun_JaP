@@ -26,8 +26,8 @@ function sortCategories(criteria, array){
         });
     }else if (criteria === ORDER_BY_PROD_COUNT){
         result = array.sort(function(a, b) {
-            let aCount = parseInt(a.productCount);
-            let bCount = parseInt(b.productCount);
+            let aCount = parseInt(a.cost);
+            let bCount = parseInt(b.cost);
 
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
@@ -92,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(url).then(function(resultObj){
         if (resultObj.status === "ok"){
             currentCategoriesArray = resultObj.data.products
-            console.log(resultObj);
             let text = `Veras aqui todos los productos de la categoria ${resultObj.data.catName}`;
             document.getElementById("titulo").innerHTML = text;
             showCategoriesList()
