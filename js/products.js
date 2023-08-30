@@ -190,7 +190,7 @@ const handleSearch = () => {
   const searchText = document.getElementById("searchInput").value;
   //filtrar
   const result = currentCategoriesArray.filter(
-    (product) => product.name.includes(searchText)
+    (product) => product.name.toLowerCase().includes(searchText) || product.description.toLowerCase().includes(searchText)
   );
   showCategoriesList(result);
 };
