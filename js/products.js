@@ -52,9 +52,9 @@ function sortCategories(criteria, array) {
   return result;
 }
 
-function setCatID(id) {
-  localStorage.setItem("catID", id);
-  window.location = "products.html";
+function setProdID(id) {
+  localStorage.setItem("prodID", id);
+  window.location = "product-info.html";
 }
 
 function showCategoriesList(products) {
@@ -68,7 +68,7 @@ function showCategoriesList(products) {
         (maxCount != undefined && parseInt(category.cost) <= maxCount))
     ) {
       htmlContentToAppend += `
-                <div class="list-group-item list-group-item-action">
+                <div onclick="setProdID(${category.id})" class="list-group-item list-group-item-action">
                     <div class="row">
                         <div class="col-3">
                             <img src="${category.image}" alt="product image" class="img-thumbnail">
@@ -76,14 +76,14 @@ function showCategoriesList(products) {
                         <div class="col">
                             <div class="d-flex w-100 justify-content-between">
                                 <div class="mb-1">
-                                    <h4> ${category.name} - ${category.currency} ${category.cost}</h4> 
+                                    <h4> ${category.name} - ${category.currency} ${category.cost} ${category.id}</h4> 
                                     <p>${category.description}</p> 
                                 </div>
                                 <small class="text-muted"> ${category.soldCount} vendidos</small> 
                             </div>
                         </div>
                     </div>
-                </div>`;
+                </div>`
     }
     document.getElementById("cat-list-container").innerHTML =
       htmlContentToAppend;

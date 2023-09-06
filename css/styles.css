@@ -204,3 +204,32 @@ h4 {
 .myMarginRight{
 margin-right: 10px;
 }
+
+.col-md-4{
+  transition: .5s, color .10s;
+      -webkit-transition: .5s, color .10s;
+      -moz-transition: .5s, color .10s;
+}
+
+.col-md-4:hover{
+  transform: translate3d(12px, 2%, 3em);
+      -webkit-transform: translate3d(12px, 1%, 3em);
+      -moz-transform: translate3d(12px, 2%, 3em);
+  box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+}
+
+.img-thumbnail{
+  transition: transform 0.3s ease
+}
+
+.img-thumbnail:hover{
+  transform: scale(1.1);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+              
+         
