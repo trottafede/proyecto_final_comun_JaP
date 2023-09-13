@@ -1,13 +1,12 @@
-let prodID = localStorage.getItem("prodID")
-let catID = localStorage.getItem("catID")
-
+const prodID = localStorage.getItem("prodID")
+const catID = localStorage.getItem("catID")
 // Construir la URL de la API
-const apiUrl = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
+const apiUrl = "https://japceibal.github.io/emercado-api/products/"+prodID+".json";
 const urlImagen = "../img/"
+console.log(apiUrl)
 
 // Realizar la solicitud GET a la API
 
-const objetoID = parseInt(prodID)
 console.log(typeof prodID)
 
 function showProductInfo(objeto) {
@@ -23,7 +22,7 @@ function showProductInfo(objeto) {
         <img src="${objeto.images[2]}" onclick="openFulImg(this.src)">
         <img src="${objeto.images[3]}" onclick="openFulImg(this.src)">
     </section>
-    <div class="info"> 
+    <div class="info">
       <h4>Descripcion</h4>
       <p>${objeto.description}</p>
       <h4>Costo</h4>
@@ -47,15 +46,16 @@ fetch(apiUrl)
     return response.json();
   })
   .then((data) => {
-    const objetoEncontrado = data.products.find((objeto) => objeto.id === objetoID);
-    if (objetoEncontrado) {
-      console.log('Objeto encontrado:', objetoEncontrado);
+    console.log(data.id);
+    const objetoID = parseInt(prodID)
+    // Verificar si el objeto con el ID específico existe en data
+    if (data.id === objetoID) {
+      console.log('Objeto encontrado:', data);
+      showProductInfo(data);
     } else {
       console.log('Objeto no encontrado con ID', objetoID);
     }
-    showProductInfo(objetoEncontrado)
   })
-
   .catch((error) => {
     console.error('Error:', error);
   });

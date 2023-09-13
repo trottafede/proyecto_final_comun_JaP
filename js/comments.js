@@ -1,7 +1,13 @@
 const commentID = localStorage.getItem("prodID");
-const user = localStorage.getItem("user")
+const user = localStorage.getItem("user");
 const apiComments = "https://japceibal.github.io/emercado-api/products_comments/" + commentID + ".json";
 let comentarios = {};
+
+// Cargar comentarios desde localStorage si existen
+const storedComments = localStorage.getItem("comments");
+if (storedComments) {
+    comentarios = JSON.parse(storedComments);
+}
 
 const comentBtn = document.getElementById("botonCmt");
 
@@ -11,13 +17,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         handleSendComment();
     })
 
-    const commentsDeArchivo = await fetch(apiComments);
-    const commentsDeArchivoData = await commentsDeArchivo.json();
+    // Cargar comentarios desde la API solo si no existen en los comentarios locales
+    if (!comentarios[commentID]) {
+        const commentsDeArchivo = await fetch(apiComments);
+        const commentsDeArchivoData = await commentsDeArchivo.json();
+        comentarios[commentID] = commentsDeArchivoData;
+    }
 
-    comentarios[commentID] = comentarios[commentID] || [];
-    comentarios[commentID] = comentarios[commentID].concat(commentsDeArchivoData);
-
-    
+    const comentariosDelProducto = comentarios[commentID] || [];
     showAllComments(commentID);
 
     const fechaHora = new Date();
@@ -46,7 +53,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             comentarios[commentID] = comentarios[commentID] || [];
             comentarios[commentID].push(comentarioLocal);
 
-            refreshStorage();
+            refreshStorage(commentID);
             showAllComments(commentID);
 
             document.getElementById("btnComent").value = "";
@@ -74,4 +81,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("comments").innerHTML = boxComments;
     }
 });
-
