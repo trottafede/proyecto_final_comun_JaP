@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     <a class="nav-link" href="components/Login/login.html">Usuario</a>
   </li>`;
 
-  const user = sessionStorage.getItem("user");
+  const user = localStorage.getItem("user");
   const parsedUser = JSON.parse(user);
 
   const cerrarSesion = () => {
-    sessionStorage.removeItem("user");
+    localStorage.removeItem("user");
   };
 
   if (user) {

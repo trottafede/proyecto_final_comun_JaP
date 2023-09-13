@@ -16,12 +16,23 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
   <main>
+    <div class="ful-img" id="fulImgBox">
+      <img src="img/car1.jpg" id="fulImg">
+      <span onclick="closeImg()">X</span>
+    </div>
     <div class="container">
       <div id="prueba">
           <div id="imagenProducto">
 
           </div>
       </div>
+      <div id="comments">
+
+      </div>
+      <form>
+        <input type="text" name="comentarios" id="btnComent" placeholder="Ingrese aqui su comentario">
+        <button id="botonCmt">Enviar</button>
+      </form>
     </div>
   </main>
   <footer class="text-muted"></footer>
@@ -39,6 +50,7 @@
   <script src="js/validarUsuario.js"></script>
   <script src="./navbar.js"></script>
   <script src="./footer.js"></script>
+  <script src="js/comments.js"></script>
 </body>
 
 </html>

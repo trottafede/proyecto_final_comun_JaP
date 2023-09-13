@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const user = sessionStorage.getItem("user");
+  const user = localStorage.getItem("user");
   if (!user) {
     window.location.href = "./components/Login/login.html";
   }
