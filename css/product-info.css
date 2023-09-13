@@ -47,5 +47,12 @@ span{
 }
 
 #comments{
-    border: solid;
+    border: rgba(136, 136, 255, 0.658) solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hr-comments{
+    padding: 2px;
+    border-radius: 10px;
 }

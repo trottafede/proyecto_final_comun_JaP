@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             <h5>${comment.user}-${comment.dateTime}</h5>
             <p>${estrellas(comment.score)}</p>
             <p>${comment.description}</p>
+            <hr class = "hr-comments">
         </div>
         `;
         }

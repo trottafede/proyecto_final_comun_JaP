@@ -243,6 +243,42 @@ html{
   color: orange;
 }
 
+#botonCmt{
+  background-color: rgba(136, 136, 255, 0.658);
+  font-weight: 700;
+  transition: 0.5s;
+  border-radius: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: none;
+  padding: 5px;
+}
+
+#btnComent{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+#botonCmt:hover{
+  background-color: rgba(87, 87, 255, 0.658);
+  font-weight: 700;
+}
+
+.caja-input{
+  padding-top: 15px;
+}
+
+.caja-puntua{
+  padding-top: 10px;
+}
+
+.caja-puntua option{
+  color: orange;
+}
+
+#color-estrella{
+  color: orange;
+}
 /* ---------------------------- */
 
 /* .rating input {
