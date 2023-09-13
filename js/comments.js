@@ -37,14 +37,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     const formatoFechaHora = `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
 
     const handleSendComment = () => {
-        const enviarBtn = document.getElementById("btnComent").value;
+        const enviarBtn = document.getElementById("btnComent").value; 
+        const estrellasValor = document.getElementById("estrellas").value;
+        
         var jsonString = user;
         var objeto = JSON.parse(jsonString);
 
         if (enviarBtn !== '') {
             const comentarioLocal = {
                 product: commentID,
-                score: 5,
+                score: estrellas(estrellasValor), //puntuacion del producto
                 description: enviarBtn,
                 user: objeto.email,
                 dateTime: formatoFechaHora
@@ -73,6 +75,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             boxComments += `
         <div>
             <h5>${comment.user}-${comment.dateTime}</h5>
+            <p>${estrellas(comment.score)}</p>
             <p>${comment.description}</p>
         </div>
         `;
@@ -81,3 +84,35 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("comments").innerHTML = boxComments;
     }
 });
+
+    function estrellas(cantidad) {
+        let scoreTotal = '';
+
+        for (let i = 1; i <= 5; i++) {
+            if(i<=cantidad){
+                scoreTotal += '<span class="fa fa-star checked"></span>';
+            }
+            else{ 
+                scoreTotal += '<span class="fa fa-star"></span>';        
+            }
+        
+    }
+        return scoreTotal;
+    }
+
+
+
+// const changeRating = document.querySelectorAll('input[name=rating]');
+// changeRating.forEach((radio) => {
+//   radio.addEventListener('change', getRating);
+// });
+// // buscar el radiobutton checked y armar el texto con el valor ( 0 - 5 )
+// function getRating() {
+//   let estrellas = document.querySelector('input[name=rating]:checked').value;
+//   document.getElementById("texto").innerHTML = (
+//     0 < estrellas ?
+//     estrellas + " estrella" + (1 < estrellas ? "s" : "") :
+//     "sin calificar"
+//   );
+//   // opcionalmente agregar un ajax para guardar el rating
+// }

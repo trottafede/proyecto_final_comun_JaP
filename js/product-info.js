@@ -27,9 +27,6 @@ function showProductInfo(objeto) {
       <p>${objeto.description}</p>
       <h4>Costo</h4>
       <p>${objeto.currency}-${objeto.cost}</p>
-      <p>${objeto.description}</p>
-      <h4>Descripcion</h4>
-      <p>${objeto.description}</p>
 
     </div>
   `;
