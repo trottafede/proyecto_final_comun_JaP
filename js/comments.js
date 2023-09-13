@@ -3,7 +3,7 @@ const user = localStorage.getItem("user");
 const apiComments = "https://japceibal.github.io/emercado-api/products_comments/" + commentID + ".json";
 let comentarios = {};
 
-// Cargar comentarios desde localStorage si existen
+// Verificar si hay datos guardados con el localStorage
 const storedComments = localStorage.getItem("comments");
 if (storedComments) {
     comentarios = JSON.parse(storedComments);
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         handleSendComment();
     })
 
-    // Cargar comentarios desde la API solo si no existen en los comentarios locales
+    // Cargar datos de la API solo una vez para que no se repitan
     if (!comentarios[commentID]) {
         const commentsDeArchivo = await fetch(apiComments);
         const commentsDeArchivoData = await commentsDeArchivo.json();
