@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (enviarBtn !== '') {
             const comentarioLocal = {
                 product: commentID,
-                score: estrellas(estrellasValor), //puntuacion del producto
+                score: estrellasValor, //puntuacion del producto
                 description: enviarBtn,
                 user: objeto.email,
                 dateTime: formatoFechaHora
