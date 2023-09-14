@@ -11,19 +11,57 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link rel="stylesheet" href="css/product-info.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
   <main>
+    <div class="ful-img" id="fulImgBox">
+      <img src="img/car1.jpg" id="fulImg">
+      <span onclick="closeImg()">X</span>
+    </div>
     <div class="container">
       <div id="prueba">
           <div id="imagenProducto">
 
           </div>
       </div>
+      <div id="comments">
+
+      </div>
+      <form>
+        <div class="caja-input">
+        <input type="text" name="comentarios" id="btnComent" placeholder="Ingrese aqui su comentario">
+        <button id="botonCmt">Enviar</button>
+      </div>
+        <div class="caja-puntua">
+          <label for="estrellas">Puntua:</label>
+          <select name="puntuacion" id="estrellas">
+            <option value="1"> <span> &#9733; </option>
+            <option value="2"> &#9733;  &#9733; </option>
+            <option value="3"> &#9733;  &#9733;  &#9733; </option>
+            <option value="4"> &#9733;  &#9733;  &#9733;  &#9733; </option>
+            <option value="5"> &#9733; &#9733;  &#9733;  &#9733;  &#9733;</option>          </select>
+        </div>
+        <!-- <div class="cajaEstrellas">
+          <div class="rating">
+              <input onclick="alert('ayuda')" value="5" name="rating" id="estrella" type="radio">
+              <label for="estrella5" ></label>
+              <input value="4" name="rating" id="estrella" type="radio">
+              <label for="estrella4"></label>
+              <input value="3" name="rating" id="estrella" type="radio">
+              <label for="estrella3"></label>
+              <input value="2" name="rating" id="estrella" type="radio">
+              <label for="estrella2"></label>
+              <input value="1" name="rating" id="estrella" type="radio">
+              <label for="estrella1"></label>
+          </div>          
+      </div> -->
+      </form>
     </div>
   </main>
+  
   <footer class="text-muted"></footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -39,6 +77,7 @@
   <script src="js/validarUsuario.js"></script>
   <script src="./navbar.js"></script>
   <script src="./footer.js"></script>
+  <script src="js/comments.js"></script>
 </body>
 
 </html>
