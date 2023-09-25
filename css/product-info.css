@@ -46,6 +46,10 @@ span{
     font-size: 0.5em;
 }
 
+#closeSpan{
+    font-size: 2rem;
+}
+
 #comments{
     border: rgba(136, 136, 255, 0.658) solid;
     padding: 10px;
