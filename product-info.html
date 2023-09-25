@@ -1,83 +1,84 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/product-info.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+     <!-- font awesome -->
+     <script src="https://kit.fontawesome.com/2919f68f3c.js" crossorigin="anonymous"></script>
+  </head>
 
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/product-info.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
-  <main>
-    <div class="ful-img" id="fulImgBox">
-      <img src="img/car1.jpg" id="fulImg">
-      <span onclick="closeImg()">X</span>
-    </div>
-    <div class="container">
-      <div id="prueba">
-          <div id="imagenProducto">
-
-          </div>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
+    <main>
+      <div class="ful-img" id="fulImgBox">
+        <img src="img/car1.jpg" id="fulImg" />
+        <span onclick="closeImg()">X</span>
       </div>
-      <div id="comments">
-
-      </div>
-      <form>
-        <div class="caja-input">
-        <input type="text" name="comentarios" id="btnComent" placeholder="Ingrese aqui su comentario">
-        <button id="botonCmt">Enviar</button>
-      </div>
-        <div class="caja-puntua">
-          <label for="estrellas">Puntua:</label>
-          <select name="puntuacion" id="estrellas">
-            <option value="1"> <span> &#9733; </option>
-            <option value="2"> &#9733;  &#9733; </option>
-            <option value="3"> &#9733;  &#9733;  &#9733; </option>
-            <option value="4"> &#9733;  &#9733;  &#9733;  &#9733; </option>
-            <option value="5"> &#9733; &#9733;  &#9733;  &#9733;  &#9733;</option>          </select>
+      <div class="container">
+        <div id="prueba">
+          <div id="imagenProducto"></div>
         </div>
-        <!-- <div class="cajaEstrellas">
-          <div class="rating">
-              <input onclick="alert('ayuda')" value="5" name="rating" id="estrella" type="radio">
-              <label for="estrella5" ></label>
-              <input value="4" name="rating" id="estrella" type="radio">
-              <label for="estrella4"></label>
-              <input value="3" name="rating" id="estrella" type="radio">
-              <label for="estrella3"></label>
-              <input value="2" name="rating" id="estrella" type="radio">
-              <label for="estrella2"></label>
-              <input value="1" name="rating" id="estrella" type="radio">
-              <label for="estrella1"></label>
-          </div>          
-      </div> -->
-      </form>
-    </div>
-  </main>
-  
-  <footer class="text-muted"></footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-  <script src="js/validarUsuario.js"></script>
-  <script src="./navbar.js"></script>
-  <script src="./footer.js"></script>
-  <script src="js/comments.js"></script>
-</body>
+        <div id="comments"></div>
+        <form>
+          <div class="caja-input">
+            <input
+              type="text"
+              name="comentarios"
+              id="btnComent"
+              placeholder="Ingrese aqui su comentario"
+            />
+            <button id="botonCmt">Enviar</button>
+          </div>
+          <div class="caja-puntua">
+            <label for="estrellas">Puntua:</label>
+            <select name="puntuacion" id="estrellas">
+              <option value="1">&#9733;</option>
+              <option value="2">&#9733; &#9733;</option>
+              <option value="3">&#9733; &#9733; &#9733;</option>
+              <option value="4">&#9733; &#9733; &#9733; &#9733;</option>
+              <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733;</option>
+            </select>
+          </div>
+        </form>
+        <hr>
+        <h2>Productos relacionados</h2>
+        <div id="productos_relacionados"></div>
+      </div>
+    </main>
 
+    <footer class="text-muted"></footer>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/product-info.js"></script>
+    <script src="js/validarUsuario.js"></script>
+    <script src="./navbar.js"></script>
+    <script src="./footer.js"></script>
+    <script src="js/comments.js"></script>
+    <script src="js/productos_relacionados.js"></script>
+  </body>
 </html>

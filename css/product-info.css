@@ -56,3 +56,17 @@ span{
     padding: 2px;
     border-radius: 10px;
 }
+
+#productos_relacionados{
+    display: flex;
+    cursor: pointer;
+}
+#imgContainerProducto img{
+    height: 200px;
+    margin-left: 20px;
+}
+
+#imgContainerProducto p {
+    font-size: 1.4rem;
+    text-align: center;
+}

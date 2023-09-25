@@ -12,7 +12,6 @@ console.log(typeof prodID)
 function showProductInfo(objeto) {
   const div = document.getElementById("prueba");
   let htmlContentToAppend = `
-    
     <div class="product-info">
       <h2><span>${objeto.category}/</span>${objeto.name}</h2>
     </div>
@@ -49,6 +48,7 @@ fetch(apiUrl)
     if (data.id === objetoID) {
       console.log('Objeto encontrado:', data);
       showProductInfo(data);
+      showRelatedProducts(data.relatedProducts);
     } else {
       console.log('Objeto no encontrado con ID', objetoID);
     }
