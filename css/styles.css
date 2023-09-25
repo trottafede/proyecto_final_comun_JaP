@@ -200,42 +200,41 @@ h4 {
   font-weight: 100;
 }
 
-
-.myMarginRight{
-margin-right: 10px;
+.myMarginRight {
+  margin-right: 10px;
 }
 
-.col-md-4{
-  transition: .5s, color .10s;
-      -webkit-transition: .5s, color .10s;
-      -moz-transition: .5s, color .10s;
+.col-md-4 {
+  transition: 0.5s, color 0.1s;
+  -webkit-transition: 0.5s, color 0.1s;
+  -moz-transition: 0.5s, color 0.1s;
 }
 
-.col-md-4:hover{
+.col-md-4:hover {
   transform: translate3d(12px, 2%, 3em);
-      -webkit-transform: translate3d(12px, 1%, 3em);
-      -moz-transform: translate3d(12px, 2%, 3em);
-  box-shadow: 0 8px 8px 0 #000000,0 8px 8px 0 #000000;
+  -webkit-transform: translate3d(12px, 1%, 3em);
+  -moz-transform: translate3d(12px, 2%, 3em);
+  box-shadow: 0 8px 8px 0 #000000, 0 8px 8px 0 #000000;
 }
 
-.img-thumbnail{
-  transition: transform 0.3s ease
+.img-thumbnail {
+  transition: transform 0.3s ease;
 }
 
-.img-thumbnail:hover{
+.img-thumbnail:hover {
   transform: scale(1.1);
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
-.navbar{
+.navbar {
   position: sticky;
   top: 0;
   z-index: 3;
 }
 
-.fa{
+.fa {
   color: black;
 }
 
@@ -243,40 +242,39 @@ html{
   color: orange;
 }
 
-#botonCmt{
+#botonCmt {
   background-color: rgba(136, 136, 255, 0.658);
   font-weight: 700;
   transition: 0.5s;
   border-radius: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border: none;
   padding: 5px;
 }
 
-#btnComent{
+#btnComent {
   border-top: none;
   border-left: none;
   border-right: none;
 }
 
-#botonCmt:hover{
+#botonCmt:hover {
   background-color: rgba(87, 87, 255, 0.658);
   font-weight: 700;
 }
 
-.caja-input{
+.caja-input {
   padding-top: 15px;
 }
 
-.caja-puntua{
+.caja-puntua {
   padding-top: 10px;
 }
 
-.caja-puntua option{
+.caja-puntua option {
   color: orange;
 }
 
-#color-estrella{
+#color-estrella {
   color: orange;
 }
-
