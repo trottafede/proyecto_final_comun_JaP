@@ -13,15 +13,21 @@ function showProductInfo(objeto) {
   const div = document.getElementById("prueba");
   let htmlContentToAppend = `
     <div class="product-info">
-      <h2>${objeto.name} ${objeto.category}</h2>
-      <p>${objeto.description}</p>
+      <h2><span>${objeto.category}/</span>${objeto.name}</h2>
     </div>
     <section>
-        <img src="${objeto.images[0]}">
-        <img src="${urlImagen}prod${objeto.id}_2.jpg">
-        <img src="${urlImagen}prod${objeto.id}_3.jpg">
-        <img src="${urlImagen}prod${objeto.id}_4.jpg">
+        <img src="${objeto.images[0]}" onclick="openFulImg(this.src)">
+        <img src="${objeto.images[1]}" onclick="openFulImg(this.src)">
+        <img src="${objeto.images[2]}" onclick="openFulImg(this.src)">
+        <img src="${objeto.images[3]}" onclick="openFulImg(this.src)">
     </section>
+    <div class="info">
+      <h4>Descripcion</h4>
+      <p>${objeto.description}</p>
+      <h4>Costo</h4>
+      <p>${objeto.currency}-${objeto.cost}</p>
+
+    </div>
   `;
   div.innerHTML = htmlContentToAppend;
 }
@@ -42,6 +48,7 @@ fetch(apiUrl)
     if (data.id === objetoID) {
       console.log('Objeto encontrado:', data);
       showProductInfo(data);
+      showRelatedProducts(data.relatedProducts);
     } else {
       console.log('Objeto no encontrado con ID', objetoID);
     }
@@ -49,4 +56,16 @@ fetch(apiUrl)
   .catch((error) => {
     console.error('Error:', error);
   });
+
+const fulImgBox = document.getElementById("fulImgBox")
+fulImg = document.getElementById("fulImg")
+
+function closeImg(){
+  fulImgBox.style.display="none";
+}
+
+function openFulImg(reference){
+  fulImgBox.style.display ="flex"
+  fulImg.src = reference
+}
 
