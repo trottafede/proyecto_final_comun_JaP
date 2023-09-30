@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   <li class="nav-item">
     <a class="nav-link" href="components/Login/login.html">Usuario</a>
   </li>`;
-
+  
   const user = localStorage.getItem("user");
   const parsedUser = JSON.parse(user);
 
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.removeItem("user");
   };
 
+  
   if (user) {
     isUserActive = `
     <li class="nav-item dropdown">
@@ -22,9 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
         <li class="nav-item"><a class="dropdown-item" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
         <li class="nav-item"><a class="dropdown-item" href="/" id="cerrar" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
       </ul>
+      <div id="caja-check">
+        <input type="checkbox" class="theme-checkbox">
+      </div>
     </li>`;
   }
-
+  
   const navbar = `<div class="container">
   <button
     class="navbar-toggler"
@@ -57,3 +61,34 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementsByTagName("nav")[0].innerHTML = navbar;
   document.getElementById("cerrar").addEventListener("click", cerrarSesion);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.querySelector('#caja-check .theme-checkbox');
+  const body = document.body;
+
+  // Verifica si hay un tema guardado en el local storage
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.style.transition = 'background-color 0.3s, color 0.3s'; 
+    body.style.backgroundColor = '#0f0f0f';
+    body.style.color = '#ffffff';
+    themeToggle.checked = true; // Marca el checkbox si el tema es oscuro
+  }
+
+  themeToggle.addEventListener('change', () => {
+    if (themeToggle.checked) {
+      body.style.transition = 'background-color 0.3s, color 0.3s'; 
+      body.style.backgroundColor = '#0f0f0f'; 
+      body.style.color = '#ffffff'; 
+      localStorage.setItem('theme', 'dark'); // Guarda el tema en el almacenamiento local
+    } else {
+      body.style.transition = 'background-color 0.3s, color 0.3s'; 
+      body.style.backgroundColor = '#ffffff'; 
+      body.style.color = 'black';
+      localStorage.setItem('theme', 'light'); // Guarda el tema en el almacenamiento local
+    }
+  });
+});
+
+
+

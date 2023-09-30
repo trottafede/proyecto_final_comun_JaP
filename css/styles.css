@@ -219,6 +219,7 @@ h4 {
 
 .img-thumbnail {
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .img-thumbnail:hover {
@@ -243,13 +244,13 @@ html {
 }
 
 #botonCmt {
-  background-color: rgba(136, 136, 255, 0.658);
+  background-color: rgb(223, 223, 223);
   font-weight: 700;
   transition: 0.5s;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border: none;
-  padding: 5px;
+  padding: 10px;
 }
 
 #btnComent {
@@ -259,8 +260,9 @@ html {
 }
 
 #botonCmt:hover {
-  background-color: rgba(87, 87, 255, 0.658);
+  background-color: rgb(77, 77, 77);
   font-weight: 700;
+  color: white;
 }
 
 .caja-input {
@@ -271,10 +273,71 @@ html {
   padding-top: 10px;
 }
 
+.caja-puntua select{
+  border-radius: 5px;
+}
+
 .caja-puntua option {
   color: orange;
 }
 
 #color-estrella {
   color: orange;
+}
+
+.theme-checkbox {
+  --toggle-size: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 6.25em;
+  height: 3.125em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+}
+
+.theme-checkbox::before {
+  content: "";
+  width: 2.25em;
+  height: 2.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.438em);
+  background-position: 0;
+}
+
+.theme-checkbox:checked {
+  background-position: 100%;
+}
+
+#caja-check{
+  position: relative;
+  z-index: 999;
+  width: 0;
+  padding: 0;
+  height: 0;
+  transform: translate(250px, -35px);
 }
