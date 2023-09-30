@@ -13,9 +13,9 @@ function showProductInfo(objeto) {
   const div = document.getElementById("prueba");
   let htmlContentToAppend = `
     <div class="product-info">
-      <h2><span>${objeto.category}/</span>${objeto.name}</h2>
+      <h2><a href="../products.html">${objeto.category}</a> ${objeto.name}</h2>
     </div>
-    <section>
+    <section id="border-carrusel">
         <img src="${objeto.images[0]}" onclick="openFulImg(this.src)">
         <img src="${objeto.images[1]}" onclick="openFulImg(this.src)">
         <img src="${objeto.images[2]}" onclick="openFulImg(this.src)">

@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     body.style.transition = 'background-color 0.3s, color 0.3s'; 
-    body.style.backgroundColor = '#000000';
+    body.style.backgroundColor = '#0f0f0f';
     body.style.color = '#ffffff';
     themeToggle.checked = true; // Marca el checkbox si el tema es oscuro
   }
@@ -78,13 +78,13 @@ document.addEventListener('DOMContentLoaded', function() {
   themeToggle.addEventListener('change', () => {
     if (themeToggle.checked) {
       body.style.transition = 'background-color 0.3s, color 0.3s'; 
-      body.style.backgroundColor = '#000000'; 
+      body.style.backgroundColor = '#0f0f0f'; 
       body.style.color = '#ffffff'; 
       localStorage.setItem('theme', 'dark'); // Guarda el tema en el almacenamiento local
     } else {
       body.style.transition = 'background-color 0.3s, color 0.3s'; 
       body.style.backgroundColor = '#ffffff'; 
-      body.style.color = '#000000';
+      body.style.color = 'black';
       localStorage.setItem('theme', 'light'); // Guarda el tema en el almacenamiento local
     }
   });
