@@ -1,0 +1,55 @@
+.h1-compras{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.caracteristicas{
+    padding-top: 20px;
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+.caracteristicas p{
+    font-weight: bold;
+}
+
+.div-hr{
+    padding-left: 18%;
+    padding-right: 25%;
+    transform: translate(0, -15px);
+}
+
+.div-hr hr{
+    border-radius: 10px;
+    height: 4px;
+}
+
+#css-articulos{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    transform: translate(-120px);
+}
+
+#css-articulos img{
+    height: 80px;
+    transform: translate(0, -20px);
+}
+
+#css-articulos input{
+    height: 25px;
+    width: 50px;
+    transform: translate(15px);
+}
+
+#css-articulos .subtotal{
+    transform: translate(55px);
+    font-weight: bold;
+}
+
+.paso-hr{
+    padding-left: 18%;
+    padding-right: 25%;
+}
