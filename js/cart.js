@@ -35,3 +35,30 @@ function subtotal(costo, valor){
     let resultado = costoNumber * valor
     return resultado
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const premiumRadio = document.getElementById('premium');
+  const expressRadio = document.getElementById('express');
+  const standarRadio = document.getElementById('standar');
+
+  premiumRadio.addEventListener('click', () => {
+    if (premiumRadio.checked) {
+      premiumRadio.checked = false;
+    }
+  });
+
+  expressRadio.addEventListener('click', () => {
+    if (expressRadio.checked) {
+      expressRadio.checked = false;
+    }
+  });
+
+  standarRadio.addEventListener('click', () => {
+    if (standarRadio.checked) {
+      standarRadio.checked = false;
+    }
+  });
+});
+
+
+

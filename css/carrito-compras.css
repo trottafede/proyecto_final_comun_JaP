@@ -53,3 +53,26 @@
     padding-left: 18%;
     padding-right: 25%;
 }
+
+.div-hr-2{
+    padding-left: 18%;
+    padding-right: 25%;
+}
+
+.div-hr-2 hr{
+    border-radius: 10px;
+    height: 4px;
+}
+
+.container h4{
+    font-size: 500;
+}
+
+.container .botones-radio{
+    padding-top: 20px;
+}
+
+.form-direccion{
+    padding-top: 20px;
+}
+
