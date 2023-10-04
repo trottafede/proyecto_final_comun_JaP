@@ -14,6 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/carrito-compras.css">
      <!-- font awesome -->
      <script src="https://kit.fontawesome.com/2919f68f3c.js" crossorigin="anonymous"></script>
   </head>
@@ -22,10 +23,46 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
     <main>
       <div class="container">
-        <div class="alert alert-danger text-center" role="alert">
-          <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
-        </div>
+          <h1 class="h1-compras">Carrito de Compras</h1>
+          <h4>Articulos a Comprar</h4>
       </div>
+      <div class="caracteristicas">
+        <p>Nombre</p>
+        <p>Costo</p>
+        <p>Cantidad</p>
+        <p>Subtotal</p>
+      </div>
+      <div class="div-hr">
+        <hr>
+      </div>
+      <div id="producto-info">
+      </div>
+      <div class="div-hr-2">
+        <hr>
+      </div>
+      <div class="container">
+        <h4>Tipo de Envío</h4>
+        <div class="botones-radio">
+          <input type="radio" id="premium" name="envio" value="1"> <label for="premium"> Premium 2 a 5 días (15%)</label>
+          <br>
+          <input type="radio" id="express" name="envio" value="2"> <label for="express"> Express 5 a 8 días (7%)</label>
+          <br>
+          <input type="radio" id="standar" name="envio" value="3"> <label for="standar"> Standar 12 a 15 días (5%)</label>
+        </div>
+        <h4>Direccion de envio</h4>
+        <div class="form-direccion">
+          <div class="direccion">
+            <label for="calle">Calle:</label>
+            <input type="text" id="calle" name="calle" required>
+        
+            <label for="numero">Número:</label>
+            <input type="text" id="numero" name="numero" required>
+                   
+            <label for="esquina">Esquina:</label>
+            <input type="text" id="esquina" name="esquina">
+          </div>
+        </div>
+        </div>
     </main>
     <footer class="text-muted"></footer>
     <div id="spinner-wrapper">
