@@ -52,7 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <li class="nav-item">
         <a class="nav-link" href="sell.html">Vender</a>
       </li>
+      <div id="usuarioBack">
       ${isUserActive}
+      </div>
     </ul>
   </div>
 </div>

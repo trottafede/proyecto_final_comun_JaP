@@ -341,3 +341,10 @@ html {
   height: 0;
   transform: translate(250px, -35px);
 }
+
+#usuarioBack{
+  background-color: rgb(61, 61, 61);
+  border-radius: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
