@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     <p>${producto.articles[0].name}</p>
     <p>${producto.articles[0].currency} ${producto.articles[0].unitCost}</p>
     <input id="cantidad" type="number" value="1" min="1">
-    <p class="subtotal"><div id="subtotal"></div></p>
+    <p class="subtotal"><span id="subtotal"></span></p>
     </div>
     <div class="paso-hr">
     <hr>
@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
     div.innerHTML = contenidoHtml
     let cantidadInput = document.getElementById('cantidad');
+    document.getElementById("subtotal").innerHTML = producto.articles[0].unitCost;
     cantidad.addEventListener('change', () => {
         let cantidad = cantidadInput.value
         let resultado = subtotal(producto.articles[0].unitCost, cantidad)
@@ -36,29 +37,6 @@ function subtotal(costo, valor){
     return resultado
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const premiumRadio = document.getElementById('premium');
-  const expressRadio = document.getElementById('express');
-  const standarRadio = document.getElementById('standar');
-
-  premiumRadio.addEventListener('click', () => {
-    if (premiumRadio.checked) {
-      premiumRadio.checked = false;
-    }
-  });
-
-  expressRadio.addEventListener('click', () => {
-    if (expressRadio.checked) {
-      expressRadio.checked = false;
-    }
-  });
-
-  standarRadio.addEventListener('click', () => {
-    if (standarRadio.checked) {
-      standarRadio.checked = false;
-    }
-  });
-});
 
 
 
