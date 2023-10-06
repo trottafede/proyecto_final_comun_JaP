@@ -66,8 +66,13 @@ function openFulImg(reference){
 let cantidad = 0;
 
 function mandarCarrito(producto) {
-  carrito.push(producto);
-  actualizarCarrito();
+  if (carrito.includes(producto)){
+    alert("El producto ya esta en el carrito")
+  }
+  else{
+   carrito.unshift(producto);
+    actualizarCarrito(); 
+  }
 }
 
 function actualizarCarrito() {
