@@ -1,78 +1,76 @@
-.h1-compras{
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #td_name,
+    #tr_name,
+    #td_cantidad,
+    #tr_cantidad {
+      display: none;
+    }
+    
+    #carrito img {
+      width: 150px !important;
+      height: auto;
+    }
+  
+   
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media screen and (min-width: 600px) and (max-width: 767px) {
+      #td_name,
+      #tr_name,
+      #td_cantidad,
+      #tr_cantidad {
+        display: none;
+      }
+  
+      #carrito img {
+          width: 150px !important;
+          height: auto;
+        }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px)  and (max-width: 991px)  {
+      #td_name,
+      #tr_name,
+      #tr_cantidad,
+      #td_cantidad {
+        display: none;
+      }
+      #carrito .h1-compras {
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 30px;
+      }
+    
+      #carrito td input {
+          width: 60px;
+        }
+  
+      #carrito img {
+        width: 150px !important;
+        height: auto;
+      }
 
-.caracteristicas{
-    padding-top: 20px;
-    display: flex;
-    gap: 80px;
-    justify-content: center;
-}
-
-.caracteristicas p{
-    font-weight: bold;
-}
-
-.div-hr{
-    padding-left: 18%;
-    padding-right: 25%;
-    transform: translate(0, -15px);
-}
-
-.div-hr hr{
-    border-radius: 10px;
-    height: 4px;
-}
-
-#css-articulos{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    transform: translate(-120px);
-}
-
-#css-articulos img{
-    height: 80px;
-    transform: translate(0, -20px);
-}
-
-#css-articulos input{
-    height: 25px;
-    width: 50px;
-    transform: translate(15px);
-}
-
-#css-articulos .subtotal{
-    transform: translate(55px);
-    font-weight: bold;
-}
-
-.paso-hr{
-    padding-left: 18%;
-    padding-right: 25%;
-}
-
-.div-hr-2{
-    padding-left: 18%;
-    padding-right: 25%;
-}
-
-.div-hr-2 hr{
-    border-radius: 10px;
-    height: 4px;
-}
-
-.container h4{
-    font-size: 500;
-}
-
-.container .botones-radio{
-    padding-top: 20px;
-}
-
-.form-direccion{
-    padding-top: 20px;
-}
-
+      
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px)  {
+      /* #td_name,
+      #tr_name,
+      #td_cantidad,
+      #tr_cantidad {
+        display: block;
+      } */
+      #carrito img {
+        width: 200px !important;
+        height: auto;
+      }
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+  }
+  

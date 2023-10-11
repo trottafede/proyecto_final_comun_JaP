@@ -67,22 +67,29 @@ function showCategoriesList(products) {
         (maxCount != undefined && parseInt(category.cost) <= maxCount))
     ) {
       htmlContentToAppend += `
-                <div onclick="setProdID(${category.id})" class="list-group-item list-group-item-action">
-                    <div class="row">
-                        <div class="col-3">
-                            <img src="${category.image}" alt="product image" class="img-thumbnail">
-                        </div>
-                        <div class="col">
-                            <div class="d-flex w-100 justify-content-between">
-                                <div class="mb-1">
-                                    <h4> ${category.name} - ${category.currency} ${category.cost} </h4> 
-                                    <p>${category.description}</p> 
-                                </div>
-                                <small class="text-muted"> ${category.soldCount} vendidos</small> 
-                            </div>
-                        </div>
-                    </div>
-                </div>`
+      <div class=" col-sm-12 col-md-6  col-lg-4 col-xl-3">
+        <div onclick="setProdID(${category.id})" class="card h-100 "  >
+            <div class="imgContainer"><img src="${category.image}" class="card-img-top" alt="..."> </div>
+              <div class="card-body">
+                  <h5 class="card-title">${category.name}</h5>
+                  <p class="card-text">$${category.cost}</p>
+                  <p class="card-text">${category.description}</p>
+              </div>
+            </div>
+        </div>
+      </div>`
+
+      /*<div class=" col-sm-12 col-md-6  col-lg-4 col-xl-3">
+        <div onclick="setCatID(${category.id})" class="card h-100 "  >
+            <div class="imgContainer"><img src="${category.imgSrc}" class="card-img-top" alt="..."> </div>
+              <div class="card-body">
+                  <h4 class="card-title">${category.name}</h4>
+                  <p class="card-text">${category.description}</p>
+                  <small class="text-muted">${category.productCount} artículos</small>
+              </div>
+            </div>
+        </div>
+      </div> */
     }
     document.getElementById("cat-list-container").innerHTML =
       htmlContentToAppend;
