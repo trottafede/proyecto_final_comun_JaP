@@ -135,3 +135,27 @@ main {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+  .contenedor-login {
+    margin: 5px; 
+    margin-right: 5px;
+    margin-top: 150px;
+  }
+
+  .texto-input i {
+    display: none; 
+  }
+}
+
+@media (min-width: 300px) {
+  .contenedor-login {
+    margin: 2px; 
+    margin-right: 5px;
+    margin-top: 100px;
+  }
+
+  .texto-input i {
+    display: none; 
+  }
+}

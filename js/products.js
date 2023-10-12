@@ -67,9 +67,9 @@ function showCategoriesList(products) {
         (maxCount != undefined && parseInt(category.cost) <= maxCount))
     ) {
       htmlContentToAppend += `
-      <div class=" col-sm-12 col-md-6  col-lg-4 col-xl-3">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-3">
         <div onclick="setProdID(${category.id})" class="card h-100 "  >
-            <div class="imgContainer"><img src="${category.image}" class="card-img-top" alt="..."> </div>
+              <img src="${category.image}" class="card-img-top" alt="${category.name}">
               <div class="card-body">
                   <h5 class="card-title">${category.name}</h5>
                   <p class="card-text">$${category.cost}</p>
@@ -78,18 +78,6 @@ function showCategoriesList(products) {
             </div>
         </div>
       </div>`
-
-      /*<div class=" col-sm-12 col-md-6  col-lg-4 col-xl-3">
-        <div onclick="setCatID(${category.id})" class="card h-100 "  >
-            <div class="imgContainer"><img src="${category.imgSrc}" class="card-img-top" alt="..."> </div>
-              <div class="card-body">
-                  <h4 class="card-title">${category.name}</h4>
-                  <p class="card-text">${category.description}</p>
-                  <small class="text-muted">${category.productCount} artículos</small>
-              </div>
-            </div>
-        </div>
-      </div> */
     }
     document.getElementById("cat-list-container").innerHTML =
       htmlContentToAppend;

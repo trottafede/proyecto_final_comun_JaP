@@ -45,6 +45,16 @@ function mostrarProducto() {
         let resultado = subtotal(producto.cost, cantidad);
         let intento = `${producto.currency} ${resultado}`;
         subtotales.innerHTML = intento;
+
+        const mostrarTotal = () =>{
+          let total = 0 
+          for (const producto of carrito){
+            total += subtotal(producto.cost, cantidad) 
+            console.log(total)
+          }
+          return total
+        }
+        document.getElementById("resumen").innerHTML = `<p>${total}</p>`
       });
     });
   }
@@ -68,3 +78,4 @@ function cambiarPropiedades(autoApi) {
   };
   return auto;
 }
+
