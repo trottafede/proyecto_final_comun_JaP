@@ -78,7 +78,6 @@ body {
   justify-content: space-between;
   font-weight: 500;
   margin: 10px 0 15px;
-  padding: 8px;
 }
 
 .recordarme label {
@@ -152,7 +151,19 @@ main {
     display: block;
     padding: 0;
   }
+  .recordarme{
+    display: block;
+  }
+  .recordarme label{
+    max-width: 60%;
+    padding: 8px;
 
+  }
+  .recordarme a{
+    max-width: 40%;
+    padding: 8px;
+    
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -161,6 +172,7 @@ main {
     max-width: 80%;
     margin: 0 auto;
     display: block;
+    padding: 5px;
   }
 }
 
@@ -185,6 +197,10 @@ main {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  
+  #login{
+    max-width: 30%;
+    margin: 0 auto;
+    display: block;
+  }
   
 }

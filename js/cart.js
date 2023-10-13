@@ -27,10 +27,10 @@ function mostrarProducto() {
     contenidoHtml = `
     <tr>
       <td><img height="100" width="100" src=${producto.image || producto.images[0]} alt=""></td> 
-      <td id="td_name">${producto.name}</td>
-      <td >${producto.currency} ${producto.cost}</td>
-      <td id="td_cantidad"><input class="cantidad" type="number" value="${producto.quantity}" min="1"></td>
-      <td><strong><span id="subtotal${producto.id}"></span></strong></td>
+      <td id="td_name" ><p>${producto.name}</p></td>
+      <td ><p>${producto.currency} ${producto.cost}</p></td>
+      <td id="td_cantidad"><input class="cantidad dark_mode" type="number" value="${producto.quantity}" min="1"></td>
+      <td ><p><strong><span id="subtotal${producto.id}"></span></strong></p></td>
     </tr>`;
     
     div.innerHTML += contenidoHtml;

@@ -69,28 +69,27 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function showAllComments(commentID) {
         const allComments = comentarios[commentID] || [];
-
         let boxComments = "";
-        for (const comment of allComments) {
+    
+        for (const [index, comment] of allComments.entries()) {
+            const uniqueID = `comment-${index}`; // Genera un identificador único
+    
             boxComments += `
-
-            <div class="card">
-                <div class="card-header">
-                    ${comment.user}-${comment.dateTime}
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item ">
+                        <h2 class="accordion-header ">
+                            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
+                                ${comment.user}-${comment.dateTime}
+                            </button>
+                        </h2>
+                        <div id="${uniqueID}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">${estrellas(comment.score)} ${comment.description}</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <blockquote class="blockquote mb-0">
-                    <p>${estrellas(comment.score)}</p>
-                    <footer class="blockquote-footer">${comment.description}<cite title="Source Title"></cite></footer>
-                    </blockquote>
-                </div>
-            </div>
-
-
-        
-        `;
+            `;
         }
-
+    
         document.getElementById("comments").innerHTML = boxComments;
     }
 });
@@ -112,17 +111,3 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
 
-// const changeRating = document.querySelectorAll('input[name=rating]');
-// changeRating.forEach((radio) => {
-//   radio.addEventListener('change', getRating);
-// });
-// // buscar el radiobutton checked y armar el texto con el valor ( 0 - 5 )
-// function getRating() {
-//   let estrellas = document.querySelector('input[name=rating]:checked').value;
-//   document.getElementById("texto").innerHTML = (
-//     0 < estrellas ?
-//     estrellas + " estrella" + (1 < estrellas ? "s" : "") :
-//     "sin calificar"
-//   );
-//   // opcionalmente agregar un ajax para guardar el rating
-// }

@@ -1,0 +1,77 @@
+.dark_mode {
+  background-color: #333333;
+}
+
+.dark_mode .card {
+  background-color: #333333;
+  color: #fff;
+}
+
+.dark_mode p {
+  color: #fff;
+}
+.dark_mode h1 {
+  color: #fff;
+}
+.dark_mode h2 {
+  color: #fff;
+}
+.dark_mode h4 {
+  color: #fff;
+}
+.dark_mode a {
+  color: #fff;
+}
+.dark_mode tr {
+  color: #fff;
+}
+.dark_mode label {
+  color: #fff;
+}
+
+.dark_mode input[type="number"] {
+  color: #fff;
+  background-color:#333333;
+}
+.dark_mode input[type="text"] {
+  color: #fff;
+  background-color:#333333;
+}
+
+/* ----------------------------------- */
+.light_mode {
+  background-color: #fff;
+}
+
+.light_mode .card {
+  color: #fff;
+}
+
+.light_mode p {
+  color: black;
+}
+.light_mode h1 {
+  color: black;
+}
+.light_mode h2 {
+  color: black;
+}
+.light_mode h4 {
+  color: black;
+}
+.light_mode a {
+  color: black;
+}
+.light_mode tr {
+  color: black;
+}
+.light_mode label {
+  color: black;
+}
+
+.light_mode input[type="number"] {
+  color: black;
+}
+.light_mode input[type="text"] {
+  color: black;
+}

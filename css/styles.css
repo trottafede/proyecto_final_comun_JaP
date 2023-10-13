@@ -135,12 +135,7 @@ h4 {
   -moz-transition: 0.5s, color 0.1s;
 }
 
-.col-md-4:hover {
-  transform: translate3d(12px, 2%, 3em);
-  -webkit-transform: translate3d(12px, 1%, 3em);
-  -moz-transform: translate3d(12px, 2%, 3em);
-  box-shadow: 0 10px 50px #7c7b7b;
-}
+
 
 html {
   scroll-behavior: smooth;

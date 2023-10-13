@@ -20,15 +20,21 @@
 }
 
 .dark_mode {
-  background-color: #121212;
+  background-color: #333333;
 }
 
 .dark_mode .card {
-  background-color: rgb(19, 19, 19);
+  background-color: #333333;
   color: #fff;
 }
 
 .dark_mode p {
+  color: #fff;
+}
+.dark_mode h1 {
+  color: #fff;
+}
+.dark_mode h2 {
   color: #fff;
 }
 .dark_mode h3 {
@@ -50,6 +56,12 @@
 .light_mode p {
   color: black;
 }
+.light_mode h1 {
+  color: black;
+}
+.light_mode h2 {
+  color: black;
+}
 .light_mode h3 {
   color: black;
 }
@@ -59,13 +71,14 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
+  nav {
+    margin-bottom: 50px;
+  }
   .jumbotron {
-    height: 20vh;
-    margin: 40px 0;
-    background: url("../img/cover_back.png");
-    object-fit: cover;
+    height: 30vh;
+    background: url("../img/login.png");
     background-size: contain;
-    background-position: center;
     background-repeat: no-repeat;
   }
 }

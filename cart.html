@@ -15,6 +15,9 @@
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/carrito-compras.css" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="css/footer.css" rel="stylesheet" />
+    <link href="css/cart.css" rel="stylesheet" />
     <!-- font awesome -->
     <script
       src="https://kit.fontawesome.com/2919f68f3c.js"
@@ -22,22 +25,22 @@
     ></script>
   </head>
 
-  <body>
+  <body class="dark_mode">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
     <main id="carrito">
       <div class="container">
-        <h1 class="h1-compras">Carrito de Compras</h1>
-        <h4>Articulos a Comprar</h4>
+        <h1 class="h1-compras dark_mode">Carrito de Compras</h1>
+        <h4 class="dark_mode">Articulos a Comprar</h4>
 
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col">Producto</th>
-                <th id="tr_name" scope="col">Nombre</th>
-                <th scope="col">Costo</th>
-                <th id="tr_cantidad" scope="col">Cantidad</th>
-                <th scope="col">Subtotal</th>
+                <th class="dark_mode" scope="col">Producto</th>
+                <th class="dark_mode" id="tr_name" scope="col">Nombre</th>
+                <th class="dark_mode" scope="col">Costo</th>
+                <th class="dark_mode" id="tr_cantidad" scope="col">Cantidad</th>
+                <th class="dark_mode" scope="col">Subtotal</th>
               </tr>
             </thead>
             <tbody id="productos_del_carrito"></tbody>
@@ -46,51 +49,67 @@
 
         <h4>Tipo de Envío</h4>
         <div class="botones-radio">
-          <input type="radio" id="premium" name="envio" value="1" />
-          <label for="premium"> Premium 2 a 5 días (15%)</label>
+          <input class="dark_mode" type="radio" id="premium" name="envio" value="1" />
+          <label class="dark_mode" for="premium"> Premium 2 a 5 días (15%)</label>
           <br />
-          <input type="radio" id="express" name="envio" value="2" />
-          <label for="express"> Express 5 a 8 días (7%)</label>
+          <input class="dark_mode" type="radio" id="express" name="envio" value="2" />
+          <label class="dark_mode" for="express"> Express 5 a 8 días (7%)</label>
           <br />
-          <input type="radio" id="standar" name="envio" value="3" />
-          <label for="standar"> Standar 12 a 15 días (5%)</label>
+          <input class="dark_mode" type="radio" id="standar" name="envio" value="3" />
+          <label class="dark_mode" for="standar"> Standar 12 a 15 días (5%)</label>
         </div>
-        <h4>Direccion de envio</h4>
+        <h4 class="dark_mode">Direccion de envio</h4>
 
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-4">
             <div class="mb-3">
-              <label for="calle" class="form-label">Calle:</label>
-              <input required type="text" class="form-control" id="calle" name="calle" aria-describedby="calle">
-              
+              <label for="calle" class="form-label dark_mode">Calle:</label>
+              <input
+                required
+                type="text"
+                class="form-control dark_mode"
+                id="calle"
+                name="calle"
+                aria-describedby="calle"
+              />
             </div>
 
             <div class="mb-3">
-              <label for="numero" class="form-label">Número:</label>
-              <input required type="text" class="form-control" id="numero" name="numero" aria-describedby="numero">
-              
+              <label for="numero" class="form-label dark_mode">Número:</label>
+              <input
+                required
+                type="text"
+                class="form-control dark_mode"
+                id="numero"
+                name="numero"
+                aria-describedby="numero"
+              />
             </div>
 
             <div class="mb-3">
-              <label for="esquina" class="form-label">Esquina:</label>
-              <input required type="text" class="form-control" id="esquina" name="esquina" aria-describedby="Esquina">
-              
+              <label for="esquina" class="form-label dark_mode">Esquina:</label>
+              <input
+                required
+                type="text"
+                class="form-control dark_mode"
+                id="esquina"
+                name="esquina"
+                aria-describedby="Esquina"
+              />
             </div>
           </div>
 
           <div id="resumen" class="col-sm-12 col-md-12 col-lg-8 text-center">
-            <p>Resumen</p>
-            <p>Resumen</p>
-            <p>Resumen</p>
-            <p>Resumen</p>
+            <p class="dark_mode">Resumen</p>
+            <p class="dark_mode">Resumen</p>
+            <p class="dark_mode">Resumen</p>
+            <p class="dark_mode">Resumen</p>
 
             <div class="mb-3">
               <button class="btn btn-outline-primary">Proceder al pago</button>
             </div>
           </div>
         </div>
-            
-           
       </div>
     </main>
     <footer class="text-muted"></footer>

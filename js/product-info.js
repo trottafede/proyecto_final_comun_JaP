@@ -46,7 +46,7 @@ function showProductInfo(objeto) {
       </div>
       
       <div class="col-md-11 info">
-        <h4>Descripcion</h4>
+        <h4>Descripción</h4>
         <p>${objeto.description}</p>
         <h4>Costo</h4>
         <p>${objeto.currency} ${objeto.cost}</p>
@@ -133,9 +133,6 @@ function showRelatedProducts(relatedProducts) {
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title">${objeto.name}</h5>
-            <p class="card-text">${objeto.cost}</p>
-            <p class="card-text">${objeto.description}</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated a few mins ago</small></p>
           </div>
         </div>
       </div>
