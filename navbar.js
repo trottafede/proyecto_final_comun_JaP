@@ -3,29 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
   <li class="nav-item">
     <a class="nav-link" href="components/Login/login.html">Usuario</a>
   </li>`;
-  
+
   const user = localStorage.getItem("user");
   const parsedUser = JSON.parse(user);
 
-  const cerrarSesion = () => {
-    localStorage.removeItem("user");
-  };
-
-  
   if (user) {
     isUserActive = `
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       ${parsedUser.email}
       </a>
-      <ul class="dropdown-menu">
+      <ul class="dropdown-menu dark_mode">
         <li class="nav-item"><a class="dropdown-item" href="./my-profile.html"><i class="fa-solid fa-user"></i> Mi Perfil</a></li>
         <li class="nav-item"><a class="dropdown-item" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
         <li class="nav-item"><a class="dropdown-item" href="/" id="cerrar" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
+        <li class="nav-item"><div class="center_dark_mode"><input id="toggle_dark_mode" type="checkbox" class="theme-checkbox"></div></li>
       </ul>
-      <div id="caja-check">
-        <input type="checkbox" class="theme-checkbox">
-      </div>
     </li>`;
   }
   
@@ -63,35 +56,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementsByTagName("nav")[0].innerHTML = navbar;
   document.getElementById("cerrar").addEventListener("click", cerrarSesion);
+  document.getElementById("toggle_dark_mode").addEventListener("change", handleDarkMode);
+  checkDarkMode();
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const themeToggle = document.querySelector('#caja-check .theme-checkbox');
-  const body = document.body;
+const cerrarSesion = () => {
+  localStorage.removeItem("user");
+};
 
-  // Verifica si hay un tema guardado en el local storage
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme === 'dark') {
-    body.style.transition = 'background-color 0.3s, color 0.3s'; 
-    body.style.backgroundColor = '#0f0f0f';
-    body.style.color = '#ffffff';
-    themeToggle.checked = true; // Marca el checkbox si el tema es oscuro
+const handleDarkMode = () => {
+  if (document.getElementById("toggle_dark_mode").checked) {
+    localStorage.setItem("theme", "dark"); // Guarda el tema en el almacenamiento local
+    const elementsWithDarkMode = document.querySelectorAll(".light_mode");
+    // Itera a través de los elementos y quita la clase "dark_mode"
+    elementsWithDarkMode.forEach((element) => {
+      element.classList.remove("light_mode");
+      element.classList.add("dark_mode");
+    });
+    
+  } else {
+    localStorage.setItem("theme", "light"); // Guarda el tema en el almacenamiento local
+    const elementsWithDarkMode = document.querySelectorAll(".dark_mode");
+    // Itera a través de los elementos y quita la clase "dark_mode"
+    elementsWithDarkMode.forEach((element) => {
+      element.classList.remove("dark_mode");
+      element.classList.add("light_mode");    
+    });
   }
+};
 
-  themeToggle.addEventListener('change', () => {
-    if (themeToggle.checked) {
-      body.style.transition = 'background-color 0.3s, color 0.3s'; 
-      body.style.backgroundColor = '#0f0f0f'; 
-      body.style.color = '#ffffff'; 
-      localStorage.setItem('theme', 'dark'); // Guarda el tema en el almacenamiento local
-    } else {
-      body.style.transition = 'background-color 0.3s, color 0.3s'; 
-      body.style.backgroundColor = '#ffffff'; 
-      body.style.color = 'black';
-      localStorage.setItem('theme', 'light'); // Guarda el tema en el almacenamiento local
-    }
-  });
-});
-
-
-
+const checkDarkMode = () => {
+  // Verifica si hay un tema guardado en el local storage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.getElementById("toggle_dark_mode").checked = true; // Marca el checkbox si el tema es oscuro
+  } else {
+    document.getElementById("toggle_dark_mode").checked = false; // Marca el checkbox si el tema es oscuro
+  }
+  handleDarkMode()
+};
+// en desktop quedo divino, en mobile ni lo mires jaja

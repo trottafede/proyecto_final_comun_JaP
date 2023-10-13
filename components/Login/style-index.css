@@ -9,13 +9,18 @@ body {
   /* display: flex; */
 }
 
+#login{
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
 .letra-h2 {
   text-align: center;
 }
 
 .contenedor-login {
-  width: 350px;
-  margin: 100px auto;
+  margin-top: 5%;
   padding: 25px;
   background-color: white;
   border-radius: 10px;
@@ -73,6 +78,7 @@ body {
   justify-content: space-between;
   font-weight: 500;
   margin: 10px 0 15px;
+  padding: 8px;
 }
 
 .recordarme label {
@@ -118,12 +124,15 @@ footer {
 footer p {
   margin-bottom: 0.25rem;
 }
+
 nav a {
   text-decoration: none;
 }
+
 main {
   min-height: calc(100vh - 210px);
 }
+
 * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
@@ -135,27 +144,47 @@ main {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
-/* Media Query para pantallas pequeñas */
-@media (max-width: 600px) {
-  .contenedor-login {
-    margin: 5px; 
-    margin-right: 5px;
-    margin-top: 150px;
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #login{
+    max-width: 94%;
+    display: block;
+    padding: 0;
   }
 
-  .texto-input i {
-    display: none; 
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  #login{
+    max-width: 80%;
+    margin: 0 auto;
+    display: block;
   }
 }
 
-@media (min-width: 300px) {
-  .contenedor-login {
-    margin: 2px; 
-    margin-right: 5px;
-    margin-top: 100px;
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #login{
+    max-width: 50%;
+    margin: 0 auto;
+    display: block;
   }
+}
 
-  .texto-input i {
-    display: none; 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  #login{
+    max-width: 50%;
+    margin: 0 auto;
+    display: block;
   }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+  
 }

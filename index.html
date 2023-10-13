@@ -13,32 +13,35 @@
       rel="stylesheet"
     />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="css/footer.css" rel="stylesheet" />
 
     <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/2919f68f3c.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/2919f68f3c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
-    <main>
+    <main class="dark_mode">
       <div class="jumbotron text-center"></div>
-      <div class="album py-5 bg-light">
+      <div class="album ">
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <div
-                class="card mb-4 shadow-sm custom-card cursor-active"
-                id="autos"
-              >
+              <div class="card mb-4 shadow-sm custom-card" id="autos">
                 <img
                   class="bd-placeholder-img card-img-top"
                   src="img/cars_index.jpg"
                   alt="Imgagen representativa de la categoría 'Autos'"
                 />
-                <h3 style="color:black" class="m-3">Autos</h3>
+                <h3 class="m-3 dark_mode">Autos</h3>
                 <div class="card-body">
-                  <p style="color:black" class="card-text">
+                  <p class="card-text dark_mode">
                     Los mejores precios en autos 0 kilómetro, de alta y media
                     gama.
                   </p>
@@ -46,18 +49,15 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div
-                class="card mb-4 shadow-sm custom-card cursor-active"
-                id="juguetes"
-              >
+              <div class="card mb-4 shadow-sm custom-card" id="juguetes">
                 <img
                   class="bd-placeholder-img card-img-top"
                   src="img/toys_index.jpg"
                   alt="Imgagen representativa de la categoría 'Juguetes'"
                 />
-                <h3 style="color:black" class="m-3">Juguetes</h3>
+                <h3 class="m-3 dark_mode">Juguetes</h3>
                 <div class="card-body">
-                  <p style="color:black" class="card-text">
+                  <p class="card-text dark_mode">
                     Encuentra aquí los mejores precios para niños/as de
                     cualquier edad.
                   </p>
@@ -65,18 +65,15 @@
               </div>
             </div>
             <div class="col-md-4">
-              <div
-                class="card mb-4 shadow-sm custom-card cursor-active"
-                id="muebles"
-              >
+              <div class="card mb-4 shadow-sm custom-card" id="muebles">
                 <img
                   class="bd-placeholder-img card-img-top"
                   src="img/furniture_index.jpg"
                   alt="Imgagen representativa de la categoría 'Muebles'"
                 />
-                <h3 style="color:black" class="m-3">Muebles</h3>
+                <h3 class="m-3 dark_mode">Muebles</h3>
                 <div class="card-body">
-                  <p style="color:black" class="card-text">
+                  <p  class="card-text dark_mode">
                     Muebles antiguos, nuevos y para ser armados por uno mismo.
                   </p>
                 </div>
@@ -84,14 +81,13 @@
             </div>
           </div>
           <div class="row">
-            <a class="btn btn-light btn-lg btn-block" href="categories.html"
-              >Y mucho más!</a
-            >
+            <a class="btn  btn-lg btn-block" href="categories.html"
+              >Y mucho más!</a>
           </div>
         </div>
       </div>
     </main>
-    <footer class="text-muted"></footer>
+    <footer class="text-muted dark_mode"></footer>
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js"></script>
@@ -99,6 +95,5 @@
     <script src="js/validarUsuario.js"></script>
     <script src="./navbar.js"></script>
     <script src="./footer.js"></script>
-    
   </body>
 </html>

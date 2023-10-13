@@ -1,0 +1,71 @@
+.jumbotron {
+  height: 50vh;
+  padding: 5em inherit;
+  background: url("../img/cover_back.png");
+  /* background: url("../img/asd.png"); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jumbotron,
+.card-body,
+.container,
+.site-header {
+  font-family: "Verdana", serif !important;
+}
+
+.card {
+  cursor: pointer;
+}
+
+.dark_mode {
+  background-color: #121212;
+}
+
+.dark_mode .card {
+  background-color: rgb(19, 19, 19);
+  color: #fff;
+}
+
+.dark_mode p {
+  color: #fff;
+}
+.dark_mode h3 {
+  color: #fff;
+}
+.dark_mode a {
+  color: #fff;
+}
+
+/* ----------------------------------- */
+.light_mode {
+  background-color: #fff;
+}
+
+.light_mode .card {
+  color: #fff;
+}
+
+.light_mode p {
+  color: black;
+}
+.light_mode h3 {
+  color: black;
+}
+.light_mode a {
+  color: black;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .jumbotron {
+    height: 20vh;
+    margin: 40px 0;
+    background: url("../img/cover_back.png");
+    object-fit: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

@@ -73,12 +73,21 @@ document.addEventListener("DOMContentLoaded", async () => {
         let boxComments = "";
         for (const comment of allComments) {
             boxComments += `
-        <div>
-            <h5>${comment.user}-${comment.dateTime}</h5>
-            <p>${estrellas(comment.score)}</p>
-            <p>${comment.description}</p>
-            <hr class = "hr-comments">
-        </div>
+
+            <div class="card">
+                <div class="card-header">
+                    ${comment.user}-${comment.dateTime}
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                    <p>${estrellas(comment.score)}</p>
+                    <footer class="blockquote-footer">${comment.description}<cite title="Source Title"></cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+
+
+        
         `;
         }
 
