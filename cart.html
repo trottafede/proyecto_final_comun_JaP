@@ -13,55 +13,79 @@
     />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/carrito-compras.css" />
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+
     <link href="css/navbar.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
     <link href="css/cart.css" rel="stylesheet" />
+
     <!-- font awesome -->
     <script
       src="https://kit.fontawesome.com/2919f68f3c.js"
       crossorigin="anonymous"
     ></script>
   </head>
-
   <body class="dark_mode">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
+
     <main id="carrito">
       <div class="container">
-        <h1 class="h1-compras dark_mode">Carrito de Compras</h1>
-        <h4 class="dark_mode">Articulos a Comprar</h4>
-
+        <h1 class="dark_mode">Carrito de Compras</h1>
         <div class="table-responsive">
-          <table class="table table-hover">
+          <table class="table table-hover align-middle">
             <thead>
               <tr>
-                <th class="dark_mode" scope="col">Producto</th>
+                <th class="dark_mode" id="tr_producto" scope="col">Producto</th>
                 <th class="dark_mode" id="tr_name" scope="col">Nombre</th>
-                <th class="dark_mode" scope="col">Costo</th>
+                <th class="dark_mode" id="tr_costo" scope="col">Costo</th>
                 <th class="dark_mode" id="tr_cantidad" scope="col">Cantidad</th>
-                <th class="dark_mode" scope="col">Subtotal</th>
+                <th class="dark_mode" id="tr_subtotal" scope="col">Subtotal</th>
               </tr>
             </thead>
             <tbody id="productos_del_carrito"></tbody>
           </table>
         </div>
 
-        <h4>Tipo de Envío</h4>
-        <div class="botones-radio">
-          <input class="dark_mode" type="radio" id="premium" name="envio" value="1" />
-          <label class="dark_mode" for="premium"> Premium 2 a 5 días (15%)</label>
-          <br />
-          <input class="dark_mode" type="radio" id="express" name="envio" value="2" />
-          <label class="dark_mode" for="express"> Express 5 a 8 días (7%)</label>
-          <br />
-          <input class="dark_mode" type="radio" id="standar" name="envio" value="3" />
-          <label class="dark_mode" for="standar"> Standar 12 a 15 días (5%)</label>
-        </div>
-        <h4 class="dark_mode">Direccion de envio</h4>
+        <div class="row tipo_de_envio_y_detalle_pedido_section">
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <h4>Tipo de Envío</h4>
+            <div class="botones-radio">
+              <input
+                class="form-check-input dark_mode"
+                type="radio"
+                id="premium"
+                name="envio"
+                value="1"
+              />
+              <label class="dark_mode form-check-label" for="premium">
+                Premium 2 a 5 días (15%)</label
+              >
+              <br />
+              <input
+                class="form-check-input dark_mode"
+                type="radio"
+                id="express"
+                name="envio"
+                value="2"
+              />
+              <label class="dark_mode form-check-label" for="express">
+                Express 5 a 8 días (7%)</label
+              >
+              <br />
+              <input
+                class="form-check-input dark_mode"
+                type="radio"
+                id="standar"
+                name="envio"
+                value="3"
+                checked
+              />
+              <label class="dark_mode form-check-label" for="standar">
+                Standar 12 a 15 días (5%)</label
+              >
+            </div>
+            <h4 class="dark_mode">Direccion de envio</h4>
 
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-4">
             <div class="mb-3">
               <label for="calle" class="form-label dark_mode">Calle:</label>
               <input
@@ -99,13 +123,29 @@
             </div>
           </div>
 
-          <div id="resumen" class="col-sm-12 col-md-12 col-lg-8 text-center">
-            <p class="dark_mode">Resumen</p>
-            <p class="dark_mode">Resumen</p>
-            <p class="dark_mode">Resumen</p>
-            <p class="dark_mode">Resumen</p>
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <h4 class="detalle_pedido_titulo">Detalle del pedido</h4>
+            <div class="detalle_pedido_cambiar_cuenta">
+              <p>ftrotta18@gmail.com</p>
+              <a href="">Cambiar cuenta</a>
+            </div>
+            <hr>
+            <div class="detalle_pedido_cambiar_cuenta">
+              <p>
+                Direccion de envio:
+                <span>Cerro Largo 1031 esquina Rio Negro. Apartamento 003</span>
+              </p>
+            </div>
+            <hr>
+            <div class="detalle_pedido_cambiar_cuenta">
+              <p>Costo de envio: Envio dentro de montevideo $300</p>
+            </div>
+            <hr>
+            <div class="detalle_pedido_cambiar_cuenta">
+              <p>Importe total: $123000</p>
+            </div>
 
-            <div class="mb-3">
+            <div class="boton_proceder_al_pago mb-3">
               <button class="btn btn-outline-primary">Proceder al pago</button>
             </div>
           </div>

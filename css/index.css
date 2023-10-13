@@ -43,6 +43,9 @@
 .dark_mode a {
   color: #fff;
 }
+.dark_mode a:hover {
+  color: rgb(184, 178, 178);
+}
 
 /* ----------------------------------- */
 .light_mode {

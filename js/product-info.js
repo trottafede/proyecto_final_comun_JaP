@@ -102,11 +102,11 @@ let cantidad = 0;
 function mandarCarrito(producto) {
   console.log(producto);
   let productoEncontrado = carrito.find((item) => item.id === producto.id);
-
+  console.log(productoEncontrado);
   if (productoEncontrado) {
     productoEncontrado.quantity++;
   } else {
-    productoEncontrado.quantity = 1; 
+    producto.quantity = 1; 
     carrito.push(producto);
   }
   alert("Producto agregado!");

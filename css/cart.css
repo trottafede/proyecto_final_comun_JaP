@@ -22,6 +22,9 @@
 .dark_mode a {
   color: #fff;
 }
+.dark_mode a:hover {
+  color: rgb(184, 178, 178);
+}
 .dark_mode tr {
   color: #fff;
 }
@@ -31,11 +34,12 @@
 
 .dark_mode input[type="number"] {
   color: #fff;
-  background-color:#333333;
+  background-color: #333333;
+  width: 80px;
 }
 .dark_mode input[type="text"] {
   color: #fff;
-  background-color:#333333;
+  background-color: #333333;
 }
 
 /* ----------------------------------- */
@@ -70,8 +74,121 @@
 }
 
 .light_mode input[type="number"] {
+  width: 80px;
   color: black;
 }
 .light_mode input[type="text"] {
   color: black;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+}
+
+#carrito #td_cantidad span{
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#carrito #td_cantidad i{
+  cursor: pointer;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+#carrito h1 {
+  text-align: center;
+  margin: 40px 0;
+}
+
+#carrito h4 {
+  margin: 40px 0;
+}
+
+.tipo_de_envio_y_detalle_pedido_section{
+  margin: 40px 0;
+}
+
+.detalle_pedido_titulo{
+  background-color: rgba(236, 234, 234, 0.485);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.detalle_pedido_cambiar_cuenta {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.detalle_pedido_cambiar_cuenta a{
+  color:blue
+  
+}
+
+.boton_proceder_al_pago{
+  display: flex;
+  justify-content: end;
+  padding: 30px;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  h1, h4 {
+    margin: 40px 0;
+  }
+
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  #tr_producto,
+  #td_producto,
+  #tr_costo,
+  #td_costo {
+    display: none;
+  }
+  .light_mode input[type="number"] {
+    width: 50px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  #tr_producto,
+  #td_producto,
+  #tr_costo,
+  #td_costo {
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+ 
+
+  #carrito td input {
+    width: 60px;
+  }
+
+  #carrito img {
+    width: 150px !important;
+    height: auto;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+ 
+  #carrito img {
+    width: 150px;
+    height: auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
 }
