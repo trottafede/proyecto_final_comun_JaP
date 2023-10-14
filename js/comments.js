@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item ">
                         <h2 class="accordion-header ">
-                            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
-                                ${comment.user}-${comment.dateTime}
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
+                                ${comment.user}  ${comment.dateTime}
                             </button>
                         </h2>
                         <div id="${uniqueID}" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">

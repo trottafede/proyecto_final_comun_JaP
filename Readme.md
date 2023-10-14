@@ -14,7 +14,7 @@ Punto 3) -> Completo
 Modificar el subtotal de la compra del artículo, en tiempo real, si se modifica la cantidad. Recuerda que el subtotal se calcula como el precio unitario del producto multiplicado por la cantidad.
 
 
-Punto 4)
+Punto 4) -> Completo
 
 Asegurar que todas las pantallas del proyecto trabajadas hasta el momento (products.html, product-info.html, login.html) se adapten de manera efectiva a dispositivos móviles y de escritorio, permitiendo una experiencia óptima en diferentes dispositivos. 
 Realizar pruebas exhaustivas en varios dispositivos y navegadores para verificar la coherencia de la experiencia del usuario. Documentar los cambios realizados mediante capturas de pantalla e incluirlas en un PDF como parte de la entrega.
@@ -31,7 +31,7 @@ Pauta 5) -> Completo!!!
 Tareas bonus
 --------------------
 
-1) Prodcuts.html - en mobil se rompe el coso del filtro
+1) Prodcuts.html - en mobile se rompe el coso del filtro
 
 2) Product-info - Terminar carrusel
 
@@ -41,7 +41,7 @@ Tareas bonus
 
 5) Arreglar darkmode
 
-6) En carrito, en mobil, al hacer click se le podria dar al usuario mas info del item en la tabla. Mas info como por ejemplo poder aumentar la cantidad y poder borrar el item.
+6) En carrito, en mobile, al hacer click se le podria dar al usuario mas info del item en la tabla. Mas info como por ejemplo poder aumentar la cantidad y poder borrar el item.
 
 
 

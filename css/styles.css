@@ -1,4 +1,3 @@
-
 nav a {
   text-decoration: none;
 }
@@ -38,8 +37,6 @@ nav a {
   top: 50%;
   left: 50%;
 }
-
-
 
 .left {
   float: left;
@@ -188,4 +185,8 @@ html {
 /* Categories */
 #catList {
   cursor: pointer;
+}
+
+.accordion {
+  margin-top: 20px;
 }

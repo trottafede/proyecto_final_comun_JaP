@@ -10,11 +10,11 @@ function showProductInfo(objeto) {
   const div = document.getElementById("prueba");
   let htmlContentToAppend = `
   <div>
-  <h2>${objeto.name}</h2>
+  <h2 class="product-name">${objeto.name}</h2>
   </div>
   <div class="container">
     <div class="row">
-      <div   id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="true" ">
+      <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="true" ">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"  aria-label="Slide 2"></button>

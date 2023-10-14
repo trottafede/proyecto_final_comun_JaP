@@ -26,7 +26,13 @@
     ></script>
   </head>
   <body class="dark_mode">
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
+
+    <div class="dark_mode div_flotante_precio">
+      <p>Total <span id="order_details_total_price_mobile"></span></p>
+      <button class="btn btn-outline-success">Finalizar compra</button>
+    </div>
 
     <main id="carrito">
       <div class="container">
@@ -45,7 +51,7 @@
             <tbody id="productos_del_carrito"></tbody>
           </table>
         </div>
-
+        
         <div class="row tipo_de_envio_y_detalle_pedido_section">
           <div class="col-sm-12 col-md-12 col-lg-6">
             <h4>Tipo de Envío</h4>
@@ -75,78 +81,133 @@
               <input
                 class="form-check-input dark_mode"
                 type="radio"
-                id="standar"
+                id="standard"
                 name="envio"
                 value="3"
                 checked
               />
-              <label class="dark_mode form-check-label" for="standar">
-                Standar 12 a 15 días (5%)</label
+              <label class="dark_mode form-check-label" for="standard">
+                Standard 12 a 15 días (5%)</label
               >
             </div>
             <h4 class="dark_mode">Direccion de envio</h4>
 
             <div class="mb-3">
-              <label for="calle" class="form-label dark_mode">Calle:</label>
+              <label for="select_departamento" class="form-label dark_mode"
+                >Departamento:</label
+              >
+              <select
+                id="select_departamento"
+                class="form-select mb-3"
+                aria-label="Default select example"
+              >
+                <option value="Artigas">Artigas</option>
+                <option value="Canelones">Canelones</option>
+                <option value="Cerro Largo">Cerro Largo</option>
+                <option value="Colonia">Colonia</option>
+                <option value="Durazno">Durazno</option>
+                <option value="Flores">Flores</option>
+                <option value="Florida">Florida</option>
+                <option value="Lavalleja">Lavalleja</option>
+                <option value="Maldonado">Maldonado</option>
+                <option value="Montevideo" selected>Montevideo</option>
+                <option value="Paysandú">Paysandú</option>
+                <option value="Río Negro">Río Negro</option>
+                <option value="Rivera">Rivera</option>
+                <option value="Rocha">Rocha</option>
+                <option value="Salto">Salto</option>
+                <option value="San José">San José</option>
+                <option value="Soriano">Soriano</option>
+                <option value="Tacuarembó">Tacuarembó</option>
+                <option value="Treinta y Tres">Treinta y Tres</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="input_calle" class="form-label dark_mode"
+                >Calle:</label
+              >
               <input
                 required
                 type="text"
                 class="form-control dark_mode"
-                id="calle"
-                name="calle"
-                aria-describedby="calle"
+                id="input_calle"
+                name="input_calle"
+                aria-describedby="input_calle"
               />
             </div>
 
             <div class="mb-3">
-              <label for="numero" class="form-label dark_mode">Número:</label>
+              <label for="input_esquina" class="form-label dark_mode"
+                >Esquina:</label
+              >
               <input
                 required
                 type="text"
                 class="form-control dark_mode"
-                id="numero"
-                name="numero"
-                aria-describedby="numero"
+                id="input_esquina"
+                name="input_esquina"
+                aria-describedby="input_esquina"
               />
             </div>
 
             <div class="mb-3">
-              <label for="esquina" class="form-label dark_mode">Esquina:</label>
+              <label for="input_numero_calle" class="form-label dark_mode"
+                >Número:</label
+              >
               <input
                 required
                 type="text"
                 class="form-control dark_mode"
-                id="esquina"
-                name="esquina"
-                aria-describedby="Esquina"
+                id="input_numero_calle"
+                name="input_numero_calle"
+                aria-describedby="input_numero_calle"
               />
+            </div>
+
+            <div class="mb-3">
+              <button
+                onclick="handleSaveDirections()"
+                type="button"
+                class="btn btn-outline-primary"
+              >
+                Guardar direccion
+              </button>
             </div>
           </div>
 
           <div class="col-sm-12 col-md-12 col-lg-6">
             <h4 class="detalle_pedido_titulo">Detalle del pedido</h4>
             <div class="detalle_pedido_cambiar_cuenta">
-              <p>ftrotta18@gmail.com</p>
+              <p id="order_details_email">ftrotta18@gmail.com</p>
               <a href="">Cambiar cuenta</a>
             </div>
-            <hr>
+            <hr />
             <div class="detalle_pedido_cambiar_cuenta">
               <p>
-                Direccion de envio:
-                <span>Cerro Largo 1031 esquina Rio Negro. Apartamento 003</span>
+                Direccion de envio: <br />
+                <span id="order_details_info_calle"></span>
               </p>
             </div>
-            <hr>
+            <hr />
             <div class="detalle_pedido_cambiar_cuenta">
-              <p>Costo de envio: Envio dentro de montevideo $300</p>
+              <p>
+                Costo de envio: <br />
+                <span id="order_details_delivery_info"></span>
+              </p>
             </div>
-            <hr>
+            <hr />
             <div class="detalle_pedido_cambiar_cuenta">
-              <p>Importe total: $123000</p>
+              <p>Importe total: <span id="order_details_total_price"></span></p>
             </div>
 
             <div class="boton_proceder_al_pago mb-3">
-              <button class="btn btn-outline-primary">Proceder al pago</button>
+              <button
+                onclick="showOrderDetails()"
+                class="btn btn-outline-primary"
+              >
+                Proceder al pago
+              </button>
             </div>
           </div>
         </div>

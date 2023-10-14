@@ -1,35 +1,54 @@
+input[type="radio"] {
+  margin-bottom: 10px;
+}
+
 .dark_mode {
-  background-color: #333333;
+  background-color: #1e2327;
 }
 
 .dark_mode .card {
-  background-color: #333333;
+  background-color: #1e2327;
   color: #fff;
 }
 
 .dark_mode p {
   color: #fff;
 }
+
 .dark_mode h1 {
   color: #fff;
 }
+
 .dark_mode h2 {
   color: #fff;
 }
+
 .dark_mode h4 {
   color: #fff;
 }
+
 .dark_mode a {
-  color: #fff;
+  color: #fff !important;
 }
+
 .dark_mode a:hover {
   color: rgb(184, 178, 178);
 }
+
+.dark_mode tr:hover {
+  color: #fff !important;
+}
+
 .dark_mode tr {
   color: #fff;
 }
 .dark_mode label {
   color: #fff;
+}
+
+.dark_mode select {
+  color: #fff;
+  background-color: #333333;
 }
 
 .dark_mode input[type="number"] {
@@ -42,6 +61,23 @@
   background-color: #333333;
 }
 
+.dark_mode hr {
+  color: white;
+}
+
+.dark_mode .div_flotante_precio {
+  color: #fff;
+  background-color: #1e2327;
+}
+
+.dark_mode select {
+  background-image: url("../img/svg_white_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+}
+
 /* ----------------------------------- */
 .light_mode {
   background-color: #fff;
@@ -51,7 +87,7 @@
   color: #fff;
 }
 
-.light_mode p {
+.light_mode p{
   color: black;
 }
 .light_mode h1 {
@@ -77,6 +113,7 @@
   width: 80px;
   color: black;
 }
+
 .light_mode input[type="text"] {
   color: black;
 }
@@ -86,13 +123,13 @@
   justify-content: center;
 }
 
-#carrito #td_cantidad span{
+#carrito #td_cantidad span {
   margin: 0 10px;
   font-weight: bold;
   font-size: 1.1rem;
 }
 
-#carrito #td_cantidad i{
+#carrito #td_cantidad i {
   cursor: pointer;
 }
 
@@ -109,11 +146,11 @@ p {
   margin: 40px 0;
 }
 
-.tipo_de_envio_y_detalle_pedido_section{
+.tipo_de_envio_y_detalle_pedido_section {
   margin: 40px 0;
 }
 
-.detalle_pedido_titulo{
+.detalle_pedido_titulo {
   background-color: rgba(236, 234, 234, 0.485);
   padding: 20px;
   border-radius: 20px;
@@ -124,22 +161,26 @@ p {
   justify-content: space-between;
   padding: 10px;
 }
-.detalle_pedido_cambiar_cuenta a{
-  color:blue
-  
+
+.detalle_pedido_cambiar_cuenta a {
+  color: blue;
 }
 
-.boton_proceder_al_pago{
+.boton_proceder_al_pago {
   display: flex;
   justify-content: end;
   padding: 30px;
 }
+
+.div_flotante_precio{
+  display: none;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  h1, h4 {
+  h1,
+  h4 {
     margin: 40px 0;
   }
-
 
   p {
     font-size: 0.9rem;
@@ -151,9 +192,27 @@ p {
   #td_costo {
     display: none;
   }
+
   .light_mode input[type="number"] {
     width: 50px;
   }
+
+  .div_flotante_precio {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0;
+    background-color: #efebeb;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+  }
+
+  .div_flotante_precio p {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+ 
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -168,8 +227,6 @@ p {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
- 
-
   #carrito td input {
     width: 60px;
   }
@@ -182,7 +239,6 @@ p {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
- 
   #carrito img {
     width: 150px;
     height: auto;
