@@ -3,11 +3,11 @@ input[type="radio"] {
 }
 
 .dark_mode {
-  background-color: #1e2327;
+  background-color: #212121;
 }
 
 .dark_mode .card {
-  background-color: #1e2327;
+  background-color: #212121;
   color: #fff;
 }
 
@@ -78,7 +78,15 @@ input[type="radio"] {
   border: 1px solid #ced4da;
 }
 
+#td_acciones i{
+  color: red;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
 /* ----------------------------------- */
+
 .light_mode {
   background-color: #fff;
 }
@@ -118,10 +126,10 @@ input[type="radio"] {
   color: black;
 }
 
-.img_container {
+/* .img_container {
   display: flex;
   justify-content: center;
-}
+} */
 
 #carrito #td_cantidad span {
   margin: 0 10px;
@@ -186,6 +194,8 @@ p {
     font-size: 0.9rem;
   }
 
+  #tr_acciones,
+  #td_acciones,
   #tr_producto,
   #td_producto,
   #tr_costo,
@@ -206,6 +216,7 @@ p {
     padding: 10px;
     width: 100%;
     position: fixed;
+    z-index: 2;
   }
 
   .div_flotante_precio p {

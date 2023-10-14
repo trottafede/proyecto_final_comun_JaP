@@ -1,5 +1,6 @@
 let carrito;
 let total = 0;
+
 document.addEventListener("DOMContentLoaded", async () => {
   carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   let peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
@@ -39,6 +40,7 @@ function mostrarProducto() {
       <td id="td_costo"><p>${currency} ${cost}</p></td>
       <td id="td_cantidad"><i onclick="handleOneLess(${id})" class="fa-solid fa-circle-minus"></i><span>${quantity}</span><i onclick="handleOneMore(${id})" class="fa-solid fa-circle-plus"></i></td>
       <td id="td_subtotal"><p><strong><span id="subtotal${id}"> USD ${cost * quantity}</span></strong></p></td>
+      <td id="td_acciones"><i onclick="handleDelete(${id})" class="fa-solid fa-trash"></i></td>
     </tr>`;
     total += cost * quantity;
   }
@@ -83,7 +85,6 @@ const findProduct = (id) => {
   return productoEncontrado;
 };
 
-
 function cambiarPropiedades(autoApi) {
   let auto = {
     id: autoApi.id,
@@ -110,6 +111,14 @@ const handleShowDirections = () => {
   }
 }
 
+const handleDelete = (id) => {
+  carrito = JSON.parse(localStorage.getItem("carrito"));
+  carrito = carrito.filter((item) => item.id != id);
+  console.log(carrito);
+  actualizarCarrito();
+  mostrarProducto();
+}
+
 const handleSaveDirections = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const input_calle = document.getElementById("input_calle").value;
@@ -127,6 +136,7 @@ const handleSaveDirections = () => {
   user.address = address;
 
   localStorage.setItem("user", JSON.stringify(user));
+  alert("Direccion guardada!");
   showOrderDetails();
 }
 

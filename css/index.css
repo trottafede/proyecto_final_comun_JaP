@@ -20,11 +20,12 @@
 }
 
 .dark_mode {
-  background-color: #262829;
+  background-color: #212121  ;
 }
 
 .dark_mode .card {
-  background-color: #262829;
+  background-color: #212121;
+
   color: #fff;
 }
 
