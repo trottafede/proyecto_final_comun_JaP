@@ -2,18 +2,30 @@
 <html lang="es">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>eMercado - Todo lo que busques está aquí</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
     <link href="css/font-awesome.min.css" rel="stylesheet" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/product-info.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link href="css/navbar.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
-     <!-- font awesome -->
-     <script src="https://kit.fontawesome.com/2919f68f3c.js" crossorigin="anonymous"></script>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2919f68f3c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -21,31 +33,28 @@
     <main>
       <div class="ful-img" id="fulImgBox">
         <img src="img/car1.jpg" id="fulImg" />
-        <span id="closeSpan" onclick="closeImg()"><i class="fa-solid fa-circle-xmark"></i></span>
+        <span id="closeSpan" onclick="closeImg()"
+          ><i class="fa-solid fa-circle-xmark"></i
+        ></span>
       </div>
-
       <div class="container">
+        <div id="carrusel"></div>
+        <div id="description"></div>
 
-        <div id="prueba">
-          <div id="imagenProducto"></div>
-        </div>
-          <div id="comments"></div>
-        <form>
-          <br>
-          <div class="buscador">
-            <div class="caja-input">
-              <input
-                type="text"
-                name="comentarios"
-                id="btnComent"
-                placeholder="Ingrese aquí su comentario"
-              />
-              <button id="botonCmt">Enviar</button>
-            </div>
-          </div>
-          <div class="caja-puntua">
-            <label for="estrellas">Puntua:</label>
-            <select name="puntuacion" id="estrellas">
+        <div class="accordion" id="comments"></div>
+
+        <!-- Comentarios -->
+        <div class="container1 form-floating">
+          <textarea
+            name="comentarios"
+            class="form-control centered-textarea"
+            placeholder="Ingrese aquí su comentario"
+            id="btnComent"
+            style="height: 100px"
+          ></textarea>
+          <label for="floatingTextarea2">Comentario: </label>
+          <div class="">
+            <select class="form-select mt-4" name="puntuacion" id="estrellas">
               <option value="1">&#9733;</option>
               <option value="2">&#9733; &#9733;</option>
               <option value="3">&#9733; &#9733; &#9733;</option>
@@ -53,13 +62,18 @@
               <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733;</option>
             </select>
           </div>
-        </form>
-        <hr>
 
+          <button class="btn btn-warning mt-4" id="botonCmt">Enviar comentario</button>
+        </div>
+
+        <!-- Puntuacion -->
+        
+        <hr />
+
+        <!-- Productos relacionados -->
         <h2>Productos relacionados</h2>
-          <div id="productos_relacionados"></div>
+        <div id="productos_relacionados"></div>
       </div>
-      
     </main>
 
     <footer class="text-muted"></footer>
@@ -71,13 +85,20 @@
         <div></div>
       </div>
     </div>
+
+    <!-- Bootstrap? y JaP? -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
-    <script src="js/product-info.js"></script>
-    <script src="js/validarUsuario.js"></script>
+
+    <!-- Footer y Navbar  -->
     <script src="./navbar.js"></script>
     <script src="./footer.js"></script>
+
+    <!-- validaciones -->
+    <script src="js/validarUsuario.js"></script>
+
+    <!--  Product Info Content -->
     <script src="js/comments.js"></script>
-    <script src="js/productos_relacionados.js"></script>
+    <script src="js/product-info.js"></script>
   </body>
 </html>

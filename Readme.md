@@ -4,12 +4,12 @@ Punto 1) ->  completo.
 Haciendo uso del id de usuario 25801, realizar la petición web a la URL donde se encuentra un carrito de compras, ya con un producto precargado, y mostrar en HTML la información del mismo: nombre, costo, cantidad (como valor de un input), moneda, imagen y subtotal (costo por cantidad).
 
 
-Punto 2) -> Completo
+Punto 2) -> Completo - Camila
 
 Incluir los controles gráficos necesarios para seleccionar tipo de envío y dirección (calle, número y esquina). La funcionalidad a dichos controles la trabajaremos en una entrega posterior.
 
 
-Punto 3) -> Completo
+Punto 3) -> Completo 
 
 Modificar el subtotal de la compra del artículo, en tiempo real, si se modifica la cantidad. Recuerda que el subtotal se calcula como el precio unitario del producto multiplicado por la cantidad.
 
@@ -20,7 +20,7 @@ Asegurar que todas las pantallas del proyecto trabajadas hasta el momento (produ
 Realizar pruebas exhaustivas en varios dispositivos y navegadores para verificar la coherencia de la experiencia del usuario. Documentar los cambios realizados mediante capturas de pantalla e incluirlas en un PDF como parte de la entrega.
 
 
-Pauta 5) -> Completo!!!
+Pauta 5) -> Completo!!! - Federico
 
 ¡Desafiate!
 -Nuestro carrito de compras ya trae un producto precargado, pero para completar la funcionalidad de la página, haz que el usuario pueda agregar los productos que quiera al carrito.
@@ -65,3 +65,5 @@ col-xs-  col-sm- col-md- col-lg- col-xl-
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {...}
+
+Naranja JaP? #fd7e14

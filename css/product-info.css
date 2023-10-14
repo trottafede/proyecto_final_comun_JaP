@@ -1,94 +1,150 @@
-.product-info{
-    padding: 15px;
+h1 {
+  margin: 40px 0;
 }
 
-.product-info a{
-    font-size: 1.5rem;
-    text-decoration: none;
+.product_description h4 {
+  margin: 20px 0;
 }
 
-.carousel{
-    max-width: 70%;
-    height: auto;
-    padding: 0;
+.product_description p {
+  font-size: 1.1rem;
 }
 
-.info{
-    max-width: 30%;
+#productos_relacionados {
+  display: flex;
+  flex-wrap: wrap; /*agre*/
+  cursor: pointer;
 }
 
-.product-name {
-    margin: 12px;
+.accordion {
+  margin: 60px 0;
 }
+.accordion-item {
+  margin-bottom: 30px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.accordion-header strong {
+  margin-right: 15px;
+}
+.accordion-body {
+  padding: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-body i {
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+
+.container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 50%; /* Ajusta el ancho según tus necesidades */
+}
+
+.centered-textarea {
+  width: 100%; /* Ocupar todo el ancho del contenedor */
+}
+
+
+
+
+
+
+
+
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .carousel{
-        max-width: 100%;
-        height: auto;
-        padding: 0;
-    }
-    .info{
-        max-width: 100%;
-    }
-    
+  #carrusel_nahuel,
+  #fulImgBox {
+    display: none;
+  }
+
+  .carousel {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+  }
+  .info {
+    max-width: 100%;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    .carousel{
-        max-width: 100%;
-        height: auto;
+  #carrusel_nahuel,
+  #fulImgBox {
+    display: none;
+  }
 
-    }
-    .info{
-        max-width: 100%;
-    }
-    
-    
+  .carousel {
+    max-width: 100%;
+    height: auto;
+  }
+  .info {
+    max-width: 100%;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  #carrusel_nahuel,
+  #fulImgBox {
+    display: none;
+  }
 
+  #carrusel_nacho {
+    display: flex;
+  }
 }
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-   
-    
-}
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    .carousel{
-        max-width: 60%;
-        height: auto;
-        padding: 0;
-    }
-    .info{
-        max-width: 40%;
-    }
+  #carrusel_nahuel {
+    display: flex;
+  }
 
-    #productos_relacionados{
-        display: flex;
-    }
-    
-}
-  
+  #carrusel_nacho {
+    display: none;
+  }
 
+  section {
+    display: flex;
+    width: 100%;
+    height: 430px;
+    border: 10px solid rgb(219, 219, 219);
+    border-radius: 10px;
+  }
 
-.carousel-control-prev-icon, .carousel-control-next-icon{
-    
-    width: 40px;
-    height: 40px;
-    background-color: black;
-    opacity: 0.7;
-    border-radius: 25px;
-}
+  section img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s ease;
+  }
 
-.ful-img{
+  section img:hover {
+    cursor: pointer;
+    width: 100px;
+    opacity: 1;
+    filter: contrast(120%);
+  }
+
+  .ful-img {
     width: 100%;
     height: 100vh;
-    background-color: rgb(0, 0, 0,0.9);
+    background-color: rgb(0, 0, 0, 0.9);
     position: fixed;
     top: 0;
     left: 0;
@@ -96,118 +152,17 @@
     align-items: center;
     justify-content: center;
     z-index: 99;
-    
-}
+  }
 
-.ful-img span{
+  .ful-img span {
     position: absolute;
     top: 5%;
     right: 5%;
     color: #fff;
     cursor: pointer;
-    
-}
+  }
 
-span{
-    font-size: 0.5em;
-}
-
-#closeSpan{
+  #closeSpan {
     font-size: 2rem;
+  }
 }
-
-/* Comentarios */
-/* Cambia el color del botón del acordeón cuando está cerrado */
-.accordion-button:not(.show) {
-    background-color: rgb(223, 223, 223); /* rgb(25, 135, 84); */
-    color: #000000; 
-}
-/*Cambia de color el cuerpo cuando el acordeon esta cerrado*/
-.accordion-body:not(.show) {
-    background-color: white; 
-    color: #000000; 
-}
-
-/* #comments {
-    max-width: 80%; 
-    margin: 0 auto; 
-} */
-
-.buscador {
-    display: felx;
-    justify-content: center;
-    align-items: center; 
-}
-.caja-input, .caja-puntua{
-    text-align: center;
-}
-
-#productos_relacionados{
-    display: flex;
-    flex-wrap: wrap;/*agre*/
-    cursor: pointer;
-}
-#imgContainerProducto{
-    flex: 0 0 calc(33.33% - 20px); /* Envolver elementos en filas en pantallas pequeñas */
-    margin-left: 20px;
-}
-#imgContainerProducto img{
-    height: auto; /* height: 200px; */
-    margin-left: 20px;
-    max-width: 100%;
-}
-
-#imgContainerProducto p {
-    font-size: 1.4rem;
-    text-align: center;
-}
-
-
-/* @media(max-width: 570px){ 
-    section{
-        display: block;
-        width: 100%;
-        height: auto;
-        border: 2px solid rgb(219, 219, 219);
-        border-radius: 10px;
-    }
-    section img{
-        max-width: 100%; 
-        width: auto;
-        flex-grow: auto;
-        object-fit: contain;
-        opacity: .8;
-        transition: .5s ease;
-    }
-    section img:hover{
-        cursor: pointer;
-        width: auto;
-        opacity: 1;
-        filter: contrast(120%);
-    }
-}
-@media(min-width:571px){
-    section{
-        display: flex;
-        width: 100%;
-        height: 430px;
-        border: 10px solid rgb(219, 219, 219);
-        border-radius: 10px;
-    }
-    
-    section img{
-        max-width: 100%; 
-        width: 0px;
-        flex-grow: 1;
-        object-fit: cover;
-        opacity: .8;
-        transition: .5s ease;
-    }
-    
-    section img:hover{
-        cursor: pointer;
-        width: 300px;
-        opacity: 1;
-        filter: contrast(120%);
-    }
-}  */
