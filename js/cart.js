@@ -186,7 +186,10 @@ const showOrderDetails = () => {
   order_details_total_price.innerHTML = "USD " + total_to_HTML;
   order_details_total_price_mobile.innerHTML = "USD " + total_to_HTML;
 
-  const selectElement = document.getElementById('select_departamento');
-  const optionToSelect = selectElement.querySelector(`option[value="${user.address.departamento}"]`);
-  optionToSelect.selected = true;
+  if (user.address != null){
+    const selectElement = document.getElementById('select_departamento');
+    const optionToSelect = selectElement.querySelector(`option[value="${user.address.departamento}"]`);
+    optionToSelect.selected = true;
+  }
+
 };
