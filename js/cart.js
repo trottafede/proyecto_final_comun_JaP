@@ -31,13 +31,18 @@ function mostrarProducto() {
     const name = producto.name;
     const image = producto.images[0];
     const currency = producto.currency;
-    const cost = producto.cost;
+    let cost = producto.cost;
     const quantity = producto.quantity;
+
+    if (currency == "UYU") {
+      cost = cost / 40;
+    }
+
     contenidoHtml += `
     <tr>
       <td id="td_producto"><div class="img_container"><img src=${image} alt=""></div></td> 
       <td id="td_name"><p>${name}</p></td>
-      <td id="td_costo"><p>${currency} ${cost}</p></td>
+      <td id="td_costo"><p>USD ${cost}</p></td>
       <td id="td_cantidad"><i onclick="handleOneLess(${id})" class="fa-solid fa-circle-minus"></i><span>${quantity}</span><i onclick="handleOneMore(${id})" class="fa-solid fa-circle-plus"></i></td>
       <td id="td_subtotal"><p><strong><span id="subtotal${id}"> USD ${cost * quantity}</span></strong></p></td>
       <td id="td_acciones"><i onclick="handleDelete(${id})" class="fa-solid fa-trash"></i></td>
@@ -145,20 +150,26 @@ const showOrderDetails = () => {
 
   const email = document.getElementById("order_details_email");
   const order_details_info_calle = document.getElementById("order_details_info_calle");
-  const order_details_delivery_info = document.getElementById("order_details_delivery_info");
+  // const order_details_delivery_info = document.getElementById("order_details_delivery_info");
   const order_details_total_price = document.getElementById("order_details_total_price");
   const order_details_total_price_mobile = document.getElementById("order_details_total_price_mobile");
+  const order_details_delivery_price = document.getElementById("order_details_delivery_price");
+  const order_details_sub_total_price = document.getElementById("order_details_sub_total_price");
 
   const premium = document.getElementById("premium").checked;
   const express = document.getElementById("express").checked;
   const standard = document.getElementById("standard").checked;
 
+  let costo_envio = 0;
   let total_to_HTML = total;
   if (premium) {
+    costo_envio = total * 0.15;
     total_to_HTML += total * 0.15;
   } else if (express) {
+    costo_envio = total * 0.07;
     total_to_HTML += total * 0.07; 
   } else if (standard) {
+    costo_envio = total * 0.05;
     total_to_HTML += total * 0.05; 
   }
   total_to_HTML = parseInt(total_to_HTML);
@@ -182,14 +193,15 @@ const showOrderDetails = () => {
     default:
       delivery = select_departamento + ": $300 de envio";
   }
-  order_details_delivery_info.innerHTML = delivery;
+  // order_details_delivery_info.innerHTML = delivery;
   order_details_total_price.innerHTML = "USD " + total_to_HTML;
   order_details_total_price_mobile.innerHTML = "USD " + total_to_HTML;
+  order_details_delivery_price.innerHTML = "USD " + costo_envio;
+  order_details_sub_total_price.innerHTML = "USD " + total;
 
-  if (user.address != null){
+  if (user.address != null) {
     const selectElement = document.getElementById('select_departamento');
     const optionToSelect = selectElement.querySelector(`option[value="${user.address.departamento}"]`);
     optionToSelect.selected = true;
   }
-
 };

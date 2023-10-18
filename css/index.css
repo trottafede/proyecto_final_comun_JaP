@@ -19,63 +19,9 @@
   cursor: pointer;
 }
 
-.dark_mode {
-  background-color: #212121  ;
-}
-
-.dark_mode .card {
-  background-color: #212121;
-
-  color: #fff;
-}
-
-.dark_mode p {
-  color: #fff;
-}
-.dark_mode h1 {
-  color: #fff;
-}
-.dark_mode h2 {
-  color: #fff;
-}
-.dark_mode h3 {
-  color: #fff;
-}
-.dark_mode a {
-  color: #fff;
-}
-.dark_mode a:hover {
-  color: rgb(184, 178, 178);
-}
-
-/* ----------------------------------- */
-.light_mode {
-  background-color: #fff;
-}
-
-.light_mode .card {
-  color: #fff;
-}
-
-.light_mode p {
-  color: black;
-}
-.light_mode h1 {
-  color: black;
-}
-.light_mode h2 {
-  color: black;
-}
-.light_mode h3 {
-  color: black;
-}
-.light_mode a {
-  color: black;
-}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
   nav {
     margin-bottom: 50px;
   }

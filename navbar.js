@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (user) {
     isUserActive = `
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown d-md-block d-lg-block d-none">
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       ${parsedUser.email}
       </a>
@@ -21,8 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </li>`;
   }
   
-  // <li class="nav-item"><div class="center_dark_mode"><input id="toggle_dark_mode" type="checkbox" class="theme-checkbox"></div></li>
-
   const navbar = `<div class="container">
   <button
     class="navbar-toggler"
@@ -55,17 +53,23 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="slider"></span>
       </label>
       </li>
+
+      <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="./my-profile.html"><i class="fa-solid fa-user"></i> ${parsedUser.email}</a></li>
+      <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
+      <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="/" id="cerrar-mobile" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
+        ${isUserActive}
       
-      <div id="usuarioBack">
-      ${isUserActive}
       </div>
     </ul>
   </div>
 </div>
  `;
-
+{/* <li class="nav-item d-md-none d-lg-none d-xl-none">
+        <a class="nav-link" href="#">${parsedUser.email}</a>
+      </li> */}
   document.getElementsByTagName("nav")[0].innerHTML = navbar;
   document.getElementById("cerrar").addEventListener("click", cerrarSesion);
+  document.getElementById("cerrar-mobile").addEventListener("click", cerrarSesion);
   document.getElementById("toggle_dark_mode").addEventListener("change", handleDarkMode);
   checkDarkMode();
 });

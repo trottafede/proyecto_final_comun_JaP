@@ -26,6 +26,10 @@ Pauta 5) -> Completo!!! - Federico
 -Nuestro carrito de compras ya trae un producto precargado, pero para completar la funcionalidad de la página, haz que el usuario pueda agregar los productos que quiera al carrito.
 
 -Todos deben mostrarse tal como el que viene del servidor, y también deben modificar su subtotal según varíe la cantidad.
+
+
+
+Entrega 6:
 --------------------
 
 Tareas bonus
@@ -67,3 +71,5 @@ col-xs-  col-sm- col-md- col-lg- col-xl-
 @media only screen and (min-width: 1200px) {...}
 
 Naranja JaP? #fd7e14
+#FFC800;
+#F09100

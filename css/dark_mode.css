@@ -1,0 +1,159 @@
+/* Dark Mode */
+.dark_mode {
+  background-color: #212121;
+}
+
+.dark_mode .card {
+  background-color: #212121;
+  color: #fff;
+}
+
+.dark_mode p {
+  color: #fff;
+}
+
+.dark_mode h1 {
+  color: #fff;
+}
+
+.dark_mode h2 {
+  color: #fff;
+}
+
+.dark_mode h4 {
+  color: #fff;
+}
+
+.dark_mode a {
+  color: #fff !important;
+}
+
+.dark_mode a:hover {
+  color: rgb(184, 178, 178);
+}
+
+.dark_mode tr:hover {
+  color: #fff !important;
+}
+
+.dark_mode tr {
+  color: #fff;
+}
+.dark_mode label {
+  color: #fff;
+}
+
+.dark_mode select {
+  color: #fff;
+  background-color: #333333;
+}
+
+.dark_mode input[type="number"] {
+  color: #fff;
+  background-color: #333333;
+}
+
+.dark_mode input[type="search"] {
+  color: #fff;
+  background-color: #333333;
+}
+
+.dark_mode input[type="text"] {
+  color: #fff;
+  background-color: #333333;
+}
+
+.dark_mode textarea {
+  color: #fff;
+  background-color: #333333;
+}
+
+.dark_mode .accordion-item{
+  background-color: #333333;
+  color: #fff;
+}
+
+.dark_mode .form-control {
+  background-color:  #333333 !important;
+  color: #fff;
+}
+.dark_mode textarea:active {
+  color: #fff;
+  background-color: #333333 !important;
+}
+
+.dark_mode hr {
+  color: white;
+}
+
+.dark_mode ul li {
+  color: white;
+}
+
+.dark_mode .div_flotante_precio {
+  color: #fff;
+  background-color: #1e2327;
+}
+
+.dark_mode select {
+  background-image: url("../img/svg_white_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: 1px solid #ced4da;
+}
+
+.dark_mode .dz-clickable{
+  background-color: #333333 !important;
+  color: #fff;
+}
+
+ .dark_mode #sell_ul_dark_mode li {
+  background-color: #333333 !important;
+  color: #fff;
+}
+
+.light_mode {
+  background-color: #fff;
+}
+
+.light_mode .card {
+  color: #fff;
+}
+
+.light_mode p{
+  color: black;
+}
+.light_mode h1 {
+  color: black;
+}
+.light_mode h2 {
+  color: black;
+}
+.light_mode h3 {
+  color: black;
+}
+.light_mode h4 {
+  color: black;
+}
+.light_mode h5 {
+  color: black;
+}
+.light_mode a {
+  color: black;
+}
+.light_mode tr {
+  color: black;
+}
+
+.light_mode label {
+  color: black;
+}
+
+.light_mode input[type="number"] {
+  color: black;
+}
+
+.light_mode input[type="text"] {
+  color: black;
+}

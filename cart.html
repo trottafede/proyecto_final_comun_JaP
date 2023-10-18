@@ -17,6 +17,7 @@
 
     <link href="css/navbar.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
+    <link href="css/dark_mode.css" rel="stylesheet" />
     <link href="css/cart.css" rel="stylesheet" />
 
     <!-- font awesome -->
@@ -191,15 +192,20 @@
               </p>
             </div>
             <hr />
-            <div class="detalle_pedido_cambiar_cuenta">
+            <!-- <div class="detalle_pedido_cambiar_cuenta">
               <p>
                 Costo de envio: <br />
                 <span id="order_details_delivery_info"></span>
               </p>
             </div>
-            <hr />
+            <hr /> -->
             <div class="detalle_pedido_cambiar_cuenta">
-              <p>Importe total: <span id="order_details_total_price"></span></p>
+              <h3>Costos</h3>
+              <ul>
+                <li><i>Subtotal: <span id="order_details_sub_total_price"></span></i></li>
+                <li><i>Costo Envio: <span id="order_details_delivery_price"></span></i></li>
+              </ul>
+              <p><strong>Costo total: <span id="order_details_total_price"></span></strong></p>
             </div>
 
             <div class="boton_proceder_al_pago mb-3">

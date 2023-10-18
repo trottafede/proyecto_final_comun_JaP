@@ -166,9 +166,8 @@ const searchButtonLogic = () => {
     dataListOptions += `<option value="${category.name}"></option>`;
   }
 
-  console.log(currentCategoriesArray);
   searchButton = ` 
-    <input id="searchInput" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar productos">
+    <input id="searchInput" type="search" class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar productos">
     <datalist id="datalistOptions">
         ${dataListOptions}
     </datalist>`;
