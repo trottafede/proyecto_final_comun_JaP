@@ -136,7 +136,7 @@ h1 {
 
   section img:hover {
     cursor: pointer;
-    width: 100px;
+    width: 300px;
     opacity: 1;
     filter: contrast(120%);
   }

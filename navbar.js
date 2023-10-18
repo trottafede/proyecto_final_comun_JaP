@@ -87,7 +87,6 @@ const handleDarkMode = () => {
       element.classList.remove("light_mode");
       element.classList.add("dark_mode");
     });
-    
   } else {
     localStorage.setItem("theme", "light"); // Guarda el tema en el almacenamiento local
     const elementsWithDarkMode = document.querySelectorAll(".dark_mode");

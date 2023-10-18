@@ -150,7 +150,6 @@ const showOrderDetails = () => {
 
   const email = document.getElementById("order_details_email");
   const order_details_info_calle = document.getElementById("order_details_info_calle");
-  // const order_details_delivery_info = document.getElementById("order_details_delivery_info");
   const order_details_total_price = document.getElementById("order_details_total_price");
   const order_details_total_price_mobile = document.getElementById("order_details_total_price_mobile");
   const order_details_delivery_price = document.getElementById("order_details_delivery_price");
@@ -173,7 +172,6 @@ const showOrderDetails = () => {
     total_to_HTML += total * 0.05; 
   }
   total_to_HTML = parseInt(total_to_HTML);
-  // total_to_HTML = total_to_HTML.toLocaleString('es-ES');
 
   const input_calle = document.getElementById("input_calle").value;
   const input_esquina = document.getElementById("input_esquina").value;
@@ -193,7 +191,6 @@ const showOrderDetails = () => {
     default:
       delivery = select_departamento + ": $300 de envio";
   }
-  // order_details_delivery_info.innerHTML = delivery;
   order_details_total_price.innerHTML = "USD " + total_to_HTML;
   order_details_total_price_mobile.innerHTML = "USD " + total_to_HTML;
   order_details_delivery_price.innerHTML = "USD " + costo_envio;

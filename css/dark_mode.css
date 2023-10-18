@@ -1,6 +1,7 @@
 /* Dark Mode */
 .dark_mode {
   background-color: #212121;
+  
 }
 
 .dark_mode .card {
@@ -112,6 +113,9 @@
   background-color: #333333 !important;
   color: #fff;
 }
+
+/* light_mode ------------------------------------------------------------*/
+
 
 .light_mode {
   background-color: #fff;
