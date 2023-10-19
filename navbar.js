@@ -53,20 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <span class="slider"></span>
       </label>
       </li>
-
       <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="./my-profile.html"><i class="fa-solid fa-user"></i> ${parsedUser.email}</a></li>
       <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
       <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="/" id="cerrar-mobile" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
         ${isUserActive}
-      
       </div>
     </ul>
   </div>
-</div>
- `;
-{/* <li class="nav-item d-md-none d-lg-none d-xl-none">
-        <a class="nav-link" href="#">${parsedUser.email}</a>
-      </li> */}
+</div>`;
   document.getElementsByTagName("nav")[0].innerHTML = navbar;
   document.getElementById("cerrar").addEventListener("click", cerrarSesion);
   document.getElementById("cerrar-mobile").addEventListener("click", cerrarSesion);
@@ -108,4 +102,4 @@ const checkDarkMode = () => {
   }
   handleDarkMode()
 };
-// en desktop quedo divino, en mobile ni lo mires jaja
+//no borrrar --> // en desktop quedo divino, en mobile ni lo mires jaja

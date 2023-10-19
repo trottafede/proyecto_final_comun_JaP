@@ -28,19 +28,16 @@ h1 {
 .accordion-header strong {
   margin-right: 15px;
 }
+
 .accordion-body {
   padding: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .accordion-body i {
   font-size: 1rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   margin-left: 5px;
 }
-
 
 .container1 {
   display: flex;
@@ -54,14 +51,6 @@ h1 {
 .centered-textarea {
   width: 100%; /* Ocupar todo el ancho del contenedor */
 }
-
-
-
-
-
-
-
-
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -165,4 +154,116 @@ h1 {
   #closeSpan {
     font-size: 2rem;
   }
+}
+
+/* boton añadir carrito */
+
+.cartBtn {
+  width: 155px;
+  height: 50px;
+  border: none;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  background-color: rgb(29, 29, 29);
+  box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cart {
+  z-index: 2;
+}
+
+.cartBtn:active {
+  transform: scale(0.96);
+}
+
+.product {
+  position: absolute;
+  width: 12px;
+  border-radius: 3px;
+  content: "";
+  left: 23px;
+  bottom: 23px;
+  opacity: 0;
+  z-index: 1;
+  fill: rgb(211, 211, 211);
+}
+
+.cartBtn:hover .product {
+  animation: slide-in-top 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) rotate(-90deg);
+    opacity: 1;
+  }
+}
+
+.cartBtn:hover .cart {
+  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* estrellas */
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl; /* Establece la dirección de derecha a izquierda */
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.rating label:before {
+  content: "\2605"; /* Estrella en blanco (☆) */
+  margin: 5px;
+}
+
+.rating input[type="radio"]:checked ~ label:before {
+  content: "\2605"; /* Estrella rellena (★) */
+  color: orange;
+}
+
+.rating input[type="radio"]:hover ~ label:before {
+  content: "\2605"; /* Estrella rellena (★) */
+  color: orange;
+}
+
+.accordion-body p {
+  width: 100%; /* Ancho máximo del párrafo */
+  overflow-wrap: break-word;
+  margin-bottom: 0;
 }

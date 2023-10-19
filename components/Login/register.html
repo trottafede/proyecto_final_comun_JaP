@@ -9,26 +9,31 @@
   <body>
     <div class="contenedor-register">
       <h2 class="letra-h2">Registrarse</h2>
-      <form id="register-form">
+      <form id="register-form" novalidate>
         <div class="texto-input">
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" required />
+          <ul class="errores" id="error_nombre"></ul>
         </div>
         <div class="texto-input">
           <label for="apellido">Apellido:</label>
           <input type="text" id="apellido" required />
+          <ul class="errores" id="error_apellido"></ul>
         </div>
         <div class="texto-input">
           <label for="mail">Email:</label>
           <input type="email" id="mail" required />
+          <ul class="errores" id="error_email"></ul>
         </div>
         <div class="texto-input">
           <label for="contraseña">Contraseña:</label>
           <input type="password" id="contraseña" />
+          <ul class="errores" id="error_contrasena"></ul>
         </div>
         <div class="texto-input">
           <label for="repeat-contraseña">Repetir Contraseña:</label>
           <input type="password" id="repeat-contraseña" />
+          <ul class="errores" id="error_contrasenas"></ul>
         </div>
         <div class="checkbox-terminos">
           <label

@@ -13,8 +13,11 @@ if (storedComments) {
 }
 
 const comentBtn = document.getElementById("botonCmt");
+let selectedRating = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
+  getRating();
+
   comentBtn.addEventListener("click", function (event) {
     event.preventDefault();
     handleSendComment();
@@ -41,7 +44,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const handleSendComment = () => {
     const enviarBtn = document.getElementById("btnComent").value;
-    const estrellasValor = document.getElementById("estrellas").value;
 
     var jsonString = user;
     var objeto = JSON.parse(jsonString);
@@ -49,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (enviarBtn !== "") {
       const comentarioLocal = {
         product: commentID,
-        score: estrellasValor, //puntuacion del producto
+        score: selectedRating, //puntuacion del producto
         description: enviarBtn,
         user: objeto.email,
         dateTime: formatoFechaHora,
@@ -77,23 +79,35 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.log(comment);
       const uniqueID = `comment-${index}`; // Genera un identificador único
       boxComments += `
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
-              <strong>${comment.user}</strong> ${comment.dateTime}
-            </button>
-          </h2>
-          <div id="${uniqueID}" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-              <span>${comment.description}</span> <span>${estrellas(comment.score)}</span>
-            </div>
+      <div class="accordion-item" style="margin-bottom: 30px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
+            <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(comment.score)}
+          </button>
+        </h2>
+        <div id="${uniqueID}" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <p>${comment.description}</p>
           </div>
-        </div>`;
+            
+        </div>
+      </div>`;
     }
 
     document.getElementById("comments").innerHTML = boxComments;
   }
 });
+
+const getRating = () => {
+  const ratingInputs = document.querySelectorAll('input[type="radio"]');
+
+  ratingInputs.forEach((input) => {
+    input.addEventListener("change", function () {
+      selectedRating = this.value;
+      console.log(`Calificación seleccionada: ${selectedRating}`);
+    });
+  });
+};
 
 function estrellas(cantidad) {
   let scoreTotal = "";
