@@ -4,9 +4,13 @@ html {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-  /* background-color: gainsboro; */
-  background-color: white;
-  /* display: flex; */
+ 
+}
+
+main {
+  min-height: calc(100vh - 210px);
+  display: flex;
+  align-items: center;
 }
 
 #login{
@@ -114,23 +118,7 @@ body {
   text-decoration: underline;
 }
 
-/* Estilos JAP */
-footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
 
-footer p {
-  margin-bottom: 0.25rem;
-}
-
-nav a {
-  text-decoration: none;
-}
-
-main {
-  min-height: calc(100vh - 210px);
-}
 
 * {
   -webkit-box-sizing: content-box;

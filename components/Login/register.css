@@ -4,8 +4,9 @@ html {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
-  background-color: gainsboro;
+   min-height: calc(100vh - 210px);
   display: flex;
+  align-items: center;
 }
 
 .letra-h2 {
@@ -19,6 +20,7 @@ body {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 1px 15px gray;
+  
 }
 
 .texto-input {
@@ -35,6 +37,7 @@ body {
   width: 96%;
   padding: 5px;
   border: 1px solid black;
+  /* border: 1px solid #fd7e14; */
   border-radius: 3px;
 }
 

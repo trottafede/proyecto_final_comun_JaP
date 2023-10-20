@@ -190,7 +190,7 @@ h1 {
   width: 12px;
   border-radius: 3px;
   content: "";
-  left: 23px;
+  left: 10px;
   bottom: 23px;
   opacity: 0;
   z-index: 1;
@@ -266,4 +266,36 @@ h1 {
   width: 100%; /* Ancho máximo del párrafo */
   overflow-wrap: break-word;
   margin-bottom: 0;
+}
+
+
+/* Titulo */
+
+.escribiendo{
+  width: 400px;
+  animation: efecto 6s steps(20), pleca 6s step-end forwards;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: solid 3px;
+  font-family: monospace;
+  font-size: 33px;
+}
+
+@keyframes efecto{
+  0%{
+    width: 0;
+  }
+  40%,
+  60% {
+    width: 400px;
+  }
+  100%{
+    width: 400px;
+  }
+}
+
+@keyframes pleca{
+  100%{
+    border-right:white;
+  }
 }

@@ -1,7 +1,8 @@
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
-  background: url("../img/cover_back.png");
+  /* background: url("../img/cover_back.png"); */
+  background: url("../img/b.png");
   /* background: url("../img/asd.png"); */
   background-size: contain;
   background-position: center;
@@ -27,7 +28,7 @@
   }
   .jumbotron {
     height: 30vh;
-    background: url("../img/login.png");
+    background: url("../img/login2.png");
     background-size: contain;
     background-repeat: no-repeat;
   }

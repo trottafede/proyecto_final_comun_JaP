@@ -193,7 +193,7 @@ const showOrderDetails = () => {
   }
   order_details_total_price.innerHTML = "USD " + total_to_HTML;
   order_details_total_price_mobile.innerHTML = "USD " + total_to_HTML;
-  order_details_delivery_price.innerHTML = "USD " + costo_envio;
+  order_details_delivery_price.innerHTML = costo_envio;
   order_details_sub_total_price.innerHTML = "USD " + total;
 
   if (user.address != null) {
