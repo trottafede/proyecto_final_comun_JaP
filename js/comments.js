@@ -76,7 +76,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     let boxComments = "";
 
     for (const [index, comment] of allComments.entries()) {
-      console.log(comment);
       const uniqueID = `comment-${index}`; // Genera un identificador único
       boxComments += `
       <div class="accordion-item" style="margin-bottom: 30px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;">

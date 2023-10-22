@@ -1,7 +1,6 @@
 /* Dark Mode */
 .dark_mode {
   background-color: #212121;
-  
 }
 
 .dark_mode .card {
@@ -21,7 +20,15 @@
   color: #fff;
 }
 
+.dark_mode h3 {
+  color: #fff;
+}
+
 .dark_mode h4 {
+  color: #fff;
+}
+
+.dark_mode h5 {
   color: #fff;
 }
 
@@ -69,13 +76,13 @@
   background-color: #333333;
 }
 
-.dark_mode .accordion-item{
+.dark_mode .accordion-item {
   background-color: #333333;
   color: #fff;
 }
 
 .dark_mode .form-control {
-  background-color:  #333333 !important;
+  background-color: #333333 !important;
   color: #fff;
 }
 .dark_mode textarea:active {
@@ -104,18 +111,17 @@
   border: 1px solid #ced4da;
 }
 
-.dark_mode .dz-clickable{
+.dark_mode .dz-clickable {
   background-color: #333333 !important;
   color: #fff;
 }
 
- .dark_mode #sell_ul_dark_mode li {
+.dark_mode #sell_ul_dark_mode li {
   background-color: #333333 !important;
   color: #fff;
 }
 
 /* light_mode ------------------------------------------------------------*/
-
 
 .light_mode {
   background-color: #fff;
@@ -125,7 +131,7 @@
   color: #fff;
 }
 
-.light_mode p{
+.light_mode p {
   color: black;
 }
 .light_mode h1 {

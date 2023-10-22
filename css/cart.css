@@ -286,3 +286,7 @@ p {
   background-color: #171717;
   transform: rotateY(180deg);
 }
+
+.flip-card{
+  margin: 0 auto;
+}

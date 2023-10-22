@@ -1,3 +1,11 @@
 .card {
   cursor: pointer;
 }
+
+h1 {
+  margin: 40px 0;
+}
+
+h4 {
+  margin: 40px 0;
+}

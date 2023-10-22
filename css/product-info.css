@@ -19,9 +19,10 @@ h1 {
 .accordion {
   margin: 60px 0;
 }
+
 .accordion-item {
   margin-bottom: 30px;
-  border-bottom-left-radius: 50px;
+  border-bottom-left-radius: 50px; 
   border-bottom-right-radius: 50px;
 }
 
@@ -52,8 +53,18 @@ h1 {
   width: 100%; /* Ocupar todo el ancho del contenedor */
 }
 
+.p_info_description {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  color: rgb(130, 130, 130) !important;
+  font-size: 1rem;
+}
+
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+
   #carrusel_nahuel,
   #fulImgBox {
     display: none;
@@ -64,9 +75,24 @@ h1 {
     height: auto;
     padding: 0;
   }
+
   .info {
     max-width: 100%;
   }
+
+  .card{
+    display: block;
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .p_info_description {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -83,6 +109,29 @@ h1 {
   .info {
     max-width: 100%;
   }
+
+  .card{
+    display: flex;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  
+
+  .card{
+    display: flex;
+    width: 50%;
+  }
+
+  /* .p_info_description {
+    display: flex;
+  } */
+
+
+  /* .p_info_description{
+    display: none;
+  }  */
+
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -94,6 +143,11 @@ h1 {
 
   #carrusel_nacho {
     display: flex;
+  }
+
+  .card{
+    display: flex;
+    width: 50%;
   }
 }
 
@@ -154,6 +208,15 @@ h1 {
   #closeSpan {
     font-size: 2rem;
   }
+  
+  .card{
+    display: flex;
+    width: 50%;
+  }
+
+  .p_info_description{
+    display: flex;
+  }
 }
 
 /* boton añadir carrito */
@@ -162,7 +225,7 @@ h1 {
   width: 155px;
   height: 50px;
   border: none;
-  border-radius: 0px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,31 +334,40 @@ h1 {
 
 /* Titulo */
 
-.escribiendo{
-  width: 400px;
-  animation: efecto 6s steps(20), pleca 6s step-end forwards;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: solid 3px;
+h1 {
   font-family: monospace;
   font-size: 33px;
 }
 
-@keyframes efecto{
-  0%{
-    width: 0;
-  }
-  40%,
-  60% {
-    width: 400px;
-  }
-  100%{
-    width: 400px;
-  }
+.contenedor_titulo{
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes pleca{
-  100%{
-    border-right:white;
-  }
+.dark_mode #cargarDatos {
+  background-color: #fff !important;
+  color: black;
 }
+
+.dark_mode #cargarDatos svg {
+  color: black;
+}
+
+.dark_mode #white_mode_svg{
+  display:none;
+}
+.light_mode #dark_mode_svg{
+  display:none;
+}
+
+.general_rating {
+  margin-bottom: 30px;
+}
+
+.general_rating i{
+  color: rgb(232, 197, 0);
+  cursor: pointer;
+}
+
+/* productos relacionados */
+
