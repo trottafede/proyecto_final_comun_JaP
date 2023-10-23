@@ -73,3 +73,45 @@ col-xs-  col-sm- col-md- col-lg- col-xl-
 Naranja JaP? #fd7e14
 #FFC800;
 #F09100
+
+
+================================================================================
+Entrega 6
+========================================================================
+
+Participantes de esta entrega:
+1) Nahuel  - Punto - Punto 2 -
+2) Hernan  - Punto - Punto 3 - agregar validaciones, alerts de bootstrap
+3) Chiara  - Punto - Punto 1 - Completado
+4) Ignacio - Punto - Desafiate - Completado
+
+Pautas
+En esta entrega continuaremos con el carrito de compras para terminar de implementar las funcionalidades del mismo:
+
+1) Agrega un espacio donde se visualicen:
+El subtotal general: la suma de los subtotales (costo por cantidad) de todos los artículos
+El costo de envío: calculado a partir del envío seleccionado por el usuario (5%, 7% o 15%) y siendo un porcentaje del valor anterior (el subtotal).
+El total a pagar: la suma de los dos valores anteriores
+
+Los 3 valores deberán actualizarse en tiempo real cuando se modifique el tipo de envío o los artículos en el carrito.
+
+Todos los valores deberán ser mostrados en dólares.
+
+
+2) Añadir un modal que permita establecer una forma de pago e introducir los datos de la misma
+Las mismas deberán ser tarjeta de crédito o transferencia bancaria, y deberán desactivarse los campos de la opción no seleccionada
+
+
+3) Añade también un botón para confirmar la compra
+
+Al presionarlo deberán ejecutarse las siguientes validaciones (dando el feedback correspondiente al usuario):
+
+Los campos calle, número y esquina, no podrán estar vacíos.
+Deberá estar seleccionada la forma de envío.
+La cantidad para cada artículo deberá estar definida y ser mayor a 0
+Deberá haberse seleccionado una forma de pago
+Los campos, para la forma de pago seleccionada, no podrán estar vacíos
+
+¡Desafiate!
+A nuestro carrito solamente le falta la funcionalidad de eliminar artículos.
+Desarróllala teniendo en cuenta que se deberán actualizar los totales cada vez que se elimine un artículo.

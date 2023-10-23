@@ -1,31 +1,44 @@
 const prodID = localStorage.getItem("prodID");
 const catID = localStorage.getItem("catID");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let largo_comentarios = 0;
+let objeto = {};
 const apiUrl =
   "https://japceibal.github.io/emercado-api/products/" + prodID + ".json";
 
 const general_rating = () => {
-  // let result = ``;
-  // const storedComments = JSON.parse(localStorage.getItem("comments"));
-  // largo_comentarios = storedComments[prodID].length;
+  let result = ``;
+  const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
+  let largo_comentarios = 0;
+  let promedio = 0;
+  if (
+    storedComments[prodID] != undefined &&
+    storedComments[prodID].length > 0
+  ) {
+    largo_comentarios = storedComments[prodID].length;
 
-  // let puntaje = 0;
-  // let cantidad_puntajes = 0;
-  // for (const comment of storedComments[prodID]) {
-  //   puntaje += parseInt(comment.score);
-  //   cantidad_puntajes++;
-  // }
+    let puntaje = 0;
+    let cantidad_puntajes = 0;
+    for (const comment of storedComments[prodID]) {
+      puntaje += parseInt(comment.score);
+      cantidad_puntajes++;
+    }
 
-  // let promedio = puntaje / cantidad_puntajes;
-  // for (let index = 0; index < promedio - 1; index++) {
-  //   result += `<i class="fa-solid fa-star"></i>`;
-  // }
+    promedio = puntaje / cantidad_puntajes;
+    for (let index = 0; index < promedio - 1; index++) {
+      result += `<i class="fa-solid fa-star"></i>`;
+    }
+  }
 
-  // return result;
+  if (result == "") {
+    result = `No comments yet, be the <a href="">first one</a>`;
+  } else {
+    result = `${promedio.toFixed(2)} ` + result + ` (${largo_comentarios})`;
+  }
+
+  return result;
 };
 
-function showProductInfo(objeto) {
+function showProductInfo() {
   console.log(objeto);
   const carrusel = document.getElementById("carrusel");
   const description = document.getElementById("description");
@@ -36,7 +49,7 @@ function showProductInfo(objeto) {
       }</a> > ${objeto.name}</h1>
   </div>
   <p class="p_info_description">Nuevo | +${objeto.soldCount} vendidos </p>
-  <p class="general_rating"> 4.8 ${general_rating()} (${largo_comentarios})</p>
+  <p class="general_rating"> ${general_rating()} </p>
   <section id="carrusel_nahuel">
     <img src="${objeto.images[0]}" onclick="openFulImg(this.src)">
     <img src="${objeto.images[1]}" onclick="openFulImg(this.src)">
@@ -107,40 +120,43 @@ function showProductInfo(objeto) {
   document
     .getElementById("cargarDatos")
     .addEventListener("click", () => mandarCarrito(objeto));
-} // eso trabaja fede, dale para adelante
-
-fetch(apiUrl)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("No se pudo obtener el objeto");
-    }
-    return response.json();
-  })
-  .then((data) => {
-    const objetoID = parseInt(prodID);
-    // Verificar si el objeto con el ID específico existe en data
-    if (data.id === objetoID) {
-      showProductInfo(data);
-      showRelatedProducts(data.relatedProducts);
-    } else {
-      console.log("Objeto no encontrado con ID", objetoID);
-    }
-  })
-  .catch((error) => {
-    console.error("Error:", error);
-  });
-
-const fulImgBox = document.getElementById("fulImgBox");
-fulImg = document.getElementById("fulImg");
-
-function closeImg() {
-  fulImgBox.style.display = "none";
 }
 
-function openFulImg(imageUrl) {
-  fulImgBox.style.display = "flex";
-  fulImg.src = imageUrl;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  fetch(apiUrl)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo obtener el objeto");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      const objetoID = parseInt(prodID);
+      // Verificar si el objeto con el ID específico existe en data
+      if (data.id === objetoID) {
+        objeto = data;
+        showProductInfo();
+        showRelatedProducts(data.relatedProducts);
+      } else {
+        console.log("Objeto no encontrado con ID", objetoID);
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+
+  const fulImgBox = document.getElementById("fulImgBox");
+  fulImg = document.getElementById("fulImg");
+
+  function closeImg() {
+    fulImgBox.style.display = "none";
+  }
+
+  function openFulImg(imageUrl) {
+    fulImgBox.style.display = "flex";
+    fulImg.src = imageUrl;
+  }
+});
 
 let cantidad = 0;
 
@@ -156,6 +172,9 @@ function mandarCarrito(producto) {
   actualizarCarrito();
 }
 
+function show() {
+  showProductInfo();
+}
 function actualizarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }

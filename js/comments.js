@@ -1,3 +1,4 @@
+
 const commentID = localStorage.getItem("prodID");
 const user = localStorage.getItem("user");
 const apiComments =
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   comentBtn.addEventListener("click", function (event) {
     event.preventDefault();
     handleSendComment();
+    showProductInfo();
   });
 
   // Cargar datos de la API solo una vez para que no se repitan
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const commentsDeArchivo = await fetch(apiComments);
     const commentsDeArchivoData = await commentsDeArchivo.json();
     comentarios[commentID] = commentsDeArchivoData;
+    refreshStorage();
   }
 
   const comentariosDelProducto = comentarios[commentID] || [];
@@ -65,10 +68,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       document.getElementById("btnComent").value = "";
     } else alert("Comentario vacío");
-  };
 
-  const refreshStorage = () => {
-    localStorage.setItem("comments", JSON.stringify(comentarios));
+    
   };
 
   function showAllComments(commentID) {
@@ -81,7 +82,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       <div class="accordion-item" style="margin-bottom: 30px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;">
         <h2 class="accordion-header">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
-            <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(comment.score)}
+            <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(
+        comment.score
+      )}
           </button>
         </h2>
         <div id="${uniqueID}" class="accordion-collapse collapse show">
@@ -99,7 +102,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 const getRating = () => {
   const ratingInputs = document.querySelectorAll('input[type="radio"]');
-
   ratingInputs.forEach((input) => {
     input.addEventListener("change", function () {
       selectedRating = this.value;
@@ -110,7 +112,6 @@ const getRating = () => {
 
 function estrellas(cantidad) {
   let scoreTotal = "";
-
   for (let i = 1; i <= 5; i++) {
     if (i <= cantidad) {
       scoreTotal += '<i class="fa fa-star checked"></i>';
@@ -120,3 +121,8 @@ function estrellas(cantidad) {
   }
   return scoreTotal;
 }
+
+const refreshStorage = () => {
+  localStorage.setItem("comments", JSON.stringify(comentarios));
+};
+

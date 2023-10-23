@@ -1,4 +1,15 @@
-.jumbotron {
+.dark_mode .jumbotron {
+  height: 50vh;
+  padding: 5em inherit;
+  /* background: url("../img/cover_back.png"); */
+  background: url("../img/cover_back1.png");
+  /* background: url("../img/asd.png"); */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.light_mode .jumbotron {
   height: 50vh;
   padding: 5em inherit;
   /* background: url("../img/cover_back.png"); */

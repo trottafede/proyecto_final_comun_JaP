@@ -193,7 +193,7 @@ const showOrderDetails = () => {
   }
   order_details_total_price.innerHTML = "USD " + total_to_HTML;
   order_details_total_price_mobile.innerHTML = "USD " + total_to_HTML;
-  order_details_delivery_price.innerHTML = costo_envio;
+  order_details_delivery_price.innerHTML = "USD " + Math.round(costo_envio);
   order_details_sub_total_price.innerHTML = "USD " + total;
 
   if (user.address != null) {
@@ -202,3 +202,31 @@ const showOrderDetails = () => {
     optionToSelect.selected = true;
   }
 };
+
+
+/* forma de pago */
+function formaDePago() {
+  const credito = document.getElementById('credit');
+  const debito = document.getElementById('debit');
+  const formDebito = document.getElementById('formDebito');
+  const formCredito = document.getElementById('formCredito');
+  let elementosDebito = formDebito.elements;
+  let elementosCredito = formCredito.elements;
+
+  if (credito.checked) {
+    for (var i = 0; i < elementosDebito.length; i++) {
+      elementosDebito[i].disabled = true;
+    }
+    for (var i = 0; i < elementosCredito.length; i++) {
+      elementosCredito[i].disabled = false;
+    }
+  }else if(debito.checked) {
+    for (var i = 0; i < elementosCredito.length; i++) {
+      elementosCredito[i].disabled = true;
+    }
+    for (var i = 0; i < elementosDebito.length; i++) {
+      elementosDebito[i].disabled = false;
+    }
+  }
+}
+
