@@ -30,7 +30,7 @@ const general_rating = () => {
   }
 
   if (result == "") {
-    result = `No comments yet, be the <a href="">first one</a>`;
+    result = `No hay comentarios, <a href="">se el primero</a>`;
   } else {
     result = `${promedio.toFixed(2)} ` + result + ` (${largo_comentarios})`;
   }
@@ -48,8 +48,6 @@ function showProductInfo() {
         objeto.category
       }</a> > ${objeto.name}</h1>
   </div>
-  <p class="p_info_description">Nuevo | +${objeto.soldCount} vendidos </p>
-  <p class="general_rating"> ${general_rating()} </p>
   <section id="carrusel_nahuel">
     <img src="${objeto.images[0]}" onclick="openFulImg(this.src)">
     <img src="${objeto.images[1]}" onclick="openFulImg(this.src)">
@@ -105,6 +103,8 @@ function showProductInfo() {
   <div class="col-12 product_description">
     <h4>Descripción</h4>
     <p>${objeto.description}</p>
+    <p class="p_info_description">Nuevo | +${objeto.soldCount} vendidos </p>
+    <p class="general_rating"> ${general_rating()} </p>
     <h4>Costo</h4>
     <p>${objeto.currency} ${objeto.cost}</p>
     <p>${other_currency(objeto.currency, objeto.cost)}</p>

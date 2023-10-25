@@ -29,11 +29,6 @@
   <body class="dark_mode">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
 
-    <div class="dark_mode div_flotante_precio">
-      <p>Total <span id="order_details_total_price_mobile"></span></p>
-      <button class="btn btn-outline-success">Finalizar compra</button>
-    </div>
-
     <main id="carrito">
       <div class="container">
         <h1 class="dark_mode">Carrito de Compras</h1>
@@ -53,47 +48,50 @@
           </table>
         </div>
 
-        <div class="row tipo_de_envio_y_detalle_pedido_section">
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <h4>Tipo de Envío</h4>
-            <div class="botones-radio">
-              <input
-                class="form-check-input dark_mode"
-                type="radio"
-                id="premium"
-                name="envio"
-                value="1"
-              />
-              <label class="dark_mode form-check-label" for="premium">
-                Premium 2 a 5 días (15%)</label
-              >
-              <br />
-              <input
-                class="form-check-input dark_mode"
-                type="radio"
-                id="express"
-                name="envio"
-                value="2"
-              />
-              <label class="dark_mode form-check-label" for="express">
-                Express 5 a 8 días (7%)</label
-              >
-              <br />
-              <input
-                class="form-check-input dark_mode"
-                type="radio"
-                id="standard"
-                name="envio"
-                value="3"
-                checked
-              />
-              <label class="dark_mode form-check-label" for="standard">
-                Standard 12 a 15 días (5%)</label
-              >
-            </div>
-            <h4 class="dark_mode">Direccion de envio</h4>
+        <form id="submit_form" class="needs-validation" novalidate action="">
+          <div class="row tipo_de_envio_y_detalle_pedido_section">
+            <div class="col-sm-12 col-md-12 col-lg-6">
+              <h4>Tipo de Envío</h4>
+              <div class="botones-radio">
+                <input
+                  class="form-check-input dark_mode"
+                  type="radio"
+                  id="premium"
+                  name="envio"
+                  value="1"
+                  required
+                />
+                <label class="dark_mode form-check-label" for="premium">
+                  Premium 2 a 5 días (15%)</label
+                >
+                <br />
+                <input
+                  class="form-check-input dark_mode"
+                  type="radio"
+                  id="express"
+                  name="envio"
+                  value="2"
+                  required
+                />
+                <label class="dark_mode form-check-label" for="express">
+                  Express 5 a 8 días (7%)</label
+                >
+                <br />
+                <input
+                  class="form-check-input dark_mode"
+                  type="radio"
+                  id="standard"
+                  name="envio"
+                  value="3"
+                  checked
+                  required
+                />
+                <label class="dark_mode form-check-label" for="standard">
+                  Standard 12 a 15 días (5%)</label
+                >
+              </div>
+              <h4 class="dark_mode">Direccion de envio</h4>
 
-            <form onsubmit="handleSaveDirections()">
               <div class="mb-3">
                 <label for="select_departamento" class="form-label dark_mode"
                   >Departamento:</label
@@ -101,6 +99,7 @@
                 <select
                   id="select_departamento"
                   class="form-select mb-3"
+                  required
                   aria-label="Default select example"
                 >
                   <option value="Artigas">Artigas</option>
@@ -168,158 +167,215 @@
               </div>
 
               <div class="mb-3">
-                <button class="btn btn-outline-primary">
-                  Guardar direccion
-                </button>
+                <span
+                  onclick="handleSaveDirections()"
+                  class="btn btn-outline-primary"
+                >
+                  Guardar dirección
+                </span>
               </div>
-            </form>
-          </div>
-
-          <!-- Detalle del pedido -->
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <h4 class="detalle_pedido_titulo">Detalle del pedido</h4>
-            <div class="detalle_pedido_cambiar_cuenta">
-              <p id="order_details_email"></p>
-              <a href="">Cambiar cuenta</a>
-            </div>
-            <hr />
-            <div class="detalle_pedido_cambiar_cuenta">
-              <p>
-                Direccion de envio: <br />
-                <span id="order_details_info_calle"></span>
-              </p>
-            </div>
-            <hr />
-            <!-- <div class="detalle_pedido_cambiar_cuenta">
-              <p>
-                Costo de envio: <br />
-                <span id="order_details_delivery_info"></span>
-              </p>
-            </div>
-            <hr /> -->
-            <div class="detalle_pedido_cambiar_cuenta">
-              <h3>Costos</h3>
-              <ul>
-                <li>
-                  <i
-                    >Subtotal: <span id="order_details_sub_total_price"></span
-                  ></i>
-                </li>
-                <li>
-                  <i
-                    >Costo Envio: <span id="order_details_delivery_price"></span
-                  ></i>
-                </li>
-              </ul>
-              <p>
-                <strong
-                  >Costo total: <span id="order_details_total_price"></span
-                ></strong>
-              </p>
             </div>
 
-            <div class="boton_proceder_al_pago mb-3">
-              <button
-                onclick="showOrderDetails()"
-                class="btn btn-outline-success"
-                id="proceder-pago"
-              >
-                Finalizar compra
-              </button>
-            </div>
-          </div>
-        </div>
+            <!-- Detalle del pedido -->
+            <div class="col-sm-12 col-md-12 col-lg-6">
+              <h4 class="detalle_pedido_titulo">Detalle del pedido</h4>
+              <div class="detalle_pedido_cambiar_cuenta">
+                <p id="order_details_email"></p>
+                <a href="">Cambiar cuenta</a>
+              </div>
+              <hr />
+              <div class="detalle_pedido_cambiar_cuenta">
+                <p>
+                  Dirección de envio: <br />
+                  <span id="order_details_info_calle"></span>
+                </p>
+              </div>
+              <hr />
+              <div class="detalle_pedido_cambiar_cuenta">
+                <h3>Costos</h3>
+                <ul>
+                  <li>
+                    <i
+                      >Subtotal: <span id="order_details_sub_total_price"></span
+                    ></i>
+                  </li>
+                  <li>
+                    <i
+                      >Costo Envío:
+                      <span id="order_details_delivery_price"></span
+                    ></i>
+                  </li>
+                </ul>
+                <p>
+                  <strong
+                    >Costo total: <span id="order_details_total_price"></span
+                  ></strong>
+                </p>
+              </div>
 
-        <h4 class="dark_mode">Forma de Pago</h4>
-        <div>
-          <!-- Button trigger modal -->
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Añadir forma de Pago
-          </button>
-
-          <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Metodo de Pago
-                  </h1>
-                  <button
+              <h4 class="dark_mode">Forma de Pago</h4>
+              <div>
+                <!-- Button trigger modal -->
+                <p>
+                  Transferencia bancaria:
+                  <a
                     type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    style="color: blue"
+                  >
+                    Seleccionar
+                  </a>
+                </p>
+
+                <div id="hello_select_me" class="invalid-feedback">
+                  Selecciona un metodo de pago
                 </div>
-                <div class="modal-body">
-                  <div>
-                    <label
-                      ><input
-                        type="radio"
-                        name="tarjeta"
-                        value="1"
-                        id="credit"
-                        onclick="formaDePago()"
-                      />Tarjeta de Credito</label
-                    >
-                    <form id="formCredito">
-                      <label for="numeroTarjeta">Numero de tarjeta</label><br />
-                      <input
-                        type="text"
-                        name="numeroTarjeta"
-                        id="numTarjeta"
-                        required
-                      /><br />
-                      <label for="code">Codigo de seg.</label><br />
-                      <input type="text" name="code" id="code" /><br />
-                      <label for="ven">Vencimiento(MM/AA)</label><br />
-                      <input type="text" name="ven" id="ven" />
-                    </form>
-                    <hr />
-                    <label
-                      ><input
-                        type="radio"
-                        name="tarjeta"
-                        value="2"
-                        id="debit"
-                        onclick="formaDePago()"
-                      />Transferencia Bancaria</label
-                    >
-                    <form id="formDebito">
-                      <label for="numCuenta">Numero de cuenta</label><br />
-                      <input type="text" name="numCuenta" id="numCuenta" />
-                    </form>
+
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header dark_mode">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          Método de Pago
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close dark_mode"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body dark_mode">
+                        <div>
+                          <div class="form-check">
+                            <label class="form-check-label" for="credit"
+                              >Tarjeta de Crédito</label
+                            >
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="tarjeta"
+                              value="1"
+                              id="credit"
+                              onclick="formaDePago()"
+                            />
+                          </div>
+                          <br />
+
+                          <label for="numeroTarjeta">Número de tarjeta</label
+                          ><br />
+                          <input
+                            class="form-control credito"
+                            type="text"
+                            name="numeroTarjeta"
+                            id="numTarjeta"
+                            required
+                          /><br />
+                          <label for="code">Código de seg.</label><br />
+                          <input
+                            class="form-control credito"
+                            required
+                            type="text"
+                            name="code"
+                            id="code"
+                          /><br />
+                          <label for="ven">Vencimiento(MM/AA)</label><br />
+                          <input
+                            class="form-control credito"
+                            required
+                            type="text"
+                            name="ven"
+                            id="ven"
+                          />
+                          <hr />
+                          <div class="form-check">
+                            <input
+                              type="radio"
+                              class="form-check-input"
+                              id="debit"
+                              name="tarjeta"
+                              onclick="formaDePago()"
+                              value="2"
+                              required
+                            />
+                            <label for="debit" class="form-check-label"
+                              >Transferencia Bancaria</label
+                            >
+                          </div>
+
+                          <br />
+                          <label for="numCuenta">Número de cuenta</label><br />
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="numCuenta"
+                            id="numCuenta"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="modal-footer dark_mode">
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          data-bs-dismiss="modal"
+                        >
+                          Guardar Cambios
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Guardar Cambios
-                  </button>
-                </div>
+              </div>
+
+              <div class="boton_proceder_al_pago mb-3">
+                <button
+                  class="btn btn-outline-success"
+                  id="proceder-pago"
+                  type="submit"
+                >
+                  Finalizar compra
+                </button>
+              </div>
+
+              <style>
+                .alert-fade {
+                  opacity: 1;
+                  transition: opacity 1s ease;
+                }
+
+                .alert-fade.fade-out {
+                  opacity: 0;
+                }
+              </style>
+
+              <div
+                id="alert_size"
+                class="alert alert-success alert-dismissible alert-fade"
+                role="alert"
+              >
+                <strong>Comprado de manera exitosa</strong>
               </div>
             </div>
           </div>
-        </div>
+
+          <div class="dark_mode div_flotante_precio">
+            <p>Total <span id="order_details_total_price_mobile"></span></p>
+            <button type="submit" class="btn btn-outline-success">
+              Finalizar compra
+            </button>
+          </div>
+        </form>
       </div>
     </main>
+
     <footer class="text-muted"></footer>
     <div id="spinner-wrapper">
       <div class="lds-ring">
@@ -329,6 +385,7 @@
         <div></div>
       </div>
     </div>
+
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/cart.js"></script>

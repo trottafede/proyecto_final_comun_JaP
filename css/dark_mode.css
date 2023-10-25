@@ -121,6 +121,10 @@
   color: #fff;
 }
 
+.dark_mode .form-control:disabled{
+  background-color: rgb(162, 162, 162) !important;
+}
+
 /* light_mode ------------------------------------------------------------*/
 
 .light_mode {

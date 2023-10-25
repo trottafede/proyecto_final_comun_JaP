@@ -80,7 +80,7 @@ Entrega 6
 ========================================================================
 
 Participantes de esta entrega:
-1) Nahuel  - Punto - Punto 2 -
+1) Nahuel  - Punto - Punto 2 - - Completo
 2) Hernan  - Punto - Punto 3 - agregar validaciones, alerts de bootstrap
 3) Chiara  - Punto - Punto 1 - Completado
 4) Ignacio - Punto - Desafiate - Completado
@@ -115,3 +115,4 @@ Los campos, para la forma de pago seleccionada, no podrán estar vacíos
 ¡Desafiate!
 A nuestro carrito solamente le falta la funcionalidad de eliminar artículos.
 Desarróllala teniendo en cuenta que se deberán actualizar los totales cada vez que se elimine un artículo.
+
