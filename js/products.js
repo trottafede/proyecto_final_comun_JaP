@@ -1,3 +1,4 @@
+// Obtener el ID de la categoría desde el almacenamiento local
 let catID = localStorage.getItem("catID");
 let url = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
 
@@ -10,7 +11,7 @@ let minCount = undefined;
 let maxCount = undefined;
 //Cant.
 
-//
+// Definir funciones de ordenamiento para las categorías
 function sortCategories(criteria, array) {
   let result = [];
   if (criteria === ORDER_ASC_BY_NAME) {
@@ -50,12 +51,12 @@ function sortCategories(criteria, array) {
 
   return result;
 }
-
+// Establecer el ID del producto en el almacenamiento local y navegar a la página de información del producto
 function setProdID(id) {
   localStorage.setItem("prodID", id);
   window.location = "product-info.html";
 }
-
+// Mostrar la lista de categorías con los filtros aplicados
 function showCategoriesList(products) {
   let htmlContentToAppend = "";
   for (let i = 0; i < products.length; i++) {
@@ -83,7 +84,7 @@ function showCategoriesList(products) {
       htmlContentToAppend;
   }
 }
-
+// Ordenar las categorías y actualizar la lista mostrada
 function sortAndShowCategories(sortCriteria, categoriesArray) {
   currentSortCriteria = sortCriteria;
   if (categoriesArray != undefined) {
@@ -159,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
       showCategoriesList(currentCategoriesArray);
     });
 });
-
+// Definir y inicializar la funcionalidad de búsqueda
 const searchButtonLogic = () => {
   let dataListOptions = "";
   for (const category of currentCategoriesArray) {
@@ -179,6 +180,9 @@ const searchButtonLogic = () => {
     .addEventListener("input", handleSearch);
 };
 
+ // Obtener el texto de búsqueda desde el campo de entrada
+  // Filtrar productos en función del texto de búsqueda
+  // Actualizar la lista mostrada con productos filtrados
 const handleSearch = () => {
   const searchText = document.getElementById("searchInput").value;
   //filtrar

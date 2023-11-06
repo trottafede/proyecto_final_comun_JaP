@@ -28,12 +28,10 @@ Pauta 5) -> Completo!!! - Federico
 -Todos deben mostrarse tal como el que viene del servidor, y también deben modificar su subtotal según varíe la cantidad.
 
 
-
-Entrega 6:
+Entrega 5:
 --------------------
 
 Tareas bonus
---------------------
 
 1) Prodcuts.html - en mobile se rompe el coso del filtro
 
@@ -48,36 +46,8 @@ Tareas bonus
 6) En carrito, en mobile, al hacer click se le podria dar al usuario mas info del item en la tabla. Mas info como por ejemplo poder aumentar la cantidad y poder borrar el item.
 
 
-
-// Boostratp breakpoints
-<576px  ≥576px  ≥768px  ≥992px  ≥1200px
-col-xs-  col-sm- col-md- col-lg- col-xl-
-
-
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {...}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {...}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {...}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {...}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {...}
-
-Naranja JaP? #fd7e14
-#FFC800;
-#F09100
-
-
-================================================================================
 Entrega 6
-========================================================================
+================================================================================
 
 Participantes de esta entrega:
 1) Nahuel  - Punto - Punto 2 - - Completo
@@ -116,3 +86,62 @@ Los campos, para la forma de pago seleccionada, no podrán estar vacíos
 A nuestro carrito solamente le falta la funcionalidad de eliminar artículos.
 Desarróllala teniendo en cuenta que se deberán actualizar los totales cada vez que se elimine un artículo.
 
+
+Entrega 7:
+================================================================================
+
+Puntos:
+1) 
+Se deberán mostrar campos para:
+Nombre*
+Segundo nombre
+Apellido*
+Segundo apellido
+E-mail*
+Teléfono de contacto
+
+Solamente se podrá ingresar al perfil si el usuario se encuentra logueado. Además, al momento de ingresar por primera vez, todos los campos se deben encontrar vacíos, excepto E-mail, que debe contener el ingresado por el usuario al momento del login.
+
+2) 
+Al presionar el botón para guardar los datos, se debe validar que los 
+campos obligatorios (*) se encuentren con valor, y de ser así, guardar en el almacenamiento local.
+
+3) 
+Luego del primer ingreso, las siguientes veces que se ingrese al perfil ya se 
+deben encontrar los datos cargados en los input listos para ser modificados por el usuario.
+
+4) 
+¡Desafiate!
+¿Sabías que también podemos guardar imágenes y otros archivos binarios a nivel local?
+
+Ofrece al usuario la posibilidad de guardar una imagen de perfil y muéstrasela. En caso de que no seleccione una muestra una imagen por defecto. 
+
+5) 
+Pauta Extra
+Teniendo en cuenta que esta será la última entrega en que trabajen a nivel de cliente, 
+es momento de revisar todo el sitio y realizarle las mejoras que consideremos adecuadas. 
+
+Dejamos algunas preguntas a modo de ejemplo:
+
+¿Mi código es legible y prolijo?
+¿Está ordenado y los nombres de variables y funciones son los adecuados?
+¿Dejé comentarios y documentación?
+¿Aplico las buenas prácticas trabajadas en clase?
+¿Cumple mi sitio con los criterios responsive design, los distintos componentes y listados se adaptan correctamente?
+¿Puedo hacer mejor algo que en las primeras pautas resolví de otra manera?
+
+Ten presente que esta pauta extra no será calificable, pero es importante lograr que el código se encuentre lo mejor posible ya que será un insumo importante para los tutores a la hora de calificar el Proyecto Final.
+
+
+Hacen video:
+Camila      -> Punto 1
+Franco      -> Punto 1
+Federico    -> Punto 3
+Gaston      -> Punto 2
+
+
+No hacen video:
+Hernan y Chiara -> Desafiate (Punto 4)
+
+
+-----------------------------------------------------

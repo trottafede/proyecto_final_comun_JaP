@@ -2,7 +2,7 @@ let carrito;
 let total = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
   let peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
   ocultarAlert();
 
