@@ -255,78 +255,33 @@
                       <div class="modal-body dark_mode">
                         <div>
                           <div class="form-check">
-                            <label class="form-check-label" for="credit"
-                              >Tarjeta de Crédito</label
-                            >
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="tarjeta"
-                              value="1"
-                              id="credit"
-                              onclick="formaDePago()"
-                            />
+                            <label class="form-check-label" for="credit">Tarjeta de Crédito</label>
+                            <input class="form-check-input" type="radio" name="tarjeta" value="1" id="credit" onclick="formaDePago()"/>
                           </div>
-                          <br />
+                          <br/>
 
-                          <label for="numeroTarjeta">Número de tarjeta</label
-                          ><br />
-                          <input
-                            class="form-control credito"
-                            type="text"
-                            name="numeroTarjeta"
-                            id="numTarjeta"
-                            required
-                          /><br />
+                          <label for="numeroTarjeta">Número de tarjeta</label>
+                          <br />
+                          <input class="form-control credito" type="text" name="numeroTarjeta" id="numTarjeta" required/>
+                          <br />
                           <label for="code">Código de seg.</label><br />
-                          <input
-                            class="form-control credito"
-                            required
-                            type="text"
-                            name="code"
-                            id="code"
-                          /><br />
-                          <label for="ven">Vencimiento(MM/AA)</label><br />
-                          <input
-                            class="form-control credito"
-                            required
-                            type="text"
-                            name="ven"
-                            id="ven"
-                          />
+                          <input class="form-control credito" required type="text" name="code" id="code"/>
+                          <br />
+                          <label for="ven">Vencimiento(MM/AA)</label>
+                          <br />
+                          <input class="form-control credito" required type="text" name="ven" id="ven"/>
                           <hr />
                           <div class="form-check">
-                            <input
-                              type="radio"
-                              class="form-check-input"
-                              id="debit"
-                              name="tarjeta"
-                              onclick="formaDePago()"
-                              value="2"
-                              required
-                            />
-                            <label for="debit" class="form-check-label"
-                              >Transferencia Bancaria</label
-                            >
+                            <input type="radio" class="form-check-input" id="debit" name="tarjeta" onclick="formaDePago()" value="2" required/>
+                            <label for="debit" class="form-check-label">Transferencia Bancaria</label>
                           </div>
-
                           <br />
                           <label for="numCuenta">Número de cuenta</label><br />
-                          <input
-                            class="form-control"
-                            type="text"
-                            name="numCuenta"
-                            id="numCuenta"
-                            required
-                          />
+                          <input class="form-control" type="text" name="numCuenta" id="numCuenta" required/>
                         </div>
                       </div>
                       <div class="modal-footer dark_mode">
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          data-bs-dismiss="modal"
-                        >
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
                           Guardar Cambios
                         </button>
                       </div>
