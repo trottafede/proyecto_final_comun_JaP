@@ -1,0 +1,66 @@
+/* ------ Css perfil ------ */
+
+#img_container {
+  display: flex;
+  justify-content: center;
+}
+
+#icons_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#icons_container i {
+  color: red;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#contenedor-perfil h1 {
+  text-align: center !important;
+  margin: 40px 0;
+}
+
+#contenedor-perfil .contenedor-inputs {
+  padding-top: 20px;
+  margin-top: 20px;
+  margin-left: 10%;
+  margin-right: 45%;
+}
+
+.image-upload {
+  text-align: center;
+  margin: 20px;
+}
+
+#image-preview {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+#btn-guardar {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  main {
+    margin-top: 40px;
+  }
+
+  #image-preview {
+    max-width: 100%;
+    max-height: 200px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  main {
+    margin-top: 40px;
+  }
+
+  #image-preview {
+    max-width: 100%;
+    max-height: 200px;
+  }
+}

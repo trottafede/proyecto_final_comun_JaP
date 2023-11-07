@@ -54,10 +54,10 @@ function showProductInfo() {
     <img src="${objeto.images[2]}" onclick="openFulImg(this.src)">
     <img src="${objeto.images[3]}" onclick="openFulImg(this.src)">
   </section>
-
-  <div id="carrusel_nacho" class="container">
+  
+  <div class="container" id="carrusel_nacho">
     <div class="row">
-      <div id="product_carousel" class="carousel slide" data-bs-touch="true" ></div>
+      <div id="product_carousel" class="carousel slide" data-bs-touch="true">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"  aria-label="Slide 2"></button>
@@ -89,6 +89,7 @@ function showProductInfo() {
       </div>
     </div>
   </div>
+  
   `;
 
   const descripton_to_html = `
@@ -228,3 +229,11 @@ const other_currency = (currency, cost) => {
     return "USD " + (cost / 40).toLocaleString("en-US");
   }
 };
+
+
+{/* <section id="carrusel_nahuel">
+    <img src="${objeto.images[0]}" onclick="openFulImg(this.src)">
+    <img src="${objeto.images[1]}" onclick="openFulImg(this.src)">
+    <img src="${objeto.images[2]}" onclick="openFulImg(this.src)">
+    <img src="${objeto.images[3]}" onclick="openFulImg(this.src)">
+  </section> */}

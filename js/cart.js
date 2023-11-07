@@ -3,13 +3,13 @@ let total = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
   carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
-  let peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
+  let peugeot = carrito.find((item) => item.name.includes("Peugeot 208")); 
   ocultarAlert();
-
+  // Agrega un evento de escucha al formulario de envío
   document.getElementById("submit_form").addEventListener("submit", (e) => {
     e.preventDefault();
     check_forma_de_pago();
-    //
+        // Obtiene el formulario y sus elementos de entrada
     const formulario = document.getElementById("submit_form");
     const inputs = formulario.getElementsByTagName("input");
 
@@ -47,11 +47,12 @@ function mostrarAlert() {
 function actualizarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-
+// Función para mostrar los productos en el carrito en una tabla HTML
 function mostrarProducto() {
   const table = document.getElementById("productos_del_carrito");
   let contenidoHtml = "";
   total = 0;
+   // Recorre los productos en el carrito
   for (const producto of carrito) {
     const id = producto.id;
     const name = producto.name;
@@ -63,7 +64,7 @@ function mostrarProducto() {
     if (currency == "UYU") {
       cost = cost / 40;
     }
-
+// Crea una fila en la tabla para cada producto
     contenidoHtml += `
     <tr>
       <td id="td_producto"><div class="img_container"><img src=${image} alt=""></div></td> 
@@ -75,6 +76,7 @@ function mostrarProducto() {
     }</span></strong></p></td>
       <td id="td_acciones"><i onclick="handleDelete(${id})" class="fa-solid fa-trash"></i></td>
     </tr>`;
+     // Actualiza el total del carrito
     total += cost * quantity;
   }
   table.innerHTML = contenidoHtml;
@@ -90,7 +92,7 @@ function mostrarProducto() {
     .getElementById("standard")
     .addEventListener("change", showOrderDetails);
 }
-
+// Función para reducir la cantidad de un producto en el carrito
 const handleOneLess = (id) => {
   const productoEncontrado = findProduct(id);
 
@@ -108,7 +110,7 @@ const handleOneLess = (id) => {
   actualizarCarrito();
   mostrarProducto();
 };
-
+// Función para aumentar la cantidad de un producto en el carrito
 const handleOneMore = (id) => {
   const productoEncontrado = findProduct(id);
 
@@ -118,7 +120,7 @@ const handleOneMore = (id) => {
   actualizarCarrito();
   mostrarProducto();
 };
-
+// Función para encontrar un producto en el carrito por su ID
 const findProduct = (id) => {
   const productoEncontrado = carrito.find((item) => item.id === id);
   return productoEncontrado;
@@ -135,7 +137,7 @@ function cambiarPropiedades(autoApi) {
   };
   return auto;
 }
-
+//  mostrar la dirección de envío del usuario si está almacenada
 const handleShowDirections = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   if (user.address) {
@@ -149,7 +151,7 @@ const handleShowDirections = () => {
     showOrderDetails();
   }
 };
-
+// eliminar un producto del carrito
 const handleDelete = (id) => {
   carrito = JSON.parse(localStorage.getItem("carrito"));
   carrito = carrito.filter((item) => item.id != id);
@@ -157,7 +159,7 @@ const handleDelete = (id) => {
   actualizarCarrito();
   mostrarProducto();
 };
-
+// Guardar la dirección de envío en el almacenamiento local
 const handleSaveDirections = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const input_calle = document.getElementById("input_calle").value;
@@ -181,7 +183,7 @@ const handleSaveDirections = () => {
   alert("Direccion guardada!");
   showOrderDetails();
 };
-
+// Mostrar los detalles del pedido
 const showOrderDetails = () => {
   const user = JSON.parse(localStorage.getItem("user"));
 

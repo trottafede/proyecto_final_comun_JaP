@@ -132,12 +132,9 @@ h4 {
   -moz-transition: 0.5s, color 0.1s;
 }
 
-
-
 html {
   scroll-behavior: smooth;
 }
-
 
 .fa {
   color: black;
@@ -146,7 +143,6 @@ html {
 .checked {
   color: orange;
 }
-
 
 /* Categories */
 #catList {
@@ -157,35 +153,3 @@ html {
   margin-top: 20px;
 }
 
-/* ------ Css perfil ------ */
-
-#contenedor-perfil h1{
-  text-align: center !important;
-}
-
-
-#contenedor-perfil .contenedor-inputs{
-  padding-top: 20px;
-  margin-left: 10%;
-  margin-right: 45%;
-}
-
-#delete-button {
-  display: flex;
-  transform: translate(490px);
-  bottom: 38px;
-}
-
-.image-upload {
-  text-align: center;
-  margin: 20px;
-}
-
-#image-preview {
-  max-width: 100%;
-  max-height: 300px;
-}
-
-#btn-guardar {
-  margin-top: 10px;
-}

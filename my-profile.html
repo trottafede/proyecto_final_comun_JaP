@@ -1,129 +1,197 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>eMercado - Todo lo que busques está aquí</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <link href="css/navbar.css" rel="stylesheet" />
-  <link href="css/footer.css" rel="stylesheet" />
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>eMercado - Todo lo que busques está aquí</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/my-profile.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="css/footer.css" rel="stylesheet" />
+    <link href="css/dark_mode.css" rel="stylesheet" />
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
-    }
-  </style>
-   <!-- font awesome -->
-   <script src="https://kit.fontawesome.com/2919f68f3c.js" crossorigin="anonymous"></script>
-</head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
-  <main>
-<div id="contenedor-perfil">
-  <h1 class="dark_mode">Perfil</h1>
-  
-<div class="contenedor-inputs">
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Primer Nombre*</span>
-    <input id="first_name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-  </div>
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Segundo Nombre</span>
-    <input id="second_name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Apellido*</span>
-    <input id="first_lastname" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-  </div>
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Segundo Apellido</span>
-    <input id="second_lastname" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
-  <div class="input-group mb-3">
-    <label for="miInput"></label><span class="input-group-text" id="inputGroup-sizing-default">E-mail*</span></label>
-    <input id="email" type="email" name="nombre" id="miInput" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-  </div>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2919f68f3c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Teléfono de contacto</span>
-    <input id="phone_number" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div>
+  <body class="dark_mode">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1"></nav>
+    <div class="container">
+      <div id="contenedor-perfil">
+        <h1 class="dark_mode">Perfil</h1>
+      </div>
 
-  <div class="input-group mb-3">
-    <div class="mb-3">
-      <label for="formFile" class="form-label" id="pfp">Elegir nueva foto de perfil</label>
-      <input class="form-control" type="file" id="formFile">
-      <button type="button" class="btn btn-danger" id="delete-button">Eliminar foto</button>
-    </div>
-  </div>
-
-
-  <div class="upload-img">
-    <img id="image-preview" src="./img/profile.jpg" alt="Preview">
-  </div>
-
-  <button id="btn-guardar" type="button" class="btn btn-primary" onclick="changePfp()">Guardar cambios</button>
-
-
-
-  <!-- Este modal anda raro
-  <div class="input-group mb-3">
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-      Launch demo modal
-    </button>
-
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div class="upload-img">
+            <div id="img_container">
+              <img id="image-preview" src="./img/profile.jpg" alt="Preview" />
+            </div>
           </div>
-          <div class="modal-body">
-            ...
+          <div id="icons_container">
+            <i class="fa-solid fa-trash" id="delete-img"></i>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <main>
+            <div class="contenedor-inputs">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >Primer Nombre*</span
+                >
+                <input
+                  id="first_name"
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default"
+                  required
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >Segundo Nombre</span
+                >
+                <input
+                  id="second_name"
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >Apellido*</span
+                >
+                <input
+                  id="first_lastname"
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default"
+                  required
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >Segundo Apellido</span
+                >
+                <input
+                  id="second_lastname"
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <label for="miInput"></label>
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >E-mail*</span
+                >
+
+                <input
+                  id="email"
+                  type="email"
+                  name="nombre"
+                  id="miInput"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default"
+                  required
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >Teléfono de contacto</span
+                >
+                <input
+                  id="phone_number"
+                  type="number"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <div class="mb-3">
+                  <label for="formFile" class="form-label" id="pfp"
+                    >Elegir nueva foto de perfil</label
+                  >
+                  <input class="form-control" type="file" id="formFile" />
+                </div>
+              </div>
+
+              <button id="btn-guardar" type="button" class="btn btn-primary">
+                Guardar cambios
+              </button>
+            </div>
+            <!-- Este modal anda raro
+      <div class="input-group mb-3">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Launch demo modal
+        </button>
+    
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
           </div>
+        </div>
+      </div> -->
+
+            <!-- </div> -->
+
+            <!-- </div> -->
+          </main>
         </div>
       </div>
     </div>
-  </div>
-  -->
-
-</div>
-
-
-</div>
-
-
-</div>
-
-  </main>
-  <footer class="text-muted"></footer>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="./navbar.js"></script>
-  <script src="./footer.js"></script>
-  <script src="js/validarUsuario.js"></script>
-  <script src="js/my-profile.js"></script>
-</body>
-
+    <footer class="text-muted"></footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="./navbar.js"></script>
+    <script src="./footer.js"></script>
+    <script src="js/validarUsuario.js"></script>
+    <script src="js/my-profile.js"></script>
+  </body>
 </html>
