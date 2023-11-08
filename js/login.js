@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
           console.log(user);
           if (user) {
             localStorage.setItem("user", JSON.stringify(user));
-            window.location.href = "../../index.html";
+            window.location.href = "./index.html";
           } else {
             alert("Login incorrecto!");
           }

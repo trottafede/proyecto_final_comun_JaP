@@ -161,8 +161,8 @@ init.js
 index.js --> OK
 comments.js    ->  chiara  OK 
 categories.js  ->  chiara  OK 
-register.js    ->  chiara 
+register.js    ->  chiara  ok 
 navbar.js  ->  Camila oka (?)
-footer.js?
+footer.js? --> 
 
 ## El punto 2 hay q hacer hoy -> Federico T

@@ -9,6 +9,7 @@ h1 {
 }
 
 .product_description h4 {
+  font-family: monospace;
   margin: 20px 0;
 }
 
@@ -17,8 +18,9 @@ h1 {
 }
 
 #productos_relacionados {
+  font-family: monospace;
   display: flex;
-  flex-wrap: wrap; /*agre*/
+  flex-wrap: wrap;
   cursor: pointer;
 }
 
