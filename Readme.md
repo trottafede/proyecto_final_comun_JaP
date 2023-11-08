@@ -140,7 +140,7 @@ dropzone.js
 
 ## Para arreglar
 
-product-info.js
+product-info.js 
 init.js
 index.js --> OK
 comments.js -> chiara OK

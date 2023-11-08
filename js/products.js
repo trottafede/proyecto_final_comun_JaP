@@ -184,7 +184,7 @@ const searchButtonLogic = () => {
   // Filtrar productos en función del texto de búsqueda
   // Actualizar la lista mostrada con productos filtrados
 const handleSearch = () => {
-  const searchText = document.getElementById("searchInput").value;
+  const searchText = document.getElementById("searchInput").value.toLowerCase();
   //filtrar
   const result = currentCategoriesArray.filter(
     (product) => product.name.toLowerCase().includes(searchText) || product.description.toLowerCase().includes(searchText)

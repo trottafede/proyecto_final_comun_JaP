@@ -27,14 +27,20 @@
   cursor: pointer;
 }
 
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   nav {
     margin-bottom: 50px;
   }
-  .jumbotron {
-    height: 30vh;
+  .light_mode .jumbotron {
+    height: 20vh;
+    background: url("../img/login.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .dark_mode .jumbotron {
+    height: 20vh;
     background: url("../img/login2.png");
     background-size: contain;
     background-repeat: no-repeat;

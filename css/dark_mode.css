@@ -12,6 +12,26 @@
   color: #fff;
 }
 
+.dark_mode td {
+  background-color: #212121;
+}
+
+.dark_mode td i {
+  color: #fff;
+}
+.dark_mode td span {
+  color: #fff;
+}
+
+.dark_mode th {
+  background-color: #212121;
+  color: #fff;
+}
+
+.dark_mode ::placeholder {
+  color: #fff;
+}
+
 .dark_mode h1 {
   color: #fff;
 }

@@ -15,9 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ${parsedUser.email}
       </a>
       <ul id="options_drop" class="dropdown-menu dark_mode">
+        <li class="nav-item"><a class="dropdown-item" href="./nosotros.html"><i class="fa-solid fa-users"></i> Nosotros</a></li>
         <li class="nav-item"><a class="dropdown-item" href="./my-profile.html"><i class="fa-solid fa-user"></i> Mi Perfil</a></li>
-        <li class="nav-item"><a class="dropdown-item" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
         <li class="nav-item"><a class="dropdown-item" href="/" id="cerrar" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
+        <li class="nav-item"><a class="dropdown-item" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
       </ul>
     </li>`;
   }
@@ -38,14 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav w-100 justify-content-between">
       <li class="nav-item">
-        <a class="nav-link active" href="index.html">Inicio</a>
+        <a class="nav-link active" href="./index.html">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="categories.html">Categorías</a>
+        <a class="nav-link" href="./categories.html">Categorías</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="sell.html">Vender</a>
+        <a class="nav-link" href="./sell.html">Vender</a>
       </li>
+     
       <li class="nav-item">
         <label class="switch">
         <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </li>
       <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="./my-profile.html"><i class="fa-solid fa-user"></i> ${parsedUser.email}</a></li>
       <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
+      
       <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="/" id="cerrar-mobile" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
         ${isUserActive}
       </div>

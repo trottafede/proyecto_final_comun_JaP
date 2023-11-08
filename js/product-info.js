@@ -175,7 +175,10 @@ function showRelatedProducts(relatedProducts) {
       </div>
     </div> 
     `;
-
+    /* 
+    <div onclick="setProdID('${objeto.id}')">
+    </div>
+ */
   }
   productos_relacionados.innerHTML = htmlContentToAppend;
 }
