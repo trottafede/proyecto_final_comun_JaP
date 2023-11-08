@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
       <ul id="options_drop" class="dropdown-menu dark_mode">
         <li class="nav-item"><a class="dropdown-item" href="./nosotros.html"><i class="fa-solid fa-users"></i> Nosotros</a></li>
         <li class="nav-item"><a class="dropdown-item" href="./my-profile.html"><i class="fa-solid fa-user"></i> Mi Perfil</a></li>
-        <li class="nav-item"><a class="dropdown-item" href="/" id="cerrar" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
         <li class="nav-item"><a class="dropdown-item" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
+        <li class="nav-item"><a class="dropdown-item" href="/" id="cerrar" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
       </ul>
     </li>`;
   }
