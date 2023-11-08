@@ -1,10 +1,12 @@
-
+// Obtener el ID del producto y el usuario desde el almacenamiento local
 const commentID = localStorage.getItem("prodID");
 const user = localStorage.getItem("user");
 const apiComments =
   "https://japceibal.github.io/emercado-api/products_comments/" +
   commentID +
   ".json";
+
+  // Inicializar un objeto para almacenar los comentarios
 let comentarios = {};
 
 // Verificar si hay datos guardados con el localStorage
@@ -14,6 +16,7 @@ if (storedComments) {
 }
 
 const comentBtn = document.getElementById("botonCmt");
+// Inicializar una variable para almacenar la calificación seleccionada por el usuario
 let selectedRating = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -35,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const comentariosDelProducto = comentarios[commentID] || [];
   showAllComments(commentID);
-
+ // Obtener la fecha y hora actual para registrar en el comentario
   const fechaHora = new Date();
   const año = fechaHora.getFullYear();
   const mes = String(fechaHora.getMonth() + 1).padStart(2, "0");
@@ -45,6 +48,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const segundos = String(fechaHora.getSeconds()).padStart(2, "0");
   const formatoFechaHora = `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
 
+   // Manejar el envío de un comentario
   const handleSendComment = () => {
     const enviarBtn = document.getElementById("btnComent").value;
 
@@ -63,15 +67,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       comentarios[commentID] = comentarios[commentID] || [];
       comentarios[commentID].push(comentarioLocal);
 
+  // Actualizar el almacenamiento local con los comentarios actualizados
       refreshStorage(commentID);
+
+  // Mostrar todos los comentarios, incluido el nuevo
       showAllComments(commentID);
 
+  // Limpiar el campo de entrada de comentarios
       document.getElementById("btnComent").value = "";
     } else alert("Comentario vacío");
 
     
   };
 
+  // Función para mostrar todos los comentarios en la página
   function showAllComments(commentID) {
     const allComments = comentarios[commentID] || [];
     let boxComments = "";
@@ -96,15 +105,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>`;
     }
 
-    document.getElementById("comments").innerHTML = boxComments;
+    document.getElementById("comments").innerHTML = boxComments;// Actualiza el contenido HTML para mostrar todos los comentarios 
   }
 });
 
+// Capturar la calificación seleccionada por el usuario
 const getRating = () => {
   const ratingInputs = document.querySelectorAll('input[type="radio"]');
   ratingInputs.forEach((input) => {
     input.addEventListener("change", function () {
-      selectedRating = this.value;
+      selectedRating = this.value; // Actualiza la calificación seleccionada cuando cambia el botón de radio
       console.log(`Calificación seleccionada: ${selectedRating}`);
     });
   });
@@ -114,15 +124,16 @@ function estrellas(cantidad) {
   let scoreTotal = "";
   for (let i = 1; i <= 5; i++) {
     if (i <= cantidad) {
-      scoreTotal += '<i class="fa fa-star checked"></i>';
+      scoreTotal += '<i class="fa fa-star checked"></i>'; //Genera estrellas rellenas segun la cantidad de estrellas seleccionadas
     } else {
-      scoreTotal += '<i class="fa fa-star"></i>';
+      scoreTotal += '<i class="fa fa-star"></i>'; // Genera estrellas vacias para las no seleccionadas
     }
   }
   return scoreTotal;
 }
 
+
+// Actualiza el localStorage con la lista de comentarios
 const refreshStorage = () => {
   localStorage.setItem("comments", JSON.stringify(comentarios));
-};
-
+}

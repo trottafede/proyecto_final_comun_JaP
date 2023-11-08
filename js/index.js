@@ -1,3 +1,4 @@
+//Cuando el documento se carga por completo, se configuran manejadores de click en los elementos con los IDs "autos", "juguetes" y "muebles"
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);

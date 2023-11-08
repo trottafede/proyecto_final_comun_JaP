@@ -1,11 +1,14 @@
+// Constantes para los criterios de ordenación
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";
 const ORDER_BY_PROD_COUNT = "Cant.";
+// Arrays para almacenar datos y criterios de filtrado
 let currentCategoriesArray = [];
 let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
 
+// Función para ordenar las categorías según el criterio especificado
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -13,13 +16,13 @@ function sortCategories(criteria, array){
         result = array.sort(function(a, b) {
             if ( a.name < b.name ){ return -1; }
             if ( a.name > b.name ){ return 1; }
-            return 0;
+            return 0; // Ordena los nombres de las catergorias ascendentemente (A-B)
         });
     }else if (criteria === ORDER_DESC_BY_NAME){
         result = array.sort(function(a, b) {
             if ( a.name > b.name ){ return -1; }
             if ( a.name < b.name ){ return 1; }
-            return 0;
+            return 0; // Ordena los nombres de las catergorias descendentemente (B-A)
         });
     }else if (criteria === ORDER_BY_PROD_COUNT){
         result = array.sort(function(a, b) {
@@ -28,18 +31,20 @@ function sortCategories(criteria, array){
 
             if ( aCount > bCount ){ return -1; }
             if ( aCount < bCount ){ return 1; }
-            return 0;
+            return 0; // Ordena las categorias por la cantidad de productos
         });
     }
 
     return result;
 }
 
+// Función para establecer el ID de la categoría en el almacenamiento local y navegar a la página de productos
 function setCatID(id) {
     localStorage.setItem("catID", id);
     window.location = "products.html"
 }
 
+// Función para mostrar la lista de categorías según el criterio de filtrado
 function showCategoriesList(){
 
     let htmlContentToAppend = "";
@@ -53,11 +58,11 @@ function showCategoriesList(){
             <div class=" col-sm-12 col-md-6  col-lg-4 col-xl-3">
                 <div onclick="setCatID(${category.id})" class="card h-100 " id="catList" >
                     <div class="imgContainer"><img src="${category.imgSrc}" class="card-img-top" alt="..."> </div>
-                    <div class="card-body">
-                        <h4 class="card-title">${category.name}</h4>
-                        <p class="card-text">${category.description}</p>
-                        <small class="text-muted">${category.productCount} artículos</small>
-                    </div>
+                        <div class="card-body">
+                            <h4 class="card-title">${category.name}</h4>
+                            <p class="card-text">${category.description}</p>
+                            <small class="text-muted">${category.productCount} artículos</small>
+                        </div>
                     </div>
                 </div>
             </div> 
@@ -67,6 +72,7 @@ function showCategoriesList(){
     }
 }
 
+// Función para ordenar y mostrar categorías
 function sortAndShowCategories(sortCriteria, categoriesArray){
     currentSortCriteria = sortCriteria;
 
@@ -76,22 +82,22 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
 
     currentCategoriesArray = sortCategories(currentSortCriteria, currentCategoriesArray);
 
-    //Muestro las categorías ordenadas
+  
     showCategoriesList();
 }
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+
+// Evento que se dispara cuando el documento se ha cargado
 document.addEventListener("DOMContentLoaded", function(e){
+        // Obtener datos de categorías desde una URL y mostrarlos
     getJSONData(CATEGORIES_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
             currentCategoriesArray = resultObj.data
             showCategoriesList()
-            //sortAndShowCategories(ORDER_ASC_BY_NAME, resultObj.data);
+            
         }
     });
-
+    // Evento para los botones de ordenar
     document.getElementById("sortAsc").addEventListener("click", function(){
         sortAndShowCategories(ORDER_ASC_BY_NAME);
     });

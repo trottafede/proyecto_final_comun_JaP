@@ -306,3 +306,14 @@ p {
 .flip-card {
   margin: 0 auto;
 }
+
+/* Alertas */
+
+.alert-fade {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.alert-fade.fade-out {
+  opacity: 0;
+}

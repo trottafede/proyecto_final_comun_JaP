@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("submit_form").addEventListener("submit", (e) => {
     e.preventDefault();
     check_forma_de_pago();
-        // Obtiene el formulario y sus elementos de entrada
+    // Obtiene el formulario y sus elementos de entrada
     const formulario = document.getElementById("submit_form");
     const inputs = formulario.getElementsByTagName("input");
 
@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  document
-    .getElementById("proceder-pago")
-    .addEventListener("click", mostrar_comprado);
+  document.getElementById("proceder-pago").addEventListener("click", mostrar_comprado);
 
   // Solo hago la llamada a la api si no encuentro el peugeot
   if (!peugeot) {

@@ -64,3 +64,8 @@
     max-height: 200px;
   }
 }
+
+.errores li {
+  color: red;
+  font-size: 0.8rem;
+}

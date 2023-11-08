@@ -1,10 +1,11 @@
 const prodID = localStorage.getItem("prodID");
 const catID = localStorage.getItem("catID");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-let objeto = {};
 const apiUrl =
   "https://japceibal.github.io/emercado-api/products/" + prodID + ".json";
 
+
+//Promedio de estrellas de los comentarios
 const general_rating = () => {
   let result = ``;
   const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
@@ -38,6 +39,7 @@ const general_rating = () => {
   return result;
 };
 
+//Muestra el titulo, carrusel y descripcion 
 function showProductInfo() {
   console.log(objeto);
   const carrusel = document.getElementById("carrusel");
@@ -49,10 +51,10 @@ function showProductInfo() {
   </div>`
   let htmlContentToAppend = `
   <section id="carrusel_nahuel">
-    <img src="${objeto.images[0]}" onclick="openFulImg(this.src)">
-    <img src="${objeto.images[1]}" onclick="openFulImg(this.src)">
-    <img src="${objeto.images[2]}" onclick="openFulImg(this.src)">
-    <img src="${objeto.images[3]}" onclick="openFulImg(this.src)">
+    <img src="${objeto.images[0]}">
+    <img src="${objeto.images[1]}">
+    <img src="${objeto.images[2]}">
+    <img src="${objeto.images[3]}">
   </section>
   
   <div class="container" id="carrusel_nacho">
@@ -66,7 +68,7 @@ function showProductInfo() {
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img onclick="openFulImg(${objeto.images[0]})" src="${objeto.images[0]}" class="d-block w-100" alt="imagen1">
+            <img src="${objeto.images[0]}" class="d-block w-100" alt="${objeto.name}">
           </div>
           <div class="carousel-item">
             <img src="${objeto.images[1]}" class="d-block w-100" alt="${objeto.name}">
@@ -91,7 +93,7 @@ function showProductInfo() {
   </div>
   
   `;
-
+  //descripción del producto con boton de añadir carrito
   const descripton_to_html = `
   <div class="product_description"></div>
     <h4>Descripción</h4>
@@ -116,6 +118,7 @@ function showProductInfo() {
     .addEventListener("click", () => mandarCarrito(objeto));
 }
 
+//fetch para conseguir informacion del producto 
 document.addEventListener("DOMContentLoaded", () => {
   fetch(apiUrl)
     .then((response) => {
@@ -138,21 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .catch((error) => {
       console.error("Error:", error);
     });
-
-  const fulImgBox = document.getElementById("fulImgBox");
-  fulImg = document.getElementById("fulImg");
-
-  function closeImg() {
-    fulImgBox.style.display = "none";
-  }
-
-  function openFulImg(imageUrl) {
-    fulImgBox.style.display = "flex";
-    fulImg.src = imageUrl;
-  }
 });
-
-let cantidad = 0;
 
 function mandarCarrito(producto) {
   let productoEncontrado = carrito.find((item) => item.id === producto.id);
@@ -166,9 +155,6 @@ function mandarCarrito(producto) {
   actualizarCarrito();
 }
 
-function show() {
-  showProductInfo();
-}
 function actualizarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
@@ -190,38 +176,16 @@ function showRelatedProducts(relatedProducts) {
     </div> 
     `;
 
-    {
-      /* <div class="card mb-2">
-      <div class="row g-0">
-        <div class="col-md-4 imgRelacional">
-          <img onclick="setProdID('${objeto.id}')" src="${objeto.image}" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">${objeto.name}</h5>
-          </div>
-        </div>
-      </div>
-    </div> */
-    }
-
-    {
-      /* <div class="card text-bg-dark">
-          <img onclick="setProdID('${objeto.id}')" src="${objeto.image}" class="card-img" alt="...">
-          <div class="card-img-overlay">
-            <h5 class="card-title">${objeto.name}</h5>
-          </div>
-        </div> */
-    }
   }
   productos_relacionados.innerHTML = htmlContentToAppend;
 }
-
+//Obtener el id de los productos relacionados 
 function setProdID(id) {
   localStorage.setItem("prodID", id);
   window.location = "product-info.html";
 }
 
+//Calcula el valor en USD y UYU
 const other_currency = (currency, cost) => {
   if (currency == "USD") {
     return "UYU " + (cost * 40).toLocaleString("en-US");
@@ -229,11 +193,3 @@ const other_currency = (currency, cost) => {
     return "USD " + (cost / 40).toLocaleString("en-US");
   }
 };
-
-
-{/* <section id="carrusel_nahuel">
-    <img src="${objeto.images[0]}" onclick="openFulImg(this.src)">
-    <img src="${objeto.images[1]}" onclick="openFulImg(this.src)">
-    <img src="${objeto.images[2]}" onclick="openFulImg(this.src)">
-    <img src="${objeto.images[3]}" onclick="openFulImg(this.src)">
-  </section> */}

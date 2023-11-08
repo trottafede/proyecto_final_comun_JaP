@@ -145,3 +145,24 @@ Hernan y Chiara -> Desafiate (Punto 4)
 
 
 -----------------------------------------------------
+
+
+## Los archivos q ya estan comentados bien:
+Cart.js
+Products.js
+my-profile.js
+sell.js
+dropzone.js
+---------------------------------------------------------
+
+## Para arreglar
+product-info.js
+init.js 
+index.js --> OK
+comments.js    ->  chiara  OK 
+categories.js  ->  chiara  OK 
+register.js    ->  chiara 
+navbar.js  ->  Camila oka (?)
+footer.js?
+
+## El punto 2 hay q hacer hoy -> Federico T

@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const parsedUser = JSON.parse(user);
 
   if (user) {
+    //Si hay un ususario activo agrega el mail al navbar
     isUserActive = `
     <li class="nav-item dropdown d-md-block d-lg-block d-none">
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
