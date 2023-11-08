@@ -48,7 +48,7 @@
   color: #fff;
 }
 .dark_mode label {
-  color: #fff;
+  color: #fff !important;
 }
 
 .dark_mode select {
@@ -121,7 +121,7 @@
   color: #fff;
 }
 
-.dark_mode .form-control:disabled{
+.dark_mode .form-control:disabled {
   background-color: rgb(162, 162, 162) !important;
 }
 
@@ -129,6 +129,17 @@
 
 .light_mode {
   background-color: #fff;
+}
+
+.light_mode a {
+  color: black;
+}
+
+.light_mode nav a {
+  color: #fff;
+}
+.light_mode #options_drop a {
+  color: black;
 }
 
 .light_mode .card {
@@ -153,9 +164,7 @@
 .light_mode h5 {
   color: black;
 }
-.light_mode a {
-  color: black;
-}
+
 .light_mode tr {
   color: black;
 }

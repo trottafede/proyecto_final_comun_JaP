@@ -53,11 +53,11 @@ h1 {
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  width: 50%; /* Ajusta el ancho según tus necesidades */
+  width: 100%;
 }
 
 .centered-textarea {
-  width: 100%; /* Ocupar todo el ancho del contenedor */
+  width: 100%;
 }
 
 .p_info_description {
@@ -178,12 +178,12 @@ h1 {
 }
 
 .rating input[type="radio"]:hover ~ label:before {
-  content: "\2605"; /* Estrella rellena (★) */
+  content: "\2605"; 
   color: orange;
 }
 
 .accordion-body p {
-  width: 100%; /* Ancho máximo del párrafo */
+  width: 100%; 
   overflow-wrap: break-word;
   margin-bottom: 0;
 }

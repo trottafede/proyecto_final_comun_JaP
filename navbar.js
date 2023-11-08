@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (user) {
     //Si hay un ususario activo agrega el mail al navbar
     isUserActive = `
-    <li class="nav-item dropdown d-md-block d-lg-block d-none">
+    <li  class="nav-item dropdown d-md-block d-lg-block d-none">
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       ${parsedUser.email}
       </a>
-      <ul class="dropdown-menu dark_mode">
+      <ul id="options_drop" class="dropdown-menu dark_mode">
         <li class="nav-item"><a class="dropdown-item" href="./my-profile.html"><i class="fa-solid fa-user"></i> Mi Perfil</a></li>
         <li class="nav-item"><a class="dropdown-item" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
         <li class="nav-item"><a class="dropdown-item" href="/" id="cerrar" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
