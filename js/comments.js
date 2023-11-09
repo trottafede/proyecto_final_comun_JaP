@@ -88,21 +88,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     for (const [index, comment] of allComments.entries()) {
       const uniqueID = `comment-${index}`; // Genera un identificador único
       boxComments += `
-      <div class="accordion-item" style="margin-bottom: 30px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
-            <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(
-        comment.score
-      )}
-          </button>
-        </h2>
-        <div id="${uniqueID}" class="accordion-collapse collapse show">
-          <div class="accordion-body">
+      <div id="comentarios">
+        <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(comment.score)}
+        <div id="${uniqueID}">
             <p>${comment.description}</p>
-          </div>
-            
         </div>
-      </div>`;
+      </div>
+      `;
+
+    /* 
+    */
     }
 
     document.getElementById("comments").innerHTML = boxComments;// Actualiza el contenido HTML para mostrar todos los comentarios 
@@ -137,3 +132,17 @@ function estrellas(cantidad) {
 const refreshStorage = () => {
   localStorage.setItem("comments", JSON.stringify(comentarios));
 }
+
+
+/* <div class="accordion-item" style="margin-bottom: 30px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
+            <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(comment.score)}
+          </button>
+        </h2>
+        <div id="${uniqueID}" class="accordion-collapse collapse show">
+          <div class="accordion-body">
+            <p>${comment.description}</p>
+          </div>
+        </div>
+      </div> */

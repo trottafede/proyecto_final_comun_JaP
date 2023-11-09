@@ -2,8 +2,8 @@ let carrito;
 let total = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  carrito = JSON.parse(localStorage.getItem("carrito")) || []; 
-  let peugeot = carrito.find((item) => item.name.includes("Peugeot 208")); 
+  carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  let peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
   ocultarAlert();
   // Agrega un evento de escucha al formulario de envío
   document.getElementById("submit_form").addEventListener("submit", (e) => {
@@ -18,7 +18,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  document.getElementById("proceder-pago").addEventListener("click", mostrar_comprado);
+  document
+    .getElementById("proceder-pago")
+    .addEventListener("click", mostrar_comprado);
 
   // Solo hago la llamada a la api si no encuentro el peugeot
   if (!peugeot) {
@@ -50,7 +52,7 @@ function mostrarProducto() {
   const table = document.getElementById("productos_del_carrito");
   let contenidoHtml = "";
   total = 0;
-   // Recorre los productos en el carrito
+  // Recorre los productos en el carrito
   for (const producto of carrito) {
     const id = producto.id;
     const name = producto.name;
@@ -62,7 +64,7 @@ function mostrarProducto() {
     if (currency == "UYU") {
       cost = cost / 40;
     }
-// Crea una fila en la tabla para cada producto
+    // Crea una fila en la tabla para cada producto
     contenidoHtml += `
     <tr>
       <td id="td_producto"><div class="img_container"><img src=${image} alt=""></div></td> 
@@ -74,7 +76,7 @@ function mostrarProducto() {
     }</span></strong></p></td>
       <td id="td_acciones"><i onclick="handleDelete(${id})" class="fa-solid fa-trash"></i></td>
     </tr>`;
-     // Actualiza el total del carrito
+    // Actualiza el total del carrito
     total += cost * quantity;
   }
   table.innerHTML = contenidoHtml;
@@ -343,9 +345,14 @@ const mostrar_comprado = () => {
     }
     alert.style.display = "block";
     setTimeout(ocultarAlerta, 5000);
+
+    setTimeout(() => {
+      generatePDF(JSON.parse(localStorage.getItem("carrito")));
+    }, 300);
   }
 };
 
+// Bootstrap validaciones
 (() => {
   "use strict";
 

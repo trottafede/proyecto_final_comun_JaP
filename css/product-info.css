@@ -237,6 +237,7 @@ section img {
   object-fit: cover;
   opacity: 0.8;
   transition: 0.5s ease;
+  border-radius: 5px;
 }
 
 section img:hover {

@@ -114,6 +114,8 @@
   color: white;
 }
 
+
+
 .dark_mode ul li {
   color: white;
 }
@@ -169,6 +171,15 @@
 .light_mode p {
   color: black;
 }
+
+.light_mode hr {
+  color: #fff;
+}
+
+.light_mode .nav-item hr {
+  color: black;
+}
+
 .light_mode h1 {
   color: black;
 }
@@ -200,3 +211,12 @@
 .light_mode input[type="text"] {
   color: black;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 967px) {
+  .light_mode .nav-item hr {
+    color: #fff;
+  }
+}
+
