@@ -1,14 +1,18 @@
+/*
 .conteiner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas con igual ancho */
-  gap: 10px; /* Espacio entre elementos */
+  grid-template-columns: repeat(4, 1fr); // 4 columnas con igual ancho
+  gap: 10px; // Espacio entre elementos
   border: green solid;
   padding-left: 40px;
 }
+*/
 
 nav {
   margin-bottom: 60px;
 }
+
+
 
 .box {
   position: relative;
@@ -21,6 +25,21 @@ nav {
   margin-bottom: 20px; /* Agrega margen inferior para separar las cajas */
   border: blue solid;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 770px) {
+  .col {
+    display: flex;
+    justify-content: center;
+  }
+  .box {
+   
+    width: 400px;
+    height: 400px;
+  }
+
+}
+
 
 .imgBx {
   position: relative;

@@ -347,7 +347,13 @@ const mostrar_comprado = () => {
     setTimeout(ocultarAlerta, 5000);
 
     setTimeout(() => {
-      generatePDF(JSON.parse(localStorage.getItem("carrito")));
+      generatePDF(
+        JSON.parse(localStorage.getItem("carrito")),
+        JSON.parse(localStorage.getItem("user")),
+        document.getElementById("order_details_delivery_price").innerHTML
+      );
+      // localStorage.setItem("carrito", JSON.stringify(""));
+      location.reload();
     }, 300);
   }
 };

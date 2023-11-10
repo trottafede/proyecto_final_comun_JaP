@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       };
 
       comentarios[commentID] = comentarios[commentID] || [];
-      comentarios[commentID].push(comentarioLocal);
+      comentarios[commentID].unshift(comentarioLocal);
 
   // Actualizar el almacenamiento local con los comentarios actualizados
       refreshStorage(commentID);
@@ -89,7 +89,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       const uniqueID = `comment-${index}`; // Genera un identificador único
       boxComments += `
       <div id="comentarios">
-        <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(comment.score)}
+        <strong>${comment.user}</strong> ${comment.dateTime}
+        <p style="margin:0">${estrellas(comment.score)}</p>
         <div id="${uniqueID}">
             <p>${comment.description}</p>
         </div>

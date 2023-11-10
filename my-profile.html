@@ -27,6 +27,7 @@
     <link href="css/navbar.css" rel="stylesheet" />
     <link href="css/footer.css" rel="stylesheet" />
     <link href="css/dark_mode.css" rel="stylesheet" />
+    <link href="css/dropzone.css" rel="stylesheet" />
     <!-- font awesome -->
     <script
       src="https://kit.fontawesome.com/2919f68f3c.js"
@@ -61,95 +62,87 @@
               novalidate
             >
               <div class="contenedor-inputs">
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"
-                    >Primer Nombre*</span
-                  >
-                  <input
-                    id="first_name"
-                    type="text"
-                    class="form-control"
-                    aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default"
-                    required
-                  />
-                </div>
-                <ul class="errores" id="error_nombre"></ul>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"
-                    >Segundo Nombre</span
-                  >
-                  <input
-                    id="second_name"
-                    type="text"
-                    class="form-control"
-                    aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default"
-                  />
-                </div>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"
-                    >Apellido*</span
-                  >
-                  <input
-                    id="first_lastname"
-                    type="text"
-                    class="form-control"
-                    aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default"
-                    required
-                  />
-                </div>
-                <ul class="errores" id="error_apellido"></ul>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"
-                    >Segundo Apellido</span
-                  >
-                  <input
-                    id="second_lastname"
-                    type="text"
-                    class="form-control"
-                    aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default"
-                  />
-                </div>
-                <div class="input-group mb-3">
-                  <label for="miInput"></label>
-                  <span class="input-group-text" id="inputGroup-sizing-default"
-                    >E-mail*</span
-                  >
 
+                <div class="row">
+                  <div class="col">
+                    <label for="first_name" class="form-label ">Primer Nombre*</label>
+                    <input
+                      id="first_name"
+                      type="text"
+                      class="form-control"
+                      required
+                    />
+                    <ul class="errores" id="error_nombre"></ul>
+
+                  </div>
+                  <div class="col">
+                    <label for="second_name" class="form-label">Segundo Nombre</label>
+                    <input
+                      id="second_name"
+                      type="text"
+                      class="form-control"
+                      aria-label="Sizing example input"
+                      aria-describedby="inputGroup-sizing-default"
+                    />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <label for="first_lastname" class="form-label">Apellido*</label>
+                    <input
+                      id="first_lastname"
+                      type="text"
+                      class="form-control"
+                      required
+                    />
+                    <ul class="errores" id="error_apellido"></ul>
+                  </div>
+                  <div class="col">
+                    <label for="second_lastname" class="form-label">Segundo apellido</label>
+                    <input
+                      id="second_lastname"
+                      type="text"
+                      class="form-control"
+                    />
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-mail*</label>
                   <input
                     id="email"
                     type="email"
-                    name="nombre"
-                    id="miInput"
                     class="form-control"
-                    aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default"
                     required
                   />
+                  <ul class="errores" id="error_email"></ul>
                 </div>
-                <ul class="errores" id="error_email"></ul>
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"
-                    >Teléfono de contacto</span
-                  >
+
+                <div class="mb-3">
+                  <label for="phone_number" class="form-label">Teléfono de contacto</label>
                   <input
                     id="phone_number"
                     type="number"
                     class="form-control"
-                    aria-label="Sizing example input"
-                    aria-describedby="inputGroup-sizing-default"
                   />
                 </div>
-                <div class="input-group mb-3">
-                  <div class="mb-3">
-                    <label for="formFile" class="form-label" id="pfp"
-                      >Elegir nueva foto de perfil</label
-                    >
-                    <input class="form-control" type="file" id="formFile" />
+
+                <div class="mb-3">
+                  <!-- <label for="formFile" class="form-label" id="pfp"
+                    >Elegir nueva foto de perfil</label
+                  >
+                  <input class="form-control" type="file" id="formFile" /> -->
+
+
+                  <label>Imágen</label>
+                  <div class="needsclick dz-clickable" id="file-upload">
+                    <div class="dz-message needsclick">
+                      Arrastra tu foto aquí<br />
+                    </div>
                   </div>
+
+
                 </div>
 
                 <button id="btn-guardar" type="submit" class="btn btn-primary">
@@ -172,5 +165,6 @@
     <script src="./footer.js"></script>
     <script src="js/validarUsuario.js"></script>
     <script src="js/my-profile.js"></script>
+    <script src="js/dropzone.js"></script>
   </body>
 </html>

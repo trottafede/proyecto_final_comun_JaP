@@ -17,50 +17,37 @@ h1 {
   font-size: 1.1rem;
 }
 
+#comments{
+  margin-top: 16px;
+  height: 400px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 #producto, #comments-seccion{
   border: solid 1px gray;
-  padding: 10px;
   margin-top: 10px;
+  padding: 10px;
   box-shadow: 5px 5px 5px rgb(87, 86, 86);
 }
 
+#comments-seccion{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#comments p {
+  width: 100%; /* Ancho máximo del párrafo */
+  overflow-wrap: break-word;
+}
+
+
 #productos_relacionados {
+  border: solid 5px black;
   font-family: monospace;
   display: flex;
   flex-wrap: wrap;
   cursor: pointer;
-}
-
-.accordion {
-  margin: 60px 0;
-}
-
-.accordion-item {
-  margin-bottom: 30px;
-  border-bottom-left-radius: 50px; 
-  border-bottom-right-radius: 50px;
-}
-
-.accordion-header strong {
-  margin-right: 15px;
-}
-
-.accordion-body {
-  padding: 60px;
-}
-
-.accordion-body i {
-  font-size: 1rem;
-  margin-left: 5px;
-}
-
-.container1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
 }
 
 .centered-textarea {
@@ -160,7 +147,7 @@ h1 {
 
 .rating {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   direction: rtl; /* Establece la dirección de derecha a izquierda */
 }
@@ -189,11 +176,6 @@ h1 {
   color: orange;
 }
 
-.accordion-body p {
-  width: 100%; 
-  overflow-wrap: break-word;
-  margin-bottom: 0;
-}
 
 .dark_mode #cargarDatos {
   background-color: #fff !important;
@@ -202,6 +184,10 @@ h1 {
 
 .dark_mode #cargarDatos svg {
   color: black;
+}
+
+.dark_mode #comentarios {
+  color: white;
 }
 
 .dark_mode #white_mode_svg{

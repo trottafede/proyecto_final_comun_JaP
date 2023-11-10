@@ -1,4 +1,13 @@
+let myDropzone;
+
 document.addEventListener("DOMContentLoaded", () => {
+   //Configuraciones para el elemento que sube archivos
+   let dzoptions = {
+    url: "/",
+    autoQueue: false,
+  };
+  myDropzone = new Dropzone("div#file-upload", dzoptions);
+  
   //cargo el email en el input - punto 1
   // si hago click en el email, se borra su contenido
   loadEmail();
@@ -13,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Listener para el boton borrar
   const deleteBtn = document.getElementById("delete-img");
   deleteBtn.addEventListener("click", handleDelete);
-  
+
   // listener del boton guardar xD
   const save_btn = document.getElementById("btn-guardar");
   save_btn.addEventListener("click", (e) => {
@@ -30,7 +39,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
+ 
+  
 });
 
 const handleDelete = () => {
@@ -71,28 +81,7 @@ const loadEmail = () => {
 };
 
 const loadImage = () => {
-  const fileInput = document.getElementById("formFile");
   const imagePreview = document.getElementById("image-preview");
-  fileInput.addEventListener("change", function () {
-    const selectedFile = fileInput.files[0];
-    if (selectedFile) {
-      const reader = new FileReader();
-
-      reader.onload = function (e) {
-        const imageSrc = e.target.result;
-
-        // //guardo mi imagen en el local storage
-        // const user = JSON.parse(localStorage.getItem("user"));
-        // user.avatar = imageSrc;
-        // localStorage.setItem("user", JSON.stringify(user));
-
-        // Muestro mi imagen en el html
-        imagePreview.src = imageSrc;
-      };
-
-      reader.readAsDataURL(selectedFile);
-    }
-  });
 
   // checkeo si tengo imagen en el objeto usuario, si la tengo
   // la cargo
@@ -101,6 +90,7 @@ const loadImage = () => {
     imagePreview.src = storedImage;
   }
 };
+
 
 const saveChanges = () => {
   //Agarro mi usuario del local storage
@@ -112,8 +102,11 @@ const saveChanges = () => {
   let first_lastname = document.getElementById("first_lastname").value;
   let second_lastname = document.getElementById("second_lastname").value;
   let phone_number = document.getElementById("phone_number").value;
-  const imagePreview = document.getElementById("image-preview").src;
+  const imagePreview = myDropzone.files[0].dataURL;
+  // const imagePreview2 = document.getElementById("image-preview").src;
 
+  console.log(imagePreview);
+  
   //guardo mi imagen en el local storage
   user.nombre = first_name;
   user.second_name = second_name;
@@ -124,7 +117,7 @@ const saveChanges = () => {
 
   //guardo mi usuario
   localStorage.setItem("user", JSON.stringify(user));
-
+  loadImage();
   //guardar en la base de datos esta info??? XD
 };
 
