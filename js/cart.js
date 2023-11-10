@@ -155,7 +155,6 @@ const handleShowDirections = () => {
 const handleDelete = (id) => {
   carrito = JSON.parse(localStorage.getItem("carrito"));
   carrito = carrito.filter((item) => item.id != id);
-  console.log(carrito);
   actualizarCarrito();
   mostrarProducto();
 };

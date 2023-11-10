@@ -41,7 +41,6 @@ const general_rating = () => {
 
 //Muestra el titulo, carrusel y descripcion 
 function showProductInfo() {
-  console.log(objeto);
   const carrusel = document.getElementById("carrusel");
   const description = document.getElementById("description");
   const title = document.getElementById("title");
@@ -134,8 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
         objeto = data;
         showProductInfo();
         showRelatedProducts(data.relatedProducts);
-      } else {
-        console.log("Objeto no encontrado con ID", objetoID);
       }
     })
     .catch((error) => {

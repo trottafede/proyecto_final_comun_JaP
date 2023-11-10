@@ -105,7 +105,6 @@ const saveChanges = () => {
   const imagePreview = myDropzone.files[0].dataURL;
   // const imagePreview2 = document.getElementById("image-preview").src;
 
-  console.log(imagePreview);
   
   //guardo mi imagen en el local storage
   user.nombre = first_name;

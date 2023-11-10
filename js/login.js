@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           );
           const { user } = await response.json(); // parses JSON response into native JavaScript objects
-          console.log(user);
           if (user) {
             localStorage.setItem("user", JSON.stringify(user));
             window.location.href = "./index.html";

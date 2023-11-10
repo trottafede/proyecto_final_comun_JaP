@@ -23,17 +23,19 @@
     />
 
     <!-- Css -->
-    <link href="css/my-profile.css" rel="stylesheet" />
-    <link href="css/navbar.css" rel="stylesheet" />
-    <link href="css/footer.css" rel="stylesheet" />
-    <link href="css/dark_mode.css" rel="stylesheet" />
-    <link href="css/dropzone.css" rel="stylesheet" />
+    <link href="./css/my-profile.css" rel="stylesheet" />
+    <link href="./css/navbar.css" rel="stylesheet" />
+    <link href="./css/footer.css" rel="stylesheet" />
+    <link href="./css/dark_mode.css" rel="stylesheet" />
+    <link href="./css/dropzone.css" rel="stylesheet" />
     <!-- font awesome -->
     <script
       src="https://kit.fontawesome.com/2919f68f3c.js"
       crossorigin="anonymous"
     ></script>
-    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favico.png" />
   </head>
 
   <body class="dark_mode">
@@ -62,10 +64,11 @@
               novalidate
             >
               <div class="contenedor-inputs">
-
                 <div class="row">
                   <div class="col">
-                    <label for="first_name" class="form-label ">Primer Nombre*</label>
+                    <label for="first_name" class="form-label"
+                      >Primer Nombre*</label
+                    >
                     <input
                       id="first_name"
                       type="text"
@@ -73,10 +76,11 @@
                       required
                     />
                     <ul class="errores" id="error_nombre"></ul>
-
                   </div>
                   <div class="col">
-                    <label for="second_name" class="form-label">Segundo Nombre</label>
+                    <label for="second_name" class="form-label"
+                      >Segundo Nombre</label
+                    >
                     <input
                       id="second_name"
                       type="text"
@@ -89,7 +93,9 @@
 
                 <div class="row">
                   <div class="col">
-                    <label for="first_lastname" class="form-label">Apellido*</label>
+                    <label for="first_lastname" class="form-label"
+                      >Apellido*</label
+                    >
                     <input
                       id="first_lastname"
                       type="text"
@@ -99,7 +105,9 @@
                     <ul class="errores" id="error_apellido"></ul>
                   </div>
                   <div class="col">
-                    <label for="second_lastname" class="form-label">Segundo apellido</label>
+                    <label for="second_lastname" class="form-label"
+                      >Segundo apellido</label
+                    >
                     <input
                       id="second_lastname"
                       type="text"
@@ -120,12 +128,10 @@
                 </div>
 
                 <div class="mb-3">
-                  <label for="phone_number" class="form-label">Teléfono de contacto</label>
-                  <input
-                    id="phone_number"
-                    type="number"
-                    class="form-control"
-                  />
+                  <label for="phone_number" class="form-label"
+                    >Teléfono de contacto</label
+                  >
+                  <input id="phone_number" type="number" class="form-control" />
                 </div>
 
                 <div class="mb-3">
@@ -134,15 +140,12 @@
                   >
                   <input class="form-control" type="file" id="formFile" /> -->
 
-
                   <label>Imágen</label>
                   <div class="needsclick dz-clickable" id="file-upload">
                     <div class="dz-message needsclick">
                       Arrastra tu foto aquí<br />
                     </div>
                   </div>
-
-
                 </div>
 
                 <button id="btn-guardar" type="submit" class="btn btn-primary">
@@ -157,14 +160,18 @@
     <footer class="text-muted"></footer>
 
     <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Nuestro javascript -->
-    <script src="js/init.js"></script>
+    <script src="./js/init.js"></script>
     <script src="./navbar.js"></script>
     <script src="./footer.js"></script>
-    <script src="js/validarUsuario.js"></script>
-    <script src="js/my-profile.js"></script>
-    <script src="js/dropzone.js"></script>
+    <script src="./js/validarUsuario.js"></script>
+    <script src="./js/my-profile.js"></script>
+    <script src="./js/dropzone.js"></script>
   </body>
 </html>

@@ -111,7 +111,6 @@ const getRating = () => {
   ratingInputs.forEach((input) => {
     input.addEventListener("change", function () {
       selectedRating = this.value; // Actualiza la calificación seleccionada cuando cambia el botón de radio
-      console.log(`Calificación seleccionada: ${selectedRating}`);
     });
   });
 };
