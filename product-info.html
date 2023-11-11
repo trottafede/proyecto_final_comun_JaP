@@ -27,6 +27,7 @@
     <link href="./css/product-info.css" rel="stylesheet" />
     <link href="./css/navbar.css" rel="stylesheet" />
     <link href="./css/footer.css" rel="stylesheet" />
+    
     <!-- font awesome -->
     <script
       src="https://kit.fontawesome.com/2919f68f3c.js"
@@ -51,28 +52,27 @@
 
         <!-- Comentarios -->
         <div id="comments-seccion" class="row">
-          <div id="comentarios-mobile" class="form-floating col-md-6 col-sm-12">
-            <textarea
-              name="comentarios"
-              class="form-control centered-textarea"
-              placeholder="Ingrese aquí su comentario"
-              id="btnComent"
-              style="height: 200px"
-            ></textarea>
-            <label for="floatingTextarea2">Comentario: </label>
-            <div class="">
-              <div class="rating">
-                <input type="radio" id="star5" name="rating" value="5" />
-                <label for="star5"></label>
-                <input type="radio" id="star4" name="rating" value="4" />
-                <label for="star4"></label>
-                <input type="radio" id="star3" name="rating" value="3" />
-                <label for="star3"></label>
-                <input type="radio" id="star2" name="rating" value="2" />
-                <label for="star2"></label>
-                <input type="radio" id="star1" name="rating" value="1" />
-                <label for="star1"></label>
-              </div>
+          <div id="comentarios-mobile" class=" col-md-6 col-sm-12">
+
+            <div class="form">
+              <textarea
+                name="comentarios"
+                class="form-control"
+                placeholder="Ingrese su comentario"
+                style="height: 200px"
+              ></textarea>
+            </div>
+            <div class="rating">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label for="star5"></label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label for="star4"></label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label for="star3"></label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label for="star2"></label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label for="star1"></label>
             </div>
 
             <button class="btn btn-warning mt-4" id="botonCmt">
@@ -123,3 +123,5 @@
     <script src="js/comments.js"></script>
   </body>
 </html>
+
+

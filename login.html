@@ -12,7 +12,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/login.css" />
+
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -20,18 +20,30 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./favico.png" />
+
+    <!-- Nuestro CSS -->
+    <link rel="stylesheet" href="./css/login.css" />
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/2919f68f3c.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
     <main class="md-5">
       <div class="container" id="login">
         <div class="contenedor-login">
           <h2 class="letra-h2">Iniciar Sesión</h2>
-          <form id="login-form">
+          <form id="login-form" novalidate>
             <div class="texto-input">
               <label for="usuario">Email:</label>
               <input type="email" id="usuario" name="usuario" required />
               <i class="bx bxs-user"></i>
             </div>
+            <ul class="errores" id="error_email"></ul>
+
             <div class="texto-input">
               <label for="contraseña">Contraseña:</label>
               <input
@@ -41,13 +53,22 @@
                 required
               /><i class="bx bxs-lock-alt"></i>
             </div>
+            <ul class="errores" id="error_contrasena"></ul>
+
             <div class="recordarme">
               <label><input type="checkbox" />Recordar usuario</label><br />
               <a href="./password.html">Olvidaste tu contraseña?</a>
             </div>
+
             <button type="submit" class="boton-login" onsubmit="redirect()">
+              <span
+                id="spinner_login"
+                class="spinner-border spinner-border-sm"
+                aria-hidden="true"
+              ></span>
               Ingresar
             </button>
+
             <div class="registrarse">
               <p>
                 No tienes una cuenta?

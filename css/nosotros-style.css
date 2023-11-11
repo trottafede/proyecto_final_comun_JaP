@@ -1,18 +1,6 @@
-/*
-.conteiner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); // 4 columnas con igual ancho
-  gap: 10px; // Espacio entre elementos
-  border: green solid;
-  padding-left: 40px;
-}
-*/
-
 nav {
   margin-bottom: 60px;
 }
-
-
 
 .box {
   position: relative;
@@ -32,12 +20,25 @@ nav {
     display: flex;
     justify-content: center;
   }
+
   .box {
-   
     width: 400px;
     height: 400px;
   }
 
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .box {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 

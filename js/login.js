@@ -3,8 +3,63 @@ function alertError() {
 }
 
 function validarLogin() {
-  const contraseña = document.getElementById("contraseña").value.trim();
-  return true;
+  const email = document.getElementById("usuario").value;
+  const contraseña1 = document.getElementById("contraseña").value;
+
+  let errores = [];
+
+  // Validación para el campo de correo electrónico vacío.
+  const email_empty = "Email no puede estar vacio!";
+  if (email == "" && !errores.includes(email_empty)) {
+    errores.push(email_empty);
+  } else {
+    errores = errores.filter((item) => item != email_empty);
+  }
+  // Validación para la longuitud  de correo electrónico.
+  const email_length = "El largo del email no puede ser menor a 3";
+  if (email.length < 3 && !errores.includes(email_length)) {
+    errores.push(email_length);
+  } else {
+    errores = errores.filter((item) => item != email_length);
+  }
+  // Validación para el tipo de correo electrónico (gmail, yahoo, o hotmail).
+  const email_type = "El email debe ser gmail, yahoo o hotmail";
+  if (!validarEmail(email)) {
+    errores.push(email_type);
+  } else {
+    errores = errores.filter((item) => item != email_type);
+  }
+  // Validación para el campo de contraseña vacío.
+  const password_empty = "La contraseña no puede estar vacia!";
+  if (contraseña1 == "" && !errores.includes(password_empty)) {
+    errores.push(password_empty);
+  } else {
+    errores = errores.filter((item) => item != password_empty);
+  }
+  // Validación para la longitud de la contraseña.
+  const password_length = "El largo de la contraseña no puede ser menor a 3";
+  if (contraseña1.length < 3 && !errores.includes(password_length)) {
+    errores.push(password_length);
+  } else {
+    errores = errores.filter((item) => item != password_length);
+  }
+
+  const error_email = document.getElementById("error_email");
+  const error_contrasena = document.getElementById("error_contrasena");
+
+  error_email.innerHTML = "";
+  error_contrasena.innerHTML = "";
+
+  // Se agregan los mensajes de error a los contenedores .
+  for (const error of errores) {
+    if (error.toLowerCase().includes("email")) {
+      error_email.innerHTML += `<li>${error}</li>`;
+    }
+    if (error.toLowerCase().includes("contraseña")) {
+      error_contrasena.innerHTML += `<li>${error}</li>`;
+    }
+  }
+  return errores.length == 0;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("login-form")
     .addEventListener("submit", function (event) {
       event.preventDefault();
+      let spinner = document.getElementById("spinner_login");
+      spinner.style.display = "inline-block";
 
       if (validarLogin()) {
         async function postData() {
@@ -41,8 +98,25 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             alert("Login incorrecto!");
           }
+          spinner.style.display = "none";
         }
         postData();
+      } else {
+        spinner.style.display = "none";
+
+      }
+
+      const formulario = document.getElementById("login-form");
+      const inputs = formulario.getElementsByTagName("input");
+      for (let i = 0; i < inputs.length; i++) {
+        inputs[i].addEventListener("input", validarLogin);
       }
     });
 });
+
+// Función para validar el formato del correo electrónico.
+function validarEmail(email) {
+  const regex =
+    /\b(?:[a-zA-Z0-9._%+-]+@gmail\.com|[a-zA-Z0-9._%+-]+@yahoo\.com|[a-zA-Z0-9._%+-]+@hotmail\.com)\b/;
+  return regex.test(email);
+}

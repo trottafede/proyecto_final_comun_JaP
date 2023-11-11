@@ -102,10 +102,13 @@ const saveChanges = () => {
   let first_lastname = document.getElementById("first_lastname").value;
   let second_lastname = document.getElementById("second_lastname").value;
   let phone_number = document.getElementById("phone_number").value;
-  const imagePreview = myDropzone.files[0].dataURL;
+
+  let imagePreview = user.avatar;
+  if (myDropzone.files.length > 0) {
+    imagePreview = myDropzone.files[0].dataURL;
+  }
   // const imagePreview2 = document.getElementById("image-preview").src;
 
-  
   //guardo mi imagen en el local storage
   user.nombre = first_name;
   user.second_name = second_name;

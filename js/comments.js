@@ -1,6 +1,7 @@
 // Obtener el ID del producto y el usuario desde el almacenamiento local
 const commentID = localStorage.getItem("prodID");
 const user = localStorage.getItem("user");
+const userParse = JSON.parse(user);
 const apiComments =
   "https://japceibal.github.io/emercado-api/products_comments/" +
   commentID +
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         product: commentID,
         score: selectedRating, //puntuacion del producto
         description: enviarBtn,
-        user: objeto.email,
+        user: userParse.nombre + userParse.apellido,
         dateTime: formatoFechaHora,
       };
 

@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   let isUserActive = `
   <li class="nav-item">
-    <a class="nav-link" href="./login.html">Usuario</a>
-  </li>`;
+    <a class="nav-link" href="./nosotros.html">
+    <i class="fa-solid fa-users"></i> Nosotros</a>
+  </li>
+`;
 
   const user = localStorage.getItem("user");
   const parsedUser = JSON.parse(user);
@@ -10,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (user) {
     //Si hay un ususario activo agrega el mail al navbar
     isUserActive = `
-    <li  class="nav-item dropdown d-md-block d-lg-block d-none">
+    <li class="nav-item dropdown d-md-block d-lg-block d-none">
       <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       ${parsedUser.email}
       </a>
@@ -23,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </ul>
     </li>`;
   }
-  
+
   const navbar = `<div class="container">
   <button
     class="navbar-toggler"
@@ -38,17 +40,21 @@ document.addEventListener("DOMContentLoaded", () => {
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
+
     <ul class="navbar-nav w-100 justify-content-between">
+
       <li class="nav-item">
         <a class="nav-link active" href="./index.html">Inicio</a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="./categories.html">Categorías</a>
       </li>
+
       <li class="nav-item">
         <a class="nav-link" href="./sell.html">Vender</a>
       </li>
-     
+    
       <li class="nav-item d-md-none d-lg-none d-xl-none">
         <hr>
       </li>
@@ -71,15 +77,24 @@ document.addEventListener("DOMContentLoaded", () => {
       </li>
       
       <li class="nav-item d-md-none d-lg-none d-xl-none"><a class="nav-link" href="./login.html" id="cerrar-mobile" ><i class="fa-solid fa-circle-xmark"></i> Cerrar sesion</a></li>
-        ${isUserActive}
-      </div>
+      ${isUserActive}
+
     </ul>
-  </div>
-</div>`;
+
+    </div>
+  </div>`;
   document.getElementsByTagName("nav")[0].innerHTML = navbar;
-  document.getElementById("cerrar").addEventListener("click", cerrarSesion);
-  document.getElementById("cerrar-mobile").addEventListener("click", cerrarSesion);
-  document.getElementById("toggle_dark_mode").addEventListener("change", handleDarkMode);
+
+  if (user) {
+    document.getElementById("cerrar").addEventListener("click", cerrarSesion);
+    document
+      .getElementById("cerrar-mobile")
+      .addEventListener("click", cerrarSesion);
+  }
+
+  document
+    .getElementById("toggle_dark_mode")
+    .addEventListener("change", handleDarkMode);
   checkDarkMode();
 });
 
@@ -102,7 +117,7 @@ const handleDarkMode = () => {
     // Itera a través de los elementos y quita la clase "dark_mode"
     elementsWithDarkMode.forEach((element) => {
       element.classList.remove("dark_mode");
-      element.classList.add("light_mode");    
+      element.classList.add("light_mode");
     });
   }
 };
@@ -115,6 +130,6 @@ const checkDarkMode = () => {
   } else {
     document.getElementById("toggle_dark_mode").checked = false; // Marca el checkbox si el tema es oscuro
   }
-  handleDarkMode()
+  handleDarkMode();
 };
 //no borrrar --> // en desktop quedo divino, en mobile ni lo mires jaja

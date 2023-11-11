@@ -19,6 +19,7 @@
 .dark_mode td i {
   color: #fff;
 }
+
 .dark_mode td span {
   color: #fff;
 }
@@ -67,8 +68,12 @@
 .dark_mode tr {
   color: #fff;
 }
+
 .dark_mode label {
   color: #fff !important;
+}
+.dark_mode #comentarios-mobile label {
+  color: black !important;
 }
 
 .dark_mode select {
@@ -114,7 +119,9 @@
   color: white;
 }
 
-
+.dark_mode .card{
+  border-color: #fff;
+}
 
 .dark_mode ul li {
   color: white;
@@ -211,6 +218,8 @@
 .light_mode input[type="text"] {
   color: black;
 }
+
+
 
 
 /* Extra small devices (phones, 600px and down) */

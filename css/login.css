@@ -192,3 +192,12 @@ main {
   }
   
 }
+
+.errores li {
+  color: red;
+  font-size: 0.8rem;
+}
+
+#spinner_login {
+  display: none;
+}

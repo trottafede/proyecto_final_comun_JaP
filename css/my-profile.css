@@ -1,4 +1,15 @@
 /* ------ Css perfil ------ */
+h1{
+  font-family: monospace;
+  border-bottom: 4px double black;
+}
+
+#bloque{
+  border: solid 1px gray;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 5px rgb(87, 86, 86);
+}
 
 #img_container {
   display: flex;
@@ -22,14 +33,22 @@
   margin: 40px 0;
 }
 
+#register-form {
+  margin-bottom: 10px;
+}
+
 .image-upload {
   text-align: center;
   margin: 20px;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
 }
 
 #image-preview {
-  max-width: 100%;
+  max-width: 300px;
   max-height: 300px;
+  object-fit: cover;
 }
 
 #btn-guardar {

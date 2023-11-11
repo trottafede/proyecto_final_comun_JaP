@@ -4,7 +4,6 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const apiUrl =
   "https://japceibal.github.io/emercado-api/products/" + prodID + ".json";
 
-
 //Promedio de estrellas de los comentarios
 const general_rating = () => {
   let result = ``;
@@ -39,7 +38,7 @@ const general_rating = () => {
   return result;
 };
 
-//Muestra el titulo, carrusel y descripcion 
+//Muestra el titulo, carrusel y descripcion
 function showProductInfo() {
   const carrusel = document.getElementById("carrusel");
   const description = document.getElementById("description");
@@ -47,7 +46,7 @@ function showProductInfo() {
   let title_to_html = `
   <div class="contenedor_titulo">
       <h1 class="escribiendo"><a href="./products.html">${objeto.category}</a> > ${objeto.name}</h1>
-  </div>`
+  </div>`;
   let htmlContentToAppend = `
   <section id="carrusel_nahuel">
     <img src="${objeto.images[0]}">
@@ -117,7 +116,7 @@ function showProductInfo() {
     .addEventListener("click", () => mandarCarrito(objeto));
 }
 
-//fetch para conseguir informacion del producto 
+//fetch para conseguir informacion del producto
 document.addEventListener("DOMContentLoaded", () => {
   fetch(apiUrl)
     .then((response) => {
@@ -168,14 +167,14 @@ function showRelatedProducts(relatedProducts) {
     <div onclick="setProdID('${objeto.id}')" class="card text-bg-dark">
       <img src="${objeto.image}" class="card-img" alt="...">
       <div class="card-img-overlay">
-        <h5 class="card-title">${objeto.name}</h5>
+        <h5 class="card-title" id="title-related-prod">${objeto.name}</h5>
       </div>
-    </div> 
+    </div>
     `;
   }
   productos_relacionados.innerHTML = htmlContentToAppend;
 }
-//Obtener el id de los productos relacionados 
+//Obtener el id de los productos relacionados
 function setProdID(id) {
   localStorage.setItem("prodID", id);
   window.location = "product-info.html";

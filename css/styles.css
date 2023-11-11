@@ -107,9 +107,6 @@ a.custom-card:hover {
   text-decoration: inherit;
 }
 
-.checked {
-  color: orange;
-}
 
 h1,
 h4 {
@@ -153,3 +150,10 @@ html {
   margin-top: 20px;
 }
 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .card:hover {
+    box-shadow: 5px 10px 50px rgb(86, 87, 86);
+  }
+}

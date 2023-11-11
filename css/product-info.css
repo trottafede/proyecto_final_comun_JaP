@@ -3,6 +3,7 @@ h1 {
   font-family: monospace;
   font-size: 33px;
 }
+
 .contenedor_titulo{
   display: flex;
   justify-content: space-between;
@@ -25,13 +26,14 @@ h1 {
 }
 
 #producto, #comments-seccion{
-  border: solid 1px gray;
+  border: solid 1px rgb(87, 86, 86);
   margin-top: 10px;
   padding: 10px;
   box-shadow: 5px 5px 5px rgb(87, 86, 86);
 }
 
 #comments-seccion{
+  margin-top: 30px;
   margin-left: 0;
   margin-right: 0;
 }
@@ -41,13 +43,20 @@ h1 {
   overflow-wrap: break-word;
 }
 
+.checked {
+  color: orange;
+}
 
 #productos_relacionados {
   border: solid 5px black;
-  font-family: monospace;
   display: flex;
-  flex-wrap: wrap;
+  font-family: monospace;
   cursor: pointer;
+  margin: 5px;
+}
+
+#title-related-prod {
+  color: black;
 }
 
 .centered-textarea {
@@ -66,9 +75,7 @@ h1 {
   padding-top: 20px;
 }
 
-#comentarios-mobile label{
-  margin-top: 20px;
-}
+
 
 /* boton añadir carrito */
 
@@ -176,6 +183,9 @@ h1 {
   color: orange;
 }
 
+.dark_mode #title-related-prod {
+  color: white;
+}
 
 .dark_mode #cargarDatos {
   background-color: #fff !important;
@@ -189,6 +199,10 @@ h1 {
 .dark_mode #comentarios {
   color: white;
 }
+
+/* .dark-mode .form-floating > label{
+  color: black;
+} */
 
 .dark_mode #white_mode_svg{
   display:none;
