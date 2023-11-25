@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
    // Manejar el envío de un comentario
   const handleSendComment = () => {
-    const enviarBtn = document.getElementById("btnComent").value;
+    const enviarBtn = document.getElementsByName("comentarios")[0].value; // const enviarBtn = document.getElementById("btnComent").value;
 
     var jsonString = user;
     var objeto = JSON.parse(jsonString);
@@ -134,16 +134,3 @@ const refreshStorage = () => {
   localStorage.setItem("comments", JSON.stringify(comentarios));
 }
 
-
-/* <div class="accordion-item" style="margin-bottom: 30px; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;">
-        <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#${uniqueID}" aria-expanded="true" aria-controls="${uniqueID}">
-            <strong>${comment.user}</strong> ${comment.dateTime} - ${estrellas(comment.score)}
-          </button>
-        </h2>
-        <div id="${uniqueID}" class="accordion-collapse collapse show">
-          <div class="accordion-body">
-            <p>${comment.description}</p>
-          </div>
-        </div>
-      </div> */
