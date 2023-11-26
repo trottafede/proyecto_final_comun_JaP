@@ -4,7 +4,7 @@
 </p>
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/8655/8655461.png" width='25'> Description 
-  Project to JaP in Q3-Q4 2K23 <br>
+  Project for JaP in Q3-Q4 2223 <br>
 
 
 
@@ -21,20 +21,20 @@ https://drive.google.com/file/d/1qTki2iEZiZzM64-wiJmv4jtZigJ5HcoB/view
 ```
 cats/cat.json
 ```
-https://japceibal.github.io/emercado-api/cats/cat.json
+https://jap-commerce-backend.vercel.app/cats/cat.json
 ```
 cats_products/[cat_ID].json
 ```
-https://japceibal.github.io/emercado-api/cats_products/101.json
+https://jap-commerce-backend.vercel.app/cats_products/101.json
 ```
 products/[product_ID].json
 ```
-https://japceibal.github.io/emercado-api/products/50921.json
+https://jap-commerce-backend.vercel.app/products/50921.json
 ```
 products_comments/[product_ID].json
 ```
-https://japceibal.github.io/emercado-api/products_comments/50921.json
+https://jap-commerce-backend.vercel.app/products_comments/50921.json
 ```
 user_cart/[ID].json
 ```
-https://japceibal.github.io/emercado-api/user_cart/[ID].json
+https://jap-commerce-backend.vercel.app/user_cart/[ID].json
