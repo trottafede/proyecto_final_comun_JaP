@@ -37,4 +37,4 @@ https://jap-commerce-backend.vercel.app/products_comments/50921.json
 ```
 user_cart/[ID].json
 ```
-https://jap-commerce-backend.vercel.app/user_cart/[ID].json
+https://jap-commerce-backend.vercel.app/user_cart/25801.json
