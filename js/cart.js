@@ -4,9 +4,11 @@ let total = 0;
 document.addEventListener("DOMContentLoaded", async () => {
   ocultarAlert();
   // carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  carrito = await carritoBS()
+  carrito = await carritoBS();
+  console.log(carrito);
+  let peugeot = "";
+  console.log(carrito.length != 0);
 
-  let peugeot = ""
   if (carrito.length != 0) {
     peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
   }

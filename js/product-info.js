@@ -154,7 +154,7 @@ function mandarCarrito(producto) {
 }
 
 async function mandarAlServidor() {
-  let carrito = carritoBS();
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   const user = JSON.parse(localStorage.getItem("user")); // Asegúrate de tener tu token o de obtenerlo de manera adecuada
   const token = user.token;
 
