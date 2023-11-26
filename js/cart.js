@@ -3,8 +3,13 @@ let total = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
   ocultarAlert();
-  carrito = await carritoBS();
-  let peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
+  // carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+  carrito = await carritoBS()
+
+  let peugeot = ""
+  if (carrito.length != 0) {
+    peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
+  }
   // Agrega un evento de escucha al formulario de envío
   document.getElementById("submit_form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -90,7 +95,9 @@ function mostrarProducto() {
       <td id="td_name"><p>${name}</p></td>
       <td id="td_costo"><p>USD ${cost}</p></td>
       <td id="td_cantidad"><i onclick="handleOneLess(${id})" class="fa-solid fa-circle-minus"></i><span>${quantity}</span><i onclick="handleOneMore(${id})" class="fa-solid fa-circle-plus"></i></td>
-      <td id="td_subtotal"><p><strong><span id="subtotal${id}"> USD ${Math.round(cost * quantity)}</span></strong></p></td>
+      <td id="td_subtotal"><p><strong><span id="subtotal${id}"> USD ${Math.round(
+      cost * quantity
+    )}</span></strong></p></td>
       <td id="td_acciones"><i onclick="handleDelete(${id})" class="fa-solid fa-trash"></i></td>
     </tr>`;
     // Actualiza el total del carrito
