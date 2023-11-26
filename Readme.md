@@ -1,9 +1,5 @@
 # E-Mercado
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="img/favicon.svg" width="200" alt="E-Mercado Logo" /></a>
-</p>
-
-<p align="center">
     Welcome to E-Mercado
 </p>
 
