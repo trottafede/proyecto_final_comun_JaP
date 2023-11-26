@@ -11,7 +11,6 @@ nav {
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   margin-bottom: 20px; /* Agrega margen inferior para separar las cajas */
-  border: blue solid;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -152,4 +151,5 @@ nav {
   font-size: 16px;
   margin: 0; /* Elimina los márgenes predeterminados */
   padding: 0; /* Elimina el relleno predeterminado */
+  text-align: center;
 }

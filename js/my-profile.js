@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       inputs[i].addEventListener("input", validarFormulario);
     }
   });
-
- 
   
 });
 

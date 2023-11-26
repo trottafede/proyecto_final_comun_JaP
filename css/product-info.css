@@ -48,7 +48,7 @@ h1 {
 }
 
 #productos_relacionados {
-  border: solid 5px black;
+  /* border: solid 5px black; */
   display: flex;
   font-family: monospace;
   cursor: pointer;
@@ -184,7 +184,7 @@ h1 {
 }
 
 .dark_mode #title-related-prod {
-  color: white;
+  color: black;
 }
 
 .dark_mode #cargarDatos {
@@ -296,7 +296,6 @@ section img:hover {
   .card{
     display: flex;
     width: 50%;
-    border-radius: 15px;
   }
 
 }

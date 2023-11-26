@@ -2,9 +2,9 @@ let carrito;
 let total = 0;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-  let peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
   ocultarAlert();
+  carrito = await carritoBS();
+  let peugeot = carrito.find((item) => item.name.includes("Peugeot 208"));
   // Agrega un evento de escucha al formulario de envío
   document.getElementById("submit_form").addEventListener("submit", (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Solo hago la llamada a la api si no encuentro el peugeot
   if (!peugeot) {
     let productos = await fetch(
-      "https://japceibal.github.io/emercado-api/user_cart/25801.json"
+      "https://jap-commerce-backend.vercel.app/user_cart/25801.json"
     );
     peugeot = await productos.json();
     let productoApi = cambiarPropiedades(peugeot.articles[0]);
@@ -34,6 +34,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   mostrarProducto();
 });
+
+async function carritoBS() {
+  const url = "https://jap-commerce-backend.vercel.app/cart";
+  let user = JSON.parse(localStorage.getItem("user"));
+  let token = user.token;
+
+  const response = await fetch(url, {
+    method: "GET", // Método GET, pero puedes ajustarlo según tus necesidades
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+  const { carrito } = await response.json();
+
+  console.log(carrito);
+  return carrito;
+}
 
 function ocultarAlert() {
   const alert = document.getElementById("alert_size");
@@ -44,6 +62,7 @@ function mostrarAlert() {
   const alert = document.getElementById("alert_size");
   alert.style.display = "block";
 }
+
 function actualizarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
@@ -109,6 +128,7 @@ const handleOneLess = (id) => {
   }
   actualizarCarrito();
   mostrarProducto();
+  mandarAlServidor();
 };
 // Función para aumentar la cantidad de un producto en el carrito
 const handleOneMore = (id) => {
@@ -119,6 +139,7 @@ const handleOneMore = (id) => {
   }
   actualizarCarrito();
   mostrarProducto();
+  mandarAlServidor();
 };
 // Función para encontrar un producto en el carrito por su ID
 const findProduct = (id) => {
@@ -157,7 +178,42 @@ const handleDelete = (id) => {
   carrito = carrito.filter((item) => item.id != id);
   actualizarCarrito();
   mostrarProducto();
+  mandarAlServidor();
 };
+
+async function mandarAlServidor() {
+  let carrito = JSON.parse(localStorage.getItem("carrito"));
+  const user = JSON.parse(localStorage.getItem("user")); // Asegúrate de tener tu token o de obtenerlo de manera adecuada
+  const token = user.token;
+
+  // Crear un objeto Headers y agregar el encabezado de autorización
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Authorization", `Bearer ${token}`);
+
+  /*
+  const local = "http://localhost:3000/users";
+  const production = "https://japceibal.github.io/emercado-api/cart";
+  */
+  const response = await fetch("https://jap-commerce-backend.vercel.app/cart", {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: myHeaders, // Utilizar los encabezados personalizados
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(carrito), // body data type must match "Content-Type" header
+  });
+  const response_a = await response.json(); // parses JSON response into native JavaScript objects
+
+  if (response.status == 201) {
+    console.log(response_a);
+  } else {
+    alert("error al agregar el servidor"); // Si la respuesta no es 201 , muestra un mensaje de error.
+  }
+}
+
 // Guardar la dirección de envío en el almacenamiento local
 const handleSaveDirections = () => {
   const user = JSON.parse(localStorage.getItem("user"));

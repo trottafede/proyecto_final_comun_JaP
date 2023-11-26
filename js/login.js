@@ -73,26 +73,27 @@ document.addEventListener("DOMContentLoaded", () => {
       if (validarLogin()) {
         async function postData() {
           // Default options are marked with *
-          const response = await fetch(
-            "https://jap-commerce-backend.vercel.app/login",
-            {
-              method: "POST",
-              mode: "cors", // no-cors, *cors, same-origin
-              cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-              credentials: "same-origin", // include, *same-origin, omit
-              headers: {
-                "Content-Type": "application/json",
-              },
-              redirect: "follow", // manual, *follow, error
-              referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-              body: JSON.stringify({
-                email: document.getElementById("usuario").value,
-                contrasena: document.getElementById("contraseña").value,
-              }), // body data type must match "Content-Type" header
-            }
-          );
-          const { user } = await response.json(); // parses JSON response into native JavaScript objects
+          const local = "http://localhost:3000/login";
+          const production = "https://jap-commerce-backend.vercel.app/login";
+          const response = await fetch(production, {
+            method: "POST",
+            mode: "cors", // no-cors, *cors, same-origin
+            cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+            credentials: "same-origin", // include, *same-origin, omit
+            headers: {
+              "Content-Type": "application/json",
+            },
+            redirect: "follow", // manual, *follow, error
+            referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+            body: JSON.stringify({
+              email: document.getElementById("usuario").value,
+              contrasena: document.getElementById("contraseña").value,
+            }), // body data type must match "Content-Type" header
+          });
+          const { token, user } = await response.json(); // parses JSON response into native JavaScript objects
           if (user) {
+            user.token = token;
+            console.log(user);
             localStorage.setItem("user", JSON.stringify(user));
             window.location.href = "./index.html";
           } else {
@@ -103,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
         postData();
       } else {
         spinner.style.display = "none";
-
       }
 
       const formulario = document.getElementById("login-form");

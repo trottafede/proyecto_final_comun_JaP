@@ -2,7 +2,7 @@ const prodID = localStorage.getItem("prodID");
 const catID = localStorage.getItem("catID");
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const apiUrl =
-  "https://japceibal.github.io/emercado-api/products/" + prodID + ".json";
+  "https://jap-commerce-backend.vercel.app/products/" + prodID + ".json";
 
 //Promedio de estrellas de los comentarios
 const general_rating = () => {
@@ -116,6 +116,27 @@ function showProductInfo() {
     .addEventListener("click", () => mandarCarrito(objeto));
 }
 
+// function mandarAlServidor() {
+//   //https://japceibal.github.io/emercado-api/
+//   //agarrar el carrito del locastorage
+//   let carrito = JSON.parse(localStorage.getItem("carrito"));
+
+//   //mandarlo al servidor
+//   fetch("https://japceibal.github.io/emercado-api/", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ item: carrito }),
+//   }).then((response) => {
+//     if (response.ok) {
+//       console.log("Item del carrito enviado correctamente");
+//     } else {
+//       console.log("Error al enviar items");
+//     }
+//   });
+// }
+
 //fetch para conseguir informacion del producto
 document.addEventListener("DOMContentLoaded", () => {
   fetch(apiUrl)
@@ -149,6 +170,39 @@ function mandarCarrito(producto) {
   }
   alert("Producto agregado!");
   actualizarCarrito();
+  mandarAlServidor();
+}
+
+async function mandarAlServidor() {
+  let carrito = JSON.parse(localStorage.getItem("carrito"));
+  const user = JSON.parse(localStorage.getItem("user")); // Asegúrate de tener tu token o de obtenerlo de manera adecuada
+  const token = user.token;
+
+  // Crear un objeto Headers y agregar el encabezado de autorización
+  const myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  myHeaders.append("Authorization", `Bearer ${token}`);
+
+  // const local = "http://localhost:3000/users";
+  
+  const production = "https://jap-commerce-backend.vercel.app/cart";
+  const response = await fetch(production, {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: myHeaders, // Utilizar los encabezados personalizados
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(carrito), // body data type must match "Content-Type" header
+  });
+  const response_a = await response.json(); // parses JSON response into native JavaScript objects
+
+  if (response.status == 201) {
+    console.log(response_a);
+  } else {
+    alert("error al agregar el servidor"); // Si la respuesta no es 201 , muestra un mensaje de error.
+  }
 }
 
 function actualizarCarrito() {

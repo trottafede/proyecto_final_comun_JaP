@@ -160,8 +160,11 @@ function registrado() {
     // Example POST method implementation:
     async function postData() {
       // Default options are marked with *
+      const local = "http://localhost:3000/users";
+      const production = "https://jap-commerce-backend.vercel.app/users";
+
       const response = await fetch(
-        "https://jap-commerce-backend.vercel.app/users",
+        production,
         {
           method: "POST", // *GET, POST, PUT, DELETE, etc.
           mode: "cors", // no-cors, *cors, same-origin
@@ -181,7 +184,7 @@ function registrado() {
       if (response.status == 201) {
         // Si la respuesta del servidor indica un estado 201 (creado con éxito).
         localStorage.setItem("user", JSON.stringify(response_a));   // Almacena los datos del usuario en el almacenamiento local.
-        window.location.href = "../../index.html"; // Redirige al usuario a la página principal.
+        window.location.href = "./index.html"; // Redirige al usuario a la página principal.
       } else {
         alert("error al registrarte!!"); // Si la respuesta no es 201 , muestra un mensaje de error.
       }

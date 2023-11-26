@@ -1,6 +1,6 @@
 // Obtener el ID de la categoría desde el almacenamiento local
 let catID = localStorage.getItem("catID");
-let url = `https://japceibal.github.io/emercado-api/cats_products/${catID}.json`;
+let url = `https://jap-commerce-backend.vercel.app/cats_products/${catID}.json`;
 
 const ORDER_ASC_BY_NAME = "AZ";
 const ORDER_DESC_BY_NAME = "ZA";

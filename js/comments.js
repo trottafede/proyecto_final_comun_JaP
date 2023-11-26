@@ -3,11 +3,11 @@ const commentID = localStorage.getItem("prodID");
 const user = localStorage.getItem("user");
 const userParse = JSON.parse(user);
 const apiComments =
-  "https://japceibal.github.io/emercado-api/products_comments/" +
+  "https://jap-commerce-backend.vercel.app/products_comments/" +
   commentID +
   ".json";
 
-  // Inicializar un objeto para almacenar los comentarios
+// Inicializar un objeto para almacenar los comentarios
 let comentarios = {};
 
 // Verificar si hay datos guardados con el localStorage
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const comentariosDelProducto = comentarios[commentID] || [];
   showAllComments(commentID);
- // Obtener la fecha y hora actual para registrar en el comentario
+  // Obtener la fecha y hora actual para registrar en el comentario
   const fechaHora = new Date();
   const año = fechaHora.getFullYear();
   const mes = String(fechaHora.getMonth() + 1).padStart(2, "0");
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const segundos = String(fechaHora.getSeconds()).padStart(2, "0");
   const formatoFechaHora = `${año}-${mes}-${dia} ${hora}:${minutos}:${segundos}`;
 
-   // Manejar el envío de un comentario
+  // Manejar el envío de un comentario
   const handleSendComment = () => {
     const enviarBtn = document.getElementsByName("comentarios")[0].value; // const enviarBtn = document.getElementById("btnComent").value;
 
@@ -68,17 +68,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       comentarios[commentID] = comentarios[commentID] || [];
       comentarios[commentID].unshift(comentarioLocal);
 
-  // Actualizar el almacenamiento local con los comentarios actualizados
+      // Actualizar el almacenamiento local con los comentarios actualizados
       refreshStorage(commentID);
 
-  // Mostrar todos los comentarios, incluido el nuevo
+      // Mostrar todos los comentarios, incluido el nuevo
       showAllComments(commentID);
 
-  // Limpiar el campo de entrada de comentarios
+      // Limpiar el campo de entrada de comentarios
       document.getElementById("btnComent").value = "";
     } else alert("Comentario vacío");
-
-    
   };
 
   // Función para mostrar todos los comentarios en la página
@@ -98,11 +96,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
       `;
 
-    /* 
-    */
+      /*
+       */
     }
 
-    document.getElementById("comments").innerHTML = boxComments;// Actualiza el contenido HTML para mostrar todos los comentarios 
+    document.getElementById("comments").innerHTML = boxComments; // Actualiza el contenido HTML para mostrar todos los comentarios
   }
 });
 
@@ -128,9 +126,7 @@ function estrellas(cantidad) {
   return scoreTotal;
 }
 
-
 // Actualiza el localStorage con la lista de comentarios
 const refreshStorage = () => {
   localStorage.setItem("comments", JSON.stringify(comentarios));
-}
-
+};
