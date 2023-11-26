@@ -4,9 +4,7 @@
 </p>
 
 ## <img src="https://cdn-icons-png.flaticon.com/512/8655/8655461.png" width='25'> Description 
-  Project for JaP in Q3-Q4 2223 <br>
-
-
+  Project for JaP in Q3-Q4 2k23 <br>
 
 ## <img src="https://cdn.jsdelivr.net/gh/Readme-Workflows/Readme-Icons@main/icons/octicons/Wiki.svg">  Stack used 
 
