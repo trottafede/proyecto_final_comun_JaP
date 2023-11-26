@@ -116,26 +116,6 @@ function showProductInfo() {
     .addEventListener("click", () => mandarCarrito(objeto));
 }
 
-// function mandarAlServidor() {
-//   //https://japceibal.github.io/emercado-api/
-//   //agarrar el carrito del locastorage
-//   let carrito = JSON.parse(localStorage.getItem("carrito"));
-
-//   //mandarlo al servidor
-//   fetch("https://japceibal.github.io/emercado-api/", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ item: carrito }),
-//   }).then((response) => {
-//     if (response.ok) {
-//       console.log("Item del carrito enviado correctamente");
-//     } else {
-//       console.log("Error al enviar items");
-//     }
-//   });
-// }
 
 //fetch para conseguir informacion del producto
 document.addEventListener("DOMContentLoaded", () => {
@@ -174,7 +154,7 @@ function mandarCarrito(producto) {
 }
 
 async function mandarAlServidor() {
-  let carrito = JSON.parse(localStorage.getItem("carrito"));
+  let carrito = carritoBS();
   const user = JSON.parse(localStorage.getItem("user")); // Asegúrate de tener tu token o de obtenerlo de manera adecuada
   const token = user.token;
 
@@ -203,6 +183,24 @@ async function mandarAlServidor() {
   } else {
     alert("error al agregar el servidor"); // Si la respuesta no es 201 , muestra un mensaje de error.
   }
+}
+
+async function carritoBS() {
+  const url = "https://jap-commerce-backend.vercel.app/cart";
+  let user = JSON.parse(localStorage.getItem("user"));
+  let token = user.token;
+
+  const response = await fetch(url, {
+    method: "GET", // Método GET, pero puedes ajustarlo según tus necesidades
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+    },
+  });
+  const { carrito } = await response.json();
+
+  console.log(carrito);
+  return carrito;
 }
 
 function actualizarCarrito() {

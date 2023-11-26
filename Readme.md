@@ -1,31 +1,44 @@
-## Entrega 8
-======================================
+# E-Mercado
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="img/favicon.svg" width="200" alt="E-Mercado Logo" /></a>
+</p>
+
+<p align="center">
+    Welcome to E-Mercado
+</p>
+
+## <img src="https://cdn-icons-png.flaticon.com/512/8655/8655461.png" width='25'> Description 
+  Project to JaP in Q3-Q4 2K23 <br>
 
 
-1)Levantar el servidor y devolver todos los JSON descargados previamente:
 
-Utilizar Node.js y Express para levantar un servidor.
-Descargar los datos en archivos JSON previamente mencionados.
+## <img src="https://cdn.jsdelivr.net/gh/Readme-Workflows/Readme-Icons@main/icons/octicons/Wiki.svg">  Stack used 
 
-Crear rutas en el servidor para devolver estos archivos JSON al ser solicitados por el frontend.
-Modificar las url que tomamos en nuestro archivo init.js para que apunten a nuestro servidor local.
+[![My Skills](https://skillicons.dev/icons?i=git,github,html,css,js,bootstrap)](https://skillicons.dev)
 
-2)Endpoint /login y autenticación mediante usuario y contraseña:
+## <img src="https://cdn-icons-png.flaticon.com/512/627/627558.png" width='20'>   Api
 
-Crear un endpoint POST /login donde reciba el usuario y contraseña en el cuerpo de la petición.
-Utilizar la librería jsonwebtoken para generar un token después de autenticar al usuario y devolverlo como respuesta al frontend.
+### <img src="https://www.pngmart.com/files/7/Guide-PNG-File.png" width='20'> Manual
+https://drive.google.com/file/d/1qTki2iEZiZzM64-wiJmv4jtZigJ5HcoB/view
 
-// Falta devolver json web token
-
-3)Middleware de autorización para la ruta /cart:
-
-Crear un middleware que verifique la presencia y validez del token en las peticiones a la ruta /cart.
-Solo permitir que usuarios autenticados realicen peticiones a esta ruta.
-
-4)¡Desafiate!
-En /cart debemos programar la funcionalidad para que permita recibir los ítems del carrito y los guarde en el servidor (puede ser en un archivo utilizando FileSystem, en una base de datos como MariaDB o MongoDB, o la herramienta que les sea más práctica).
-
-front end -> 
-
-
-Borrar read me
+### <img src="https://www.shareicon.net/data/512x512/2015/10/18/658103_segments_512x512.png" width='20'> Endpoints 
+```
+cats/cat.json
+```
+https://japceibal.github.io/emercado-api/cats/cat.json
+```
+cats_products/[cat_ID].json
+```
+https://japceibal.github.io/emercado-api/cats_products/101.json
+```
+products/[product_ID].json
+```
+https://japceibal.github.io/emercado-api/products/50921.json
+```
+products_comments/[product_ID].json
+```
+https://japceibal.github.io/emercado-api/products_comments/50921.json
+```
+user_cart/[ID].json
+```
+https://japceibal.github.io/emercado-api/user_cart/[ID].json

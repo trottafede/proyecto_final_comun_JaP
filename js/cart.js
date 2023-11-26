@@ -90,9 +90,7 @@ function mostrarProducto() {
       <td id="td_name"><p>${name}</p></td>
       <td id="td_costo"><p>USD ${cost}</p></td>
       <td id="td_cantidad"><i onclick="handleOneLess(${id})" class="fa-solid fa-circle-minus"></i><span>${quantity}</span><i onclick="handleOneMore(${id})" class="fa-solid fa-circle-plus"></i></td>
-      <td id="td_subtotal"><p><strong><span id="subtotal${id}"> USD ${
-      cost * quantity
-    }</span></strong></p></td>
+      <td id="td_subtotal"><p><strong><span id="subtotal${id}"> USD ${Math.round(cost * quantity)}</span></strong></p></td>
       <td id="td_acciones"><i onclick="handleDelete(${id})" class="fa-solid fa-trash"></i></td>
     </tr>`;
     // Actualiza el total del carrito
