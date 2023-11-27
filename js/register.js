@@ -148,17 +148,19 @@ function validarEmail(email) {
 // Función para manejar el registro después de una validación exitosa.
 function registrado() {
   if (validarFormulario()) {
-    let user = {
-      nombre: document.getElementById("nombre").value,
-      apellido: document.getElementById("apellido").value,
-      email: document.getElementById("mail").value,
-      contrasena: document.getElementById("contraseña").value,
-    };
+  
 
     // //--------------------------------------------------------------
 
     // Example POST method implementation:
     async function postData() {
+      let user1 = {
+        nombre: document.getElementById("nombre").value,
+        apellido: document.getElementById("apellido").value,
+        email: document.getElementById("mail").value,
+        contrasena: document.getElementById("contraseña").value,
+      };
+
       // Default options are marked with *
       const local = "http://localhost:3000/users";
       const production = "https://jap-commerce-backend.vercel.app/users";
@@ -176,7 +178,7 @@ function registrado() {
           },
           redirect: "follow", // manual, *follow, error
           referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-          body: JSON.stringify(user), // body data type must match "Content-Type" header
+          body: JSON.stringify(user1), // body data type must match "Content-Type" header
         }
       );
       const { token, user } = await response.json(); // parses JSON response into native JavaScript objects
