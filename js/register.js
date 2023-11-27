@@ -179,11 +179,12 @@ function registrado() {
           body: JSON.stringify(user), // body data type must match "Content-Type" header
         }
       );
-      const response_a = await response.json(); // parses JSON response into native JavaScript objects
-
+      const { token, user } = await response.json(); // parses JSON response into native JavaScript objects
+        
       if (response.status == 201) {
         // Si la respuesta del servidor indica un estado 201 (creado con éxito).
-        localStorage.setItem("user", JSON.stringify(response_a));   // Almacena los datos del usuario en el almacenamiento local.
+        user.token = token;
+        localStorage.setItem("user", JSON.stringify(user));   // Almacena los datos del usuario en el almacenamiento local.
         window.location.href = "./index.html"; // Redirige al usuario a la página principal.
       } else {
         alert("error al registrarte!!"); // Si la respuesta no es 201 , muestra un mensaje de error.
